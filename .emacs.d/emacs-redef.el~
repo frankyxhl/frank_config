@@ -1,0 +1,115 @@
+;; function
+(defun switch-windows-buffer ()
+  (interactive)
+  (let ((this-buffer (window-buffer)))
+    (switch-to-buffer (window-buffer (next-window (selected-window))))
+    (switch-to-buffer-other-window this-buffer)
+    (other-window 1)
+    )
+)
+
+;; load hippie-expand
+(setq hippie-expand-try-functions-list
+      '( ;;senator-complete-symbol
+        try-expand-dabbrev
+        try-expand-dabbrev-visible
+        try-expand-dabbrev-all-buffers
+        try-expand-dabbrev-from-kill
+        try-complete-file-name-partially
+        try-complete-file-name
+        try-expand-all-abbrevs
+        try-expand-list
+        try-expand-line
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol))
+
+;; for desktop
+(defun remove-desktop-lock (path)
+  (if (not (null path))
+    (let ((root_desktop_filepath (car path)))
+      (if (file-exists-p root_desktop_filepath)
+	  (delete-file root_desktop_filepath)
+	)
+      (remove-desktop-lock (cdr path))
+      )
+    )
+)
+
+;; for python
+(defun run-python-cmd ()
+  (interactive)
+  (comint-run "/usr/bin/python")
+)
+
+;; for python
+(defun debug-python-file ()
+  (interactive)
+  (pdb (concat "pdb " (buffer-file-name)))
+)
+
+(defun copy-line (&optional arg)
+  "Copy current line to next new line"
+ (interactive "P")
+ (let ((beg (line-beginning-position)) 
+       (end (line-end-position arg)))
+ (copy-region-as-kill beg end))
+ (message "Line has been copied")
+)
+
+(defun comment-line (&optional arg)
+  "comment-line line"
+ (interactive "P")
+ (let ((beg (line-beginning-position)) 
+       (end (line-end-position arg)))
+ (comment-or-uncomment-region beg end))
+)
+
+(defun open-bashrc()
+  "Open-bashrc File"
+  (interactive)
+  (find-file "~/.bashrc")
+)
+
+(defun open-emacs()
+  "Open-emacs configure file"
+  (interactive)
+  (find-file "~/.emacs")
+)
+
+(defun open-keymap()
+  "Open-keymap configure file"
+  (interactive)
+  (find-file "~/.emacs.d/emacs-keymap.el")
+)
+
+(defun open-file()
+  "OpenFTP file"
+  (interactive)
+  (message "Password is 561121")
+;;pause for 3 seconds
+;;  (sit-for 3)
+  (find-file "/ftp:chicappa.jp-xuzhigang1956@ftp48.chicappa.jp:")
+ )
+
+(defun increase-font-size ()
+  (interactive)
+  (set-face-attribute 'default
+		      nil
+		      :height
+		      (ceiling (* 1.10
+				  (face-attribute 'default :height)))))
+
+(defun decrease-font-size ()
+  (interactive) 
+  (set-face-attribute 'default
+		      nil                    
+		      :height
+		      (floor (* 0.9
+                                 (face-attribute 'default :height)))))
+
+(defun fullscreen ()
+        (interactive)
+        (set-frame-parameter nil 'fullscreen
+                             (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
+

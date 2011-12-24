@@ -1,0 +1,1 @@
+(pymacs-load "gen_etags" "gen-etags-")

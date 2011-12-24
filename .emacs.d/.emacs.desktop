@@ -1,0 +1,205 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Dec 20 02:10:11 2011
+;; Desktop file format version 206
+;; Emacs version 23.2.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name "/home/frank/TAGS")
+(setq tags-table-list '("/home/frank/TAGS" "/home/frank/python_TAGS"))
+(setq search-ring '("0.29" "python" "C-m" "C-m " "C-m" "scim" "scp" "tar" "C-c C-" "lilyp" "tsoc" "Dro" "drop" "dropbo" "py" "ac"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/test.html" "~/sina/creat_sina_down_list.py" "~/sina/calc_html.py" "~/data.txt" "~/bottle_test.py" "~/bottle/bottle.py" "~/" "~/python_TAGS" "~/sina/creat_sina_down_list.py" "~/sina/nc.shtml" "~/sina/get_stock_list_from_guba.py" "~/sina/new.py" "~/sina/ggg.py" "~/sina/down_sym_list_from_sina.py" "~/stock_js/qq/down_sym_list_from_sina.py" "~/python_TAGS" "~/TAGS" "~/lisp_collection.lisp" "~/yyets/yyets_ftp.py" "~/a.py" "~/yyets_ftp.py" "~/Dropbox/link_jpg_to_product_name.py" "emacs-redef.el" "~/.emacs.d/emacs-redef.el" "~/.emacs.d/emacs-plugin.el" "~/download_sina_stock_xls.py" "~/practicals-1.0.3/Chapter03/simple-database.lisp" "~/test.org" "~/Dropbox/Frank_Shedule.org" "/usr/src/linux-headers-2.6.38-8/include/drm/drm_global.h"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/frank/sina/calc_html.py"
+  "calc_html.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode)
+  5104
+  '(5511 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/test.html"
+  "test.html"
+  'html-mode
+  '(abbrev-mode)
+  712
+  '(662 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(abbrev-mode auto-complete-mode paredit-mode linum-mode)
+  4676
+  '(156 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (case-fold-search . t)))
+
+(desktop-create-buffer 206
+  "/home/frank/sina/creat_sina_down_list.py"
+  "creat_sina_down_list.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode)
+  323
+  '(242 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/sina/get_stock_list_from_guba.py"
+  "get_stock_list_from_guba.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode linum-mode)
+  971
+  '(1526 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/xunlei/xunlei.py"
+  "xunlei.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode linum-mode)
+  3210
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/download_sina_stock_xls.py"
+  "download_sina_stock_xls.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode linum-mode outline-minor-mode)
+  994
+  '(1059 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/sina/down_sym_list_from_sina.py"
+  "down_sym_list_from_sina.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode linum-mode)
+  1567
+  '(2159 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/bottle_test.py"
+  "bottle_test.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode)
+  586
+  '(560 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/data.txt"
+  "data.txt"
+  'text-mode
+  '(abbrev-mode)
+  14
+  '(11 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/bottle/bottle.py"
+  "bottle.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode)
+  21473
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/stock_js/qq/down_sym_list_from_sina.py"
+  "down_sym_list_from_sina.py<2>"
+  'python-mode
+  '(abbrev-mode auto-complete-mode linum-mode)
+  2694
+  '(2051 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/frank/.emacs.d/emacs-redef.el"
+  "emacs-redef.el"
+  'emacs-lisp-mode
+  '(abbrev-mode auto-complete-mode paredit-mode linum-mode)
+  13
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/lisp_collection.lisp"
+  "lisp_collection.lisp"
+  'lisp-mode
+  '(abbrev-mode paredit-mode linum-mode slime-mode eldoc-mode)
+  421
+  '(496 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/Dropbox/link_jpg_to_product_name.py"
+  "link_jpg_to_product_name.py"
+  'python-mode
+  '(abbrev-mode auto-complete-mode linum-mode)
+  826
+  '(1829 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/.emacs.d/emacs-plugin.el"
+  "emacs-plugin.el"
+  'emacs-lisp-mode
+  '(abbrev-mode auto-complete-mode paredit-mode linum-mode)
+  16
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/frank/practicals-1.0.3/Chapter03/simple-database.lisp"
+  "simple-database.lisp"
+  'lisp-mode
+  '(abbrev-mode paredit-mode linum-mode slime-mode eldoc-mode)
+  1877
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+

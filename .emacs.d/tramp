@@ -1,0 +1,21 @@
+;; -*- emacs-lisp -*-
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["ssh" "frank" "shlug.org" nil]
+  ("uname" "Linux 2.6.26-2-xen-amd64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/home/frank")
+  ("file-exists" "test -e")
+  ("readlink" "\\readlink")
+  ("stat" "\\stat")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl"))
+ (["ftp" "chicappa.jp-xuzhigang1956" "ftp48.chicappa.jp" nil]
+  ("started" t))
+ (["ftp" "chicappa.jp-xuzhigang1956" "ftp210.chicappa.jp" nil]
+  ("started" t)))

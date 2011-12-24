@@ -1,0 +1,20 @@
+/pscp:shell@192.168.5.199:/home/shell/pyweb/http.py
+#_apscp_bshell@192.168.5.199_b_ahome_ashell_apyweb_ahttp.py#
+c:/Documents and Settings/Administrator/Application Data/.emacs
+c:\Documents and Settings\Administrator\Application Data\#.emacs#
+/pscp:shell@192.168.5.199:/home/shell/pyweb/server.py
+#_apscp_bshell@192.168.5.199_b_ahome_ashell_apyweb_aserver.py#
+/pscp:shell@192.168.5.199:/home/shell/pyweb/main.py
+#_apscp_bshell@192.168.5.199_b_ahome_ashell_apyweb_amain.py#
+/pscp:shell@192.168.5.199:/home/shell/pyweb/http_file.py
+#_apscp_bshell@192.168.5.199_b_ahome_ashell_apyweb_ahttp__file.py#
+c:/Python/Lib/BaseHTTPServer.py
+c:\Python\Lib\#BaseHTTPServer.py#
+c:/Downloads/vnc4_4.1.1+X4.3.0.orig/vnc4-4.1.1+X4.3.0.orig/unix/xc/programs/Xserver/vnc/Xvnc/xvnc.cc
+c:\Downloads\vnc4_4.1.1+X4.3.0.orig\vnc4-4.1.1+X4.3.0.orig\unix\xc\programs\Xserver\vnc\Xvnc\#xvnc.cc#
+c:/Downloads/vnc4_4.1.1+X4.3.0.orig/vnc4-4.1.1+X4.3.0.orig/unix/xc/programs/Xserver/vnc/vncHooks.cc
+c:\Downloads\vnc4_4.1.1+X4.3.0.orig\vnc4-4.1.1+X4.3.0.orig\unix\xc\programs\Xserver\vnc\#vncHooks.cc#
+c:/Downloads/vnc4_4.1.1+X4.3.0.orig/vnc4-4.1.1+X4.3.0.orig/unix/README
+c:\Downloads\vnc4_4.1.1+X4.3.0.orig\vnc4-4.1.1+X4.3.0.orig\unix\#README#
+c:/Documents and Settings/Administrator/Application Data/.emacs.d/emacs-keymap.el
+c:\Documents and Settings\Administrator\Application Data\.emacs.d\#emacs-keymap.el#
