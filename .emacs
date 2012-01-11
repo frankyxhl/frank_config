@@ -135,3 +135,8 @@
 (setq slime-net-coding-system 'utf-8-unix)
 (linum-mode)
 
+(require 'coffee-mode)
+
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
