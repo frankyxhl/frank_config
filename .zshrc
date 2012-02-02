@@ -6,9 +6,9 @@
 
 #关于历史纪录的配置
 # number of lines kept in history
-export HISTSIZE=10000
+export HISTSIZE=100000
 # # number of lines saved in the history after logout
-export SAVEHIST=10000
+export SAVEHIST=100000
 # # location of history
 export HISTFILE=~/.zhistory
 # # append command to history file once executed
@@ -254,4 +254,11 @@ fi
 
 alias fq='ssh -qTfnN -D 9999 frank@vps.toujibiji.com -p 2012'
 alias sub='ls -d */'
-alias hh='history 1'
+alias h='history 1'
+alias tar_delete='tar --delete -f '
+alias tar_list='tar tf '
+alias tar_update='tar uPvf '
+alias tar_extract='tar xPvf '
+# cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
+alias v='/usr/local/bin/vless'
+alias c='rsync -av --progress'
