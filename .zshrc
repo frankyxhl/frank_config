@@ -252,7 +252,6 @@ else
     setprompt
 fi
 
-alias fq='ssh -qTfnN -D 9999 frank@vps.toujibiji.com -p 2012'
 alias sub='ls -d */'
 alias h='history 1'
 alias tar_delete='tar --delete -f '
