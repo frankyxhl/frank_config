@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @date: 2012-03-02
 # @author: Frank.Xu
-sudo apt-get install vim
+sudo apt-get install vim-nox
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 ln -s ~/frank_config/.emacs ~/.emacs
 ln -s ~/frank_config/.emacs.d ~/.emacs.d
