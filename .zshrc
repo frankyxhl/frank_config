@@ -253,6 +253,7 @@ else
 fi
 
 alias sub='ls -d */'
+alias l.='ls -d .*'
 alias h='history 1'
 alias tar_delete='tar --delete -f '
 alias tar_list='tar tf '
