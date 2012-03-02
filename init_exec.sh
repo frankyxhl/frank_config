@@ -5,8 +5,8 @@
 
 sudo apt-get install vim
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
-ln -s .emacs ~/.emacs
-ln -s .emacs.d ~/.emacs.d 
-ln -s .tmux.conf ~/.tmux.conf
-ln -s .zshrc ~/.zshrc
+ln -s ~/frank_config/.emacs ~/.emacs
+ln -s ~/frank_config/.emacs.d ~/.emacs.d
+ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
+ln -s ~/frank_config/.zshrc ~/.zshrc
 source ~/.zshrc
