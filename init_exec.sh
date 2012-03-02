@@ -9,3 +9,4 @@ ln -s .emacs ~/.emacs
 ln -s .emacs.d ~/.emacs.d 
 ln -s .tmux.conf ~/.tmux.conf
 ln -s .zshrc ~/.zshrc
+source ~/.zshrc
