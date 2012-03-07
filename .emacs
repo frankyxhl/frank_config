@@ -137,9 +137,25 @@
 (ido-mode 1)
 
 
+
 (require 'coffee-mode)
 
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
 (require 'mwe-color-box)
+;; (load "js2")
+
+
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(setq default-buffer-file-coding-system 'utf-8)
+
+(defalias 'ar 'align-regexp)
+(require 'anything)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
