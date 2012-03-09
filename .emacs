@@ -82,7 +82,7 @@
 ;; (set-frame-parameter (selected-frame) 'alpha '(85 50))
 ;; (add-to-list 'default-frame-alist '(alpha 85 50))
 
-(load "javascript-mode")
+;; (load "javascript-mode")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 高亮当前行
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -135,7 +135,6 @@
 (setq slime-net-coding-system 'utf-8-unix)
 (linum-mode 1)
 (ido-mode 1)
-
 
 
 (require 'coffee-mode)
