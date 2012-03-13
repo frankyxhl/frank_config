@@ -34,7 +34,7 @@
 ;; (global-set-key [(control .)] 'end-of-defun)
 ;; (global-set-key [(meta .)] 'beginning-of-defun)
 (global-set-key [(control ,)] 'copy-line)
-(global-set-key (kbd "C-+") 'increase-font-size)
+(global-set-key (kbd "C-=") 'increase-font-size)
 (global-set-key (kbd "C--") 'decrease-font-size)
 (global-set-key [(control \;)] 'comment-line)
 (global-set-key (kbd "C-x ;") 'comment-or-uncomment-region)
