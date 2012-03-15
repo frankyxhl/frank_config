@@ -138,13 +138,14 @@
 
 
 (require 'coffee-mode)
-
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+;; 保存后自动编译
+(add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
+;; 开启自动补全
+(add-to-list 'ac-modes 'coffee-mode)
 
 (require 'mwe-color-box)
-;; (load "js2")
-
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -161,6 +162,6 @@
 (setq indent-tabs-mode nil)
 (setq default-tab-width 4)
 (setq tab-width 4)
-(setq tab-stop-list ())
-(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 
-44 48 52 56 60 64 68 72 76 80 84 88 92 96))
+;; (setq tab-stop-list ())
+;; (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 
+;; 44 48 52 56 60 64 68 72 76 80 84 88 92 96))
