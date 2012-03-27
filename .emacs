@@ -111,10 +111,10 @@
 (define-key key-translation-map [?\]] [?\)])
 
 
-(require 'paredit)
-(add-hook 'emacs-lisp-mode-hook		(lambda () (paredit-mode 1)))
-(add-hook 'lisp-mode-hook		(lambda () (paredit-mode 1)))
-(add-hook 'lisp-interaction-mode-hook	(lambda () (paredit-mode 1)))
+;; (require 'paredit)
+;; (add-hook 'emacs-lisp-mode-hook		(lambda () (paredit-mode 1)))
+;; (add-hook 'lisp-mode-hook		(lambda () (paredit-mode 1)))
+;; (add-hook 'lisp-interaction-mode-hook	(lambda () (paredit-mode 1)))
 ;; (add-hook 'python-mode-hook		(lambda () (paredit-mode 1)))
 ;; (add-hook 'scheme-mode-hook		(lambda () (paredit-mode 1)))
 
@@ -127,14 +127,13 @@
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
 
-(setq skeleton-pair t)
-(global-set-key "(" 'skeleton-pair-insert-maybe)
-(global-set-key "'" 'skeleton-pair-insert-maybe)
-(global-set-key "[" 'skeleton-pair-insert-maybe)
+;; (setq skeleton-pair t)
+;; (global-set-key "(" 'skeleton-pair-insert-maybe)
+;; (global-set-key "'" 'skeleton-pair-insert-maybe)
+;; (global-set-key "[" 'skeleton-pair-insert-maybe)
+;; (ido-mode 1)
 
 (setq slime-net-coding-system 'utf-8-unix)
-(linum-mode 1)
-(ido-mode 1)
 
 
 (require 'coffee-mode)
@@ -157,6 +156,15 @@
 (defalias 'ar 'align-regexp)
 (require 'anything)
 
-;; (setq indent-tabs-mode nil)
-;; (setq default-tab-width 4)
-;; (setq tab-width 4)
+(require 'fast-paren-mode)
+(add-hook 'emacs-lisp-mode-hook		(lambda () (fast-paren-mode 1)))
+(add-hook 'lisp-mode-hook		(lambda () (fast-paren-mode 1)))
+(add-hook 'lisp-interaction-mode-hook	(lambda () (fast-paren-mode 1)))
+(require 'highlight-parentheses)
+
+;; (linum-mode 1)
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
