@@ -33,13 +33,15 @@
 (global-set-key (kbd "C-c o c") 'open-chicappa)
 ;; (global-set-key [(control .)] 'end-of-defun)
 ;; (global-set-key [(meta .)] 'beginning-of-defun)
-(global-set-key [(control ,)] 'copy-line)
+(global-set-key [(control \,)] 'copy-line)
 (global-set-key (kbd "C-=") 'increase-font-size)
 (global-set-key (kbd "C--") 'decrease-font-size)
 (global-set-key [(control \;)] 'comment-line)
 (global-set-key (kbd "C-x ;") 'comment-or-uncomment-region)
 (global-set-key [f11] 'fullscreen)
-
+(global-set-key [f8] 'other-window)
+(global-set-key (kbd "C-.") 'pop-tag-mark)
+	
 (defvar my-point-track 0
   "this variable save the point position when begin track
 and goto the saved point position when end track.")
