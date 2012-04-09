@@ -59,7 +59,8 @@
     (hl-paren-color-update)))
 
 (defcustom hl-paren-colors
-  '("dark magenta" "blue" "OliveDrab1" "yellow" "DarkGoldenrod2" "IndianRed1")  
+  ;; '("IndianRed1" "DarkGoldenrod2" "yellow" "OliveDrab1" "blue" "dark magenta")
+  '("dark magenta" "blue" "OliveDrab1" "yellow" "DarkGoldenrod2" "IndianRed1")
   ;; '("firebrick1" "IndianRed1" "IndianRed3" "IndianRed4")
   "*List of colors for the highlighted parentheses.
 The list starts with the the inside parentheses and moves outwards."

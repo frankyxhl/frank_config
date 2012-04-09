@@ -52,3 +52,5 @@ alias tar_extract='tar xPvf '
 # cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
 alias v='/usr/local/bin/vless'
 alias c='rsync -av --progress'
+alias ut='ubuntu-server-tip'
+alias g='grep'
