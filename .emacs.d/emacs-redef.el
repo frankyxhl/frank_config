@@ -132,7 +132,9 @@
 (defun copy-sentence (&optional arg)
   "Copy current sentence"
   (interactive "P")
-  (let ((beg (progn (backward-sentence) (point))) 
+  (let ((current-position (point))
+	(beg (progn (backward-sentence) (point))) 
 	(end (progn (forward-sentence) (point)))) 
-    (copy-region-as-kill beg end))
-  (message "Sentence has been copied"))
+    (copy-region-as-kill beg end)
+    (goto-char current-position)    
+    (message "Sentence has been copied")))
