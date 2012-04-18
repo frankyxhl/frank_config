@@ -1,3 +1,8 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; My Emacs Config
+;; Frank.Xu (franky.xhl[at]gmail.com)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (ido-mode 1)
 ;; .emacs profile, written by shell.xu
 (setq inhibit-startup-screen t);; close welcome screen
 (setq column-number-mode t);; enable column mode
@@ -23,9 +28,9 @@
 (load "emacs-redef")
 (load "emacs-plugin")
 (load "python-indent")
-
-;;lily pond mode load
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; lily pond mode load
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
 (add-to-list 'auto-mode-alist '("\\.ly$" . LilyPond-mode))
 (add-to-list 'auto-mode-alist '("\\.ily$" . LilyPond-mode))
@@ -63,7 +68,7 @@
 ;;Pinbar-mode顶部Alt键
 (require 'pinbar)
 (global-set-key "\M-0" 'pinbar-add)
-;;(pinbar-mode t)
+(pinbar-mode t)
 ;;Lua mode setting
 (setq auto-mode-alist (cons '("\\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
@@ -81,8 +86,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (set-frame-parameter (selected-frame) 'alpha '(85 50))
 ;; (add-to-list 'default-frame-alist '(alpha 85 50))
-
-;; (load "javascript-mode")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 高亮当前行
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -127,39 +130,45 @@
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
 
-;; (setq skeleton-pair t)
-;; (global-set-key "(" 'skeleton-pair-insert-maybe)
-;; (global-set-key "'" 'skeleton-pair-insert-maybe)
+(setq skeleton-pair t)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+(global-set-key "'" 'skeleton-pair-insert-maybe)
 ;; (global-set-key "[" 'skeleton-pair-insert-maybe)
-;; (ido-mode 1)
+
 
 (setq slime-net-coding-system 'utf-8-unix)
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; coffee-mode && js2-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'coffee-mode)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-;; 保存后自动编译
+;;automatic complie after save file
 (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
-;; 开启自动补全
 (add-to-list 'ac-modes 'coffee-mode)
-
-(require 'mwe-color-box)
-
-(add-to-list 'ac-modes 'lisp-mode)
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; lisp-environment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'mwe-color-box)
+
+(add-to-list 'ac-modes 'lisp-mode)
+(add-to-list 'ac-modes 'slime-mode)
 
 (setq default-buffer-file-coding-system 'utf-8)
 
 (defalias 'ar 'align-regexp)
 (require 'anything)
 
+(paredit-mode nil)
 (require 'fast-paren-mode)
 (add-hook 'emacs-lisp-mode-hook		(lambda () (fast-paren-mode 1)))
 (add-hook 'lisp-mode-hook		(lambda () (fast-paren-mode 1)))
 (add-hook 'lisp-interaction-mode-hook	(lambda () (fast-paren-mode 1)))
+(add-hook 'slime-mode-hook		(lambda () (fast-paren-mode 1)))
 (require 'highlight-parentheses)
 
 ;; (linum-mode 1)

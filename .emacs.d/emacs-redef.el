@@ -4,9 +4,7 @@
   (let ((this-buffer (window-buffer)))
     (switch-to-buffer (window-buffer (next-window (selected-window))))
     (switch-to-buffer-other-window this-buffer)
-    (other-window 1)
-    )
-)
+    (other-window 1)))
 
 ;; load hippie-expand
 (setq hippie-expand-try-functions-list
@@ -69,51 +67,44 @@
 ;; ) 
 
 ;; for python
-(defun run-python-cmd ()
-  (interactive)
-  (comint-run "/usr/bin/python")
-)
+;; (defun run-python-cmd ()
+  ;; (interactive)
+  ;; (comint-run "/usr/bin/python"))
 
 ;; for python
 (defun debug-python-file ()
   (interactive)
-  (pdb (concat "pdb " (buffer-file-name)))
-)
+  (pdb (concat "pdb " (buffer-file-name))))
 
 (defun copy-line (&optional arg)
   "Copy current line to next new line"
- (interactive "P")
- (let ((beg (line-beginning-position)) 
-       (end (line-end-position arg)))
- (copy-region-as-kill beg end))
- (message "Line has been copied")
-)
+  (interactive "P")
+  (let ((beg (line-beginning-position)) 
+	(end (line-end-position arg)))
+    (copy-region-as-kill beg end))
+  (message "Line has been copied"))
 
 (defun comment-line (&optional arg)
   "comment-line line"
- (interactive "P")
- (let ((beg (line-beginning-position)) 
-       (end (line-end-position arg)))
- (comment-or-uncomment-region beg end))
-)
+  (interactive "P")
+  (let ((beg (line-beginning-position)) 
+	(end (line-end-position arg)))
+    (comment-or-uncomment-region beg end)))
 
 (defun open-bashrc()
   "Open-bashrc File"
   (interactive)
-  (find-file "~/.bashrc")
-)
+  (find-file "~/.bashrc"))
 
 (defun open-emacs()
   "Open-emacs configure file"
   (interactive)
-  (find-file "~/.emacs")
-)
+  (find-file "~/.emacs"))
 
 (defun open-keymap()
   "Open-keymap configure file"
   (interactive)
-  (find-file "~/.emacs.d/emacs-keymap.el")
-)
+  (find-file "~/.emacs.d/emacs-keymap.el"))
 
 
 (defun increase-font-size ()
@@ -130,11 +121,18 @@
 		      nil                    
 		      :height
 		      (floor (* 0.9
-                                 (face-attribute 'default :height)))))
+				(face-attribute 'default :height)))))
 
 (defun fullscreen ()
-        (interactive)
-        (set-frame-parameter nil 'fullscreen
-                             (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 
 
+(defun copy-sentence (&optional arg)
+  "Copy current sentence"
+  (interactive "P")
+  (let ((beg (progn (backward-sentence) (point))) 
+	(end (progn (forward-sentence) (point)))) 
+    (copy-region-as-kill beg end))
+  (message "Sentence has been copied"))
