@@ -23,7 +23,8 @@
 
 ;; load other set
 (add-to-list 'load-path "~/.emacs.d/")  ;;should set again if the enviroment has been changed
-(load "color-theme")
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0") 
+(require 'color-theme)
 (load "csv-mode")
 (load "emacs-redef")
 (load "emacs-plugin")
@@ -148,6 +149,13 @@
 (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
 (add-to-list 'ac-modes 'coffee-mode)
 
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2))
+
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
+
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -177,3 +185,14 @@
   (lambda ()
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
+
+(require 'color-theme-arjen)
+(require 'htmlize)
+;; (setq-default tab-width 2)
+(define-skeleton src 
+  "Input #+begin_src #+end_src in org-mode"
+""
+"#+begin_src lisp \n"
+ _ "\n" 
+"#+end_src"
+)
