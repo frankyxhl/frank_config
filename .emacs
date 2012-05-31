@@ -82,15 +82,13 @@
 ;; (add-to-list 'load-path
              ;; "~/.emacs.d/yasnippet-0.6.1c/snippets")
 ;; (require 'yasnippet-bundle)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 透明背景
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (set-frame-parameter (selected-frame) 'alpha '(85 50))
-;; (add-to-list 'default-frame-alist '(alpha 85 50))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 高亮当前行
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-hl-line-mode t) 
+;;------------------------------------------------------------------------------
+;; 透明背景transparent background
+;;------------------------------------------------------------------------------
+(set-frame-parameter (selected-frame) 'alpha '(55 50))
+(add-to-list 'default-frame-alist '(alpha 55 50))
+
+(global-hl-line-mode t) 		;高亮当前行
 
 (setq-default make-backup-files nil)
 (color-theme-luolE-darknight)
@@ -196,3 +194,4 @@
  _ "\n" 
 "#+end_src"
 )
+(delete-selection-mode 1)
