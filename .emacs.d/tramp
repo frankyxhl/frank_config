@@ -18,4 +18,22 @@
  (["ftp" "chicappa.jp-xuzhigang1956" "ftp48.chicappa.jp" nil]
   ("started" t))
  (["ftp" "chicappa.jp-xuzhigang1956" "ftp210.chicappa.jp" nil]
-  ("started" t)))
+  ("started" t))
+ (["ssh" "frank" "ubuntu" nil]
+  ("uname" "Linux 3.2.0-23-generic")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("file-exists" "test -e")
+  ("readlink" "\\readlink")
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 1000)
+  ("local-encoding" base64-encode-region)
+  ("local-decoding" base64-decode-region)
+  ("remote-encoding" "base64")
+  ("remote-decoding" "base64 -d")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")))
