@@ -93,10 +93,11 @@
 (setq-default make-backup-files nil)
 (color-theme-luolE-darknight)
 ;; (color-theme-midnight)
-(require 'scim-bridge)
-(add-hook 'after-init-hook 'scim-mode-on)
-(require 'scim-bridge-zh-si)
-(add-hook 'after-init-hook 'scim-mode-on)
+;; Debian下中文输入法问题
+;; (require 'scim-bridge)
+;; (add-hook 'after-init-hook 'scim-mode-on)
+;; (require 'scim-bridge-zh-si)
+;; (add-hook 'after-init-hook 'scim-mode-on)
 
 ;; (defun lisp-indent-or-complete (&optional arg)
   ;; (interactive "p")
@@ -169,7 +170,7 @@
 (defalias 'ar 'align-regexp)
 (require 'anything)
 
-(paredit-mode nil)
+;; (paredit-mode nil)
 (require 'fast-paren-mode)
 (add-hook 'emacs-lisp-mode-hook		(lambda () (fast-paren-mode 1)))
 (add-hook 'lisp-mode-hook		(lambda () (fast-paren-mode 1)))
