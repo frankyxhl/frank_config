@@ -132,7 +132,7 @@
 
 (setq skeleton-pair t)
 (global-set-key "(" 'skeleton-pair-insert-maybe)
-(global-set-key "'" 'skeleton-pair-insert-maybe)
+;; (global-set-key "'" 'skeleton-pair-insert-maybe)
 ;; (global-set-key "[" 'skeleton-pair-insert-maybe)
 
 
@@ -196,3 +196,11 @@
 "#+end_src"
 )
 (delete-selection-mode 1)
+
+(add-to-list 'load-path "~/.emacs.d/jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)    
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+(require 'mon-css-complete)
+
