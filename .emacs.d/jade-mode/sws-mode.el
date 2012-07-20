@@ -112,7 +112,8 @@
         (indent-to (- ci sws-tab-width))))))
 
 (defvar sws-mode-map (make-sparse-keymap))
-(define-key sws-mode-map [S-tab] 'sws-dendent-line)
+;; (define-key sws-mode-map [S-tab] 'sws-dendent-line)
+(define-key sws-mode-map [tab] 'sws-dendent-line)
 (define-key sws-mode-map [backtab] 'sws-dendent-line)
 
 ;;;###autoload
