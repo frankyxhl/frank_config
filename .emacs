@@ -178,7 +178,7 @@
 (add-hook 'slime-mode-hook		(lambda () (fast-paren-mode 1)))
 (require 'highlight-parentheses)
 
-;; (linum-mode 1)
+(global-linum-mode 1)
 (define-globalized-minor-mode global-highlight-parentheses-mode
   highlight-parentheses-mode
   (lambda ()
