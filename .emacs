@@ -203,4 +203,6 @@
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 (require 'mon-css-complete)
-
+(load "indent-vline")
+(add-hook 'jade-mode-hook '(lambda () (indent-hint-mode t)))
+(add-hook 'coffee-mode-hook '(lambda () (indent-hint-mode t)))
