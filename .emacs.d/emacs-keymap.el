@@ -2,8 +2,9 @@
 ;;; emacs-keymap.el --- 
 
 ;;; load pymacs --- 
-
-(pymacs-load "gen_etags" "gen-etags-")
+(if (eq system-type 'darwin)
+    ()
+    (pymacs-load "gen_etags" "gen-etags-"))
 
 ;;; define keymap
 ;;;(global-set-key [f2] 'kill-this-buffer)

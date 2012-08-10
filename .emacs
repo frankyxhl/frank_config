@@ -17,7 +17,7 @@
 (tool-bar-mode -1);; remove tool bar
 (fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
 (setq uniquify-buffer-name-style 'forward);; it's said that it can control buffer's name, but look like not work
-(pc-selection-mode);; use shift + [array] to select
+
 (put 'dired-find-alternate-file 'disabled nil)
 (global-unset-key [?\C- ])
 
@@ -40,11 +40,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;  Below is written by Frank.Xu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(setq display-time-interval 1)
-(setq display-time-format "%m月%d日%H点%M分%S秒")
-(display-time-mode 1)
+
  ;;shut up left scroll-bar in linux windows,去掉左边的滚轴
 ;; (scroll-bar-mode nil)
 (scroll-bar-mode -1)  
@@ -65,7 +61,7 @@
 ;;   设置字体
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (set-frame-font "Monaco")
-(set-fontset-font "fontset-default" 'han '("文泉驿等宽正黑" . "unicode-bmp"))
+
 ;;Pinbar-mode顶部Alt键
 (require 'pinbar)
 (global-set-key "\M-0" 'pinbar-add)
@@ -126,18 +122,28 @@
 
 (setq show-paren-delay 0)
 
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-;; Replace "sbcl" with the path to your implementation
-(setq inferior-lisp-program "sbcl")
-
-(setq skeleton-pair t)
-(global-set-key "(" 'skeleton-pair-insert-maybe)
-;; (global-set-key "'" 'skeleton-pair-insert-maybe)
-;; (global-set-key "[" 'skeleton-pair-insert-maybe)
-
-
-(setq slime-net-coding-system 'utf-8-unix)
-
+(if (eq system-type 'darwin)
+    (progn
+    (set-face-attribute 'default (selected-frame) :height 200)
+    (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp")))
+  (progn
+    (global-linum-mode 1)
+    (setq display-time-24hr-format t)
+    (setq display-time-day-and-date t)
+    (setq display-time-interval 1)
+    (setq display-time-format "%m月%d日%H点%M分%S秒")
+    (display-time-mode 1)
+    (pc-selection-mode);; use shift + [array] to select    
+    (set-fontset-font "fontset-default" 'han '("文泉驿等宽正黑" . "unicode-bmp"))      
+    (load (expand-file-name "~/quicklisp/slime-helper.el"))
+    ;; Replace "sbcl" with the path to your implementation
+    (setq inferior-lisp-program "sbcl")
+    (setq skeleton-pair t)
+    (global-set-key "(" 'skeleton-pair-insert-maybe)
+    ;; (global-set-key "'" 'skeleton-pair-insert-maybe)
+    ;; (global-set-key "[" 'skeleton-pair-insert-maybe)
+    (setq slime-net-coding-system 'utf-8-unix)
+    ))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; coffee-mode && js2-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -178,7 +184,7 @@
 (add-hook 'slime-mode-hook		(lambda () (fast-paren-mode 1)))
 (require 'highlight-parentheses)
 
-(global-linum-mode 1)
+
 (define-globalized-minor-mode global-highlight-parentheses-mode
   highlight-parentheses-mode
   (lambda ()

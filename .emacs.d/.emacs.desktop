@@ -2,270 +2,39 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Mar  2 13:12:47 2012
+;; Created Sat Aug 11 03:12:06 2012
 ;; Desktop file format version 206
-;; Emacs version 23.2.1
+;; Emacs version 24.1.1
 
 ;; Global section:
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name "/home/frank/TAGS")
 (setq tags-table-list '("/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("sleep" "M-k" "tou" "VML" "jquery" "an" "destroy" "navigator" "series" "tsock" "‘Õª‘Òª" "shlug-op" "shlug" "shlug-o" "shlug-op" "shlug-"))
+(setq search-ring '("ita" "linum" "pc" "sleep" "M-k" "tou" "VML" "jquery" "an" "destroy" "navigator" "series" "tsock" "‘Õª‘Òª" "shlug-op" "shlug"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/home/frank/.emacs.d/tramp" "/home/frank/frank_config/initi_exec.sh" "/home/frank/toujibiji/before_git_install.sh" "/home/frank/Dropbox/Frank_Shedule.org" "/home/frank/lisp_collection.lisp" "/home/frank/socket/simulate_send.py" "~/socket/simulate_recv_send_mysql.py" "~/socket/simulate_send.py" "~/node/app_n.js" "~/node/app.js" "~/socket_test/my.js" "~/socket_test/index.html" "~/Dropbox/Frank_Shedule.org" "~/long_pull/simulate_add_something_to_file.py" "~/long_pull/my.js" "~/mem.txt" "~/long_pull/my.js" "~/long_pull/index.html" "~/node/app.js" "~/index.html" "~/node/index.html" "~/index.html" "~/install_node_npm.sh" "~/socket/simulate_send.py" "~/socket/direct_send_to_mysql.py" "~/socket/mysql.py" "~/socket/simulate_send.py" "/home/frank/yuange/cond.py" "/home/frank/yuange/jingzichan_shouyilv/jingzichan_shouyilv.py" "/home/frank/yuange/pb/pb.py"))
+(setq file-name-history '("color-theme-luolE-darknight.el" "~/frank_config/.emacs.d/color-theme-luolE-darknight.el" "color-theme-luolE-darknight.el" "~/frank_config/.emacs.d/color-theme-luolE-darknight.el" "~/gongjujiaoji/public/js/login.coffee" "~/frank_config/.emacs.d/emacs-keymap.el" "~/.emacs.d/emacs-redef.el" "/home/frank/.emacs.d/tramp" "/home/frank/frank_config/initi_exec.sh" "/home/frank/toujibiji/before_git_install.sh" "/home/frank/Dropbox/Frank_Shedule.org" "/home/frank/lisp_collection.lisp" "/home/frank/socket/simulate_send.py" "~/socket/simulate_recv_send_mysql.py" "~/socket/simulate_send.py" "~/node/app_n.js" "~/node/app.js" "~/socket_test/my.js" "~/socket_test/index.html" "~/Dropbox/Frank_Shedule.org" "~/long_pull/simulate_add_something_to_file.py" "~/long_pull/my.js" "~/mem.txt" "~/long_pull/my.js" "~/long_pull/index.html" "~/node/app.js" "~/index.html" "~/node/index.html" "~/index.html" "~/install_node_npm.sh"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/frank/toujibiji/before_git_install.sh"
-  "before_git_install.sh"
-  'sh-mode
-  '(abbrev-mode auto-complete-mode)
-  283
-  '(336 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/install_node_npm.sh"
-  "install_node_npm.sh"
-  'sh-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(16 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/yuange/strip_all.py"
-  "strip_all.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  19
-  '(512 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/socket/simulate_send.py"
-  "simulate_send.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  1313
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/yuange/cond.py"
-  "cond.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  6647
-  '(6569 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/socket/simulate_recv_send_mysql.py"
-  "simulate_recv_send_mysql.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  262
-  '(1248 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/node/index.html"
-  "index.html"
-  'html-mode
-  '(abbrev-mode)
-  282
-  '(146 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/node/app_n.js"
-  "app_n.js"
-  'js2-mode
-  '(abbrev-mode auto-complete-mode)
-  326
-  '(109 nil)
+  "/Users/frank/frank_config/.emacs.d/color-theme-luolE-darknight.el"
+  "color-theme-luolE-darknight.el"
+  'emacs-lisp-mode
+  '(abbrev-mode auto-complete-mode fast-paren-mode highlight-parentheses-mode)
+  791
+  '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/frank/socket_test/my.js"
-  "my.js<3>"
-  'js2-mode
-  '(abbrev-mode auto-complete-mode)
-  222
-  '(98 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/node/app.js"
-  "app.js"
-  'js2-mode
-  '(abbrev-mode auto-complete-mode)
-  194
-  '(220 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/socket_test/index.html"
-  "index.html<5>"
-  'html-mode
-  '(abbrev-mode)
-  395
-  '(305 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/index.html"
-  "index.html<3>"
-  'html-mode
-  '(abbrev-mode)
-  428
-  '(307 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/socket/mysql.py"
-  "mysql.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(444 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/raphaeljs/index.html"
-  "index.html<2>"
-  'html-mode
-  '(abbrev-mode)
-  322
-  '(1560 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/raphaeljs/our_script.js"
-  "our_script.js"
-  'js2-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(1164 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/yuange/jingzichan_shouyilv/jingzichan_shouyilv.py"
-  "jingzichan_shouyilv.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  896
+  "/Users/frank/frank_config/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(abbrev-mode auto-complete-mode fast-paren-mode highlight-parentheses-mode)
+  6413
   '(nil nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/yuange/cash/cash.py"
-  "cash.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  163
-  '(582 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/sina/down_sym_list_from_sina.py"
-  "down_sym_list_from_sina.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode)
-  982
-  '(527 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/raphaeljs/my.js"
-  "my.js"
-  'js2-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(8769 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (case-fold-search . t)))
-
-(desktop-create-buffer 206
-  "/home/frank/raphaeljs/raphael.js"
-  "raphael.js"
-  'js2-mode
-  '(abbrev-mode auto-complete-mode)
-  17484
-  '(23134 nil)
-  nil
-  nil
   '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/sina/array_range.py"
-  "array_range.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode linum-mode)
-  1314
-  '(6081 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/home/frank/masonry/jquery.masonry.js"
-  "jquery.masonry.js"
-  'js-mode
-  '(abbrev-mode linum-mode)
-  6533
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/frank/bottle/bottle.py"
-  "bottle.py"
-  'python-mode
-  '(abbrev-mode auto-complete-mode linum-mode)
-  21473
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
