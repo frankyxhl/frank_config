@@ -51,8 +51,6 @@
 (setq default-abbrev-mode t)
 (add-to-list 'load-path "~/.emacs.d/company")
 (autoload 'company-mode "company" nil t)
-;; 打开自动文件文件打开模式
-;;(ido-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   去掉菜单栏
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -110,7 +108,7 @@
 (define-key key-translation-map [?\]] [?\)])
 
 
-;; (require 'paredit)
+(require 'paredit)
 ;; (add-hook 'emacs-lisp-mode-hook		(lambda () (paredit-mode 1)))
 ;; (add-hook 'lisp-mode-hook		(lambda () (paredit-mode 1)))
 ;; (add-hook 'lisp-interaction-mode-hook	(lambda () (paredit-mode 1)))
@@ -124,8 +122,13 @@
 
 (if (eq system-type 'darwin)
     (progn
-    (set-face-attribute 'default (selected-frame) :height 200)
-    (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp")))
+      (setq mac-option-key-is-meta nil)
+      (setq mac-option-modifier nil)      
+      (setq mac-command-key-is-meta t)
+      (setq mac-command-modifier 'meta)
+      (set-face-attribute 'default (selected-frame) :height 200)
+      (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
+      (set-frame-font "Monaco"))
   (progn
     (global-linum-mode 1)
     (setq display-time-24hr-format t)
@@ -138,12 +141,13 @@
     (load (expand-file-name "~/quicklisp/slime-helper.el"))
     ;; Replace "sbcl" with the path to your implementation
     (setq inferior-lisp-program "sbcl")
-    (setq skeleton-pair t)
-    (global-set-key "(" 'skeleton-pair-insert-maybe)
-    ;; (global-set-key "'" 'skeleton-pair-insert-maybe)
-    ;; (global-set-key "[" 'skeleton-pair-insert-maybe)
     (setq slime-net-coding-system 'utf-8-unix)
     ))
+
+(setq skeleton-pair t)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+;; (global-set-key "'" 'skeleton-pair-insert-maybe)
+;; (global-set-key "[" 'skeleton-pair-insert-maybe)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; coffee-mode && js2-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -166,7 +170,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; lisp-environment
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'mwe-color-box)
 
 (add-to-list 'ac-modes 'lisp-mode)
 (add-to-list 'ac-modes 'slime-mode)
