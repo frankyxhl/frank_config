@@ -122,13 +122,16 @@
 
 (if (eq system-type 'darwin)
     (progn
+      (global-set-key [C-f7] 'ns-toggle-fullscreen)
       (setq mac-option-key-is-meta nil)
       (setq mac-option-modifier nil)      
       (setq mac-command-key-is-meta t)
       (setq mac-command-modifier 'meta)
-      (set-face-attribute 'default (selected-frame) :height 200)
+      ;; (set-face-attribute 'default (selected-frame) :height 200)
       (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
-      (set-frame-font "Monaco"))
+      ;; (set-default-font "Monaco 20"))
+      (set-frame-font "Monaco 18")
+      (ns-toggle-fullscreen))
   (progn
     (global-linum-mode 1)
     (setq display-time-24hr-format t)
