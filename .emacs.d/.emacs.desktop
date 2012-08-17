@@ -2,93 +2,38 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Aug 14 01:47:34 2012
+;; Created Thu Aug 16 18:03:16 2012
 ;; Desktop file format version 206
-;; Emacs version 24.1.1
+;; Emacs version 24.1.50.1
 
 ;; Global section:
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name "/home/frank/python_TAGS")
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("luol" "hl" "high" "send" "paredit" "post" "regi" "choose" "cookie" "darwin" "monaco" "ita" "linum" "pc" "sleep" "M-k"))
+(setq search-ring '("lo" "login_check" "logincheck" "testL" "login" "goto" "choose" "test" "ch" "choose" "param" ":id" "login" "checkChoo" "test" "findOne"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("col-highlight.el" "~/.emacs.d/color-theme-luolE-darknight.el" "~/frank_config/.emacs.d/col-highlight.el" "~/gongjujiaoji/views/layout.jade" "~/gongjujiaoji/views/index.jade" "~/gongjujiaoji/views/relogin.jade" "~/gongjujiaoji/public/js/relogin.coffee" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/views/login.jade" "~/gongjujiaoji/views/register.jade" "~/gongjujiaoji/views/index.jade" "~/gongjujiaoji/views/login.jade" "~/gongjujiaoji/emacs_coffee.tags" "~/Dropbox/computer.org" "~/gongjujiaoji/test.coffee" "~/gongjujiaoji/views/register.jade" "~/gongjujiaoji/public/js/register.coffee" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/public/js/choose.coffee" "~/gongjujiaoji/views/choose.jade" "~/Dropbox/computer.org" "~/mongo_run.txt" "~/Dropbox/computer.org" "~/gongjujiaoji/app.coffee" "color-theme-luolE-darknight.el" "~/frank_config/.emacs.d/color-theme-luolE-darknight.el" "color-theme-luolE-darknight.el" "~/frank_config/.emacs.d/color-theme-luolE-darknight.el" "~/gongjujiaoji/public/js/login.coffee"))
+(setq file-name-history '("~/gongjujiaoji/views/choose.jade" "~/gongjujiaoji/public/js/relogin.coffee" "~/gongjujiaoji/views/relogin.jade" "~/gongjujiaoji/public/js/relogin.coffee" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/public/js/relogin.coffee" "~/Dropbox/computer.org" "~/gongjujiaoji/public/css/choose.css" "~/gongjujiaoji/app.coffee" "~/gongjujiaoji/views/layout.jade" "~/gongjujiaoji/views/index.jade" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/public/js/new_tool.coffee" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/public/js/choose.coffee" "~/gongjujiaoji/public/css/choose.css" "~/Dropbox/computer.org" "~/gongjujiaoji/views/choose.jade" "~/gongjujiaoji/data_backup/fav.coffee" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/app.coffee" "~/gongjujiaoji/views/choose.jade" "~/gongjujiaoji/views/layout.jade" "~/gongjujiaoji/views/choose.jade" "~/gongjujiaoji/views/layout.jade" "~/frank_config/.emacs" "~/frank_config/.emacs.d/emacs-redef.el" "~/frank_config/.emacs.d/emacs-func.el" "~/frank_config/.emacs.d/emacs-keymap.el" "~/podcast.list"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/color-theme-luolE-darknight.el"
-  "color-theme-luolE-darknight.el"
-  'emacs-lisp-mode
-  '(abbrev-mode auto-complete-mode fast-paren-mode highlight-parentheses-mode)
-  1164
-  '(1164 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs"
-  ".emacs"
-  'emacs-lisp-mode
-  '(abbrev-mode auto-complete-mode fast-paren-mode highlight-parentheses-mode)
-  3157
-  '(2649 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/col-highlight.el"
-  "col-highlight.el"
-  'emacs-lisp-mode
-  '(abbrev-mode auto-complete-mode fast-paren-mode highlight-parentheses-mode)
-  13361
-  '(13379 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/register.coffee"
-  "register.coffee"
-  'coffee-mode
-  '(abbrev-mode auto-complete-mode coffee-cos-mode highlight-parentheses-mode)
-  1213
-  '(1047 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
 (desktop-create-buffer 206
   "/Users/frank/gongjujiaoji/app.coffee"
   "app.coffee"
   'coffee-mode
-  '(abbrev-mode auto-complete-mode coffee-cos-mode highlight-parentheses-mode)
-  5955
-  '(6394 nil)
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode)
+  6748
+  '(7655 nil)
   nil
   nil
   '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/relogin.coffee"
-  "relogin.coffee"
-  'coffee-mode
-  '(abbrev-mode auto-complete-mode coffee-cos-mode highlight-parentheses-mode)
-  636
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/views/relogin.jade"
-  "relogin.jade"
+  "/Users/frank/gongjujiaoji/views/choose.jade"
+  "choose.jade"
   'jade-mode
-  '(abbrev-mode highlight-parentheses-mode)
-  371
-  '(681 nil)
+  '(abbrev-mode linum-mode highlight-parentheses-mode)
+  1
+  '(295 nil)
   nil
   nil
   '((tab-width . 2) (buffer-file-coding-system . utf-8-unix)))
@@ -97,29 +42,62 @@
   "/Users/frank/gongjujiaoji/views/layout.jade"
   "layout.jade"
   'jade-mode
-  '(abbrev-mode highlight-parentheses-mode)
-  353
-  '(272 nil)
+  '(abbrev-mode linum-mode highlight-parentheses-mode)
+  924
+  '(1451 nil)
   nil
   nil
   '((tab-width . 2) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/views/choose.jade"
-  "choose.jade"
-  'jade-mode
-  '(abbrev-mode highlight-parentheses-mode)
-  92
-  '(nil nil)
+  "/Users/frank/gongjujiaoji/public/js/relogin.coffee"
+  "relogin.coffee"
+  'coffee-mode
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode)
+  167
+  '(162 nil)
   nil
   nil
-  '((tab-width . 2) (buffer-file-coding-system . utf-8-unix)))
+  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/public/js/choose.coffee"
+  "choose.coffee"
+  'coffee-mode
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode)
+  1
+  '(739 nil)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/public/js/login.coffee"
+  "login.coffee"
+  'coffee-mode
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode)
+  1211
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/public/css/choose.css"
+  "choose.css"
+  'css-mode
+  '(abbrev-mode auto-complete-mode linum-mode highlight-parentheses-mode)
+  1675
+  '(1731 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/gongjujiaoji/views/index.jade"
   "index.jade"
   'jade-mode
-  '(abbrev-mode highlight-parentheses-mode)
+  '(abbrev-mode linum-mode highlight-parentheses-mode)
   1
   '(nil nil)
   nil
@@ -127,35 +105,13 @@
   '((tab-width . 2) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/login.coffee"
-  "login.coffee"
+  "/Users/frank/gongjujiaoji/data_backup/fav.coffee"
+  "fav.coffee"
   'coffee-mode
-  '(abbrev-mode auto-complete-mode coffee-cos-mode highlight-parentheses-mode)
-  2725
-  '(1614 nil)
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode)
+  1938
+  '(1937 nil)
   nil
   nil
   '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/Dropbox/computer.org"
-  "computer.org"
-  'org-mode
-  '(abbrev-mode highlight-parentheses-mode)
-  47435
-  '(47388 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/choose.coffee"
-  "choose.coffee"
-  'coffee-mode
-  '(abbrev-mode auto-complete-mode coffee-cos-mode highlight-parentheses-mode)
-  240
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 

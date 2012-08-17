@@ -41,7 +41,7 @@
 ;;;  Below is written by Frank.Xu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
- ;;shut up left scroll-bar in linux windows,去掉左边的滚轴
+;;shut up left scroll-bar in linux windows,去掉左边的滚轴
 ;; (scroll-bar-mode nil)
 (scroll-bar-mode -1)  
 (setq make-backup-file nil)
@@ -74,7 +74,7 @@
 
 ;; (load "pymacs-settings")
 ;; (add-to-list 'load-path
-             ;; "~/.emacs.d/yasnippet-0.6.1c/snippets")
+;; "~/.emacs.d/yasnippet-0.6.1c/snippets")
 ;; (require 'yasnippet-bundle)
 ;;------------------------------------------------------------------------------
 ;; 透明背景transparent background
@@ -94,13 +94,13 @@
 ;; (add-hook 'after-init-hook 'scim-mode-on)
 
 ;; (defun lisp-indent-or-complete (&optional arg)
-  ;; (interactive "p")
-  ;; (if (or (looking-back "^\\s-*") (bolp))
-      ;; (call-interactively 'lisp-indent-line)
-      ;; (call-interactively 'slime-indent-and-complete-symbol)))
+;; (interactive "p")
+;; (if (or (looking-back "^\\s-*") (bolp))
+;; (call-interactively 'lisp-indent-line)
+;; (call-interactively 'slime-indent-and-complete-symbol)))
 ;; (eval-after-load "lisp-mode"
-  ;; '(progn
-     ;; (define-key lisp-mode-map (kbd "TAB") 'lisp-indent-or-complete)))
+;; '(progn
+;; (define-key lisp-mode-map (kbd "TAB") 'lisp-indent-or-complete)))
 
 (define-key key-translation-map [?\(] [?\[])
 (define-key key-translation-map [?\[] [?\(])
@@ -120,20 +120,22 @@
 
 (setq show-paren-delay 0)
 
+(global-linum-mode 1)
 (if (eq system-type 'darwin)
-    (progn
-      (global-set-key [C-f7] 'ns-toggle-fullscreen)
-      (setq mac-option-key-is-meta nil)
-      (setq mac-option-modifier nil)      
-      (setq mac-command-key-is-meta t)
-      (setq mac-command-modifier 'meta)
-      ;; (set-face-attribute 'default (selected-frame) :height 200)
-      (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
-      ;; (set-default-font "Monaco 20"))
-      (set-frame-font "Monaco 18")
-      (ns-toggle-fullscreen))
   (progn
-    (global-linum-mode 1)
+    (global-set-key [C-f7] 'ns-toggle-fullscreen)
+    (setq mac-option-key-is-meta nil)
+    (setq mac-option-modifier nil)      
+    (setq mac-command-key-is-meta t)
+    (setq mac-command-modifier 'meta)
+    ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
+    ;; (set-frame-font "Monaco 18")
+    (add-to-list 'default-frame-alist '(font . "Inconsolata-15")) ;设置新frame的字体大小
+    (set-frame-font "Inconsolata-15") ;设置英文字体
+    (set-language-environment "UTF-8")
+    ;; (ns-toggle-fullscreen)
+    )
+  (progn
     (setq display-time-24hr-format t)
     (setq display-time-day-and-date t)
     (setq display-time-interval 1)
@@ -149,6 +151,7 @@
 
 (setq skeleton-pair t)
 (global-set-key "(" 'skeleton-pair-insert-maybe)
+(global-set-key "\"" 'skeleton-pair-insert-maybe)
 ;; (global-set-key "'" 'skeleton-pair-insert-maybe)
 ;; (global-set-key "[" 'skeleton-pair-insert-maybe)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -163,15 +166,15 @@
 
 (defun coffee-custom ()
   "coffee-mode-hook"
- (set (make-local-variable 'tab-width) 2))
+  (set (make-local-variable 'tab-width) 2))
 
 (add-hook 'coffee-mode-hook
-  '(lambda() (coffee-custom)))
+	  '(lambda() (coffee-custom)))
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; lisp-environment
+					; lisp-environment
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'ac-modes 'lisp-mode)
@@ -190,7 +193,6 @@
 (add-hook 'slime-mode-hook		(lambda () (fast-paren-mode 1)))
 (require 'highlight-parentheses)
 
-
 (define-globalized-minor-mode global-highlight-parentheses-mode
   highlight-parentheses-mode
   (lambda ()
@@ -202,11 +204,11 @@
 ;; (setq-default tab-width 2)
 (define-skeleton src 
   "Input #+begin_src #+end_src in org-mode"
-""
-"#+begin_src lisp \n"
- _ "\n" 
-"#+end_src"
-)
+  ""
+  "#+begin_src lisp \n"
+  _ "\n" 
+  "#+end_src"
+  )
 (delete-selection-mode 1)
 
 (add-to-list 'load-path "~/.emacs.d/jade-mode")
