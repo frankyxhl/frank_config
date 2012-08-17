@@ -220,3 +220,10 @@
 (load "indent-vline")
 ;; (add-hook 'jade-mode-hook '(lambda () (indent-hint-mode t)))
 ;; (add-hook 'coffee-mode-hook '(lambda () (indent-hint-mode t)))
+
+;;===========================================================================
+;;yasnippet
+;;===========================================================================
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
