@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Aug 17 11:23:32 2012
+;; Created Sun Aug 19 02:25:00 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -10,96 +10,85 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name "/home/frank/python_TAGS")
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("goToLogin" "test" "lo" "login_check" "logincheck" "testL" "login" "goto" "choose" "test" "ch" "choose" "param" ":id" "login" "checkChoo"))
+(setq search-ring '("login_che" "loginch" "cons" "ToF" "goToLogin" "goToL" "coffee" "goToLogin" "test" "lo" "login_check" "logincheck" "testL" "login" "goto" "choose"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/dr.yasnippet" "~/test.coffee" "~/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/dr.yasnippet" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/If.yasnippet" "~/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/If.yasnippet" "~/test.coffee" "~/test.py" "~/test.c" "~/Dropbox/orgmode_slide.org" "~/Dropbox/computer.org" "~/gongjujiaoji/public/js/choose.coffee" "~/gongjujiaoji/public/js/test.coffee" "~/gongjujiaoji/public/css/choose.css" "~/gongjujiaoji/public/css/index.css" "~/gongjujiaoji/public/js/test.coffee" "~/gongjujiaoji/views/index.jade" "~/gongjujiaoji/views/choose.jade" "~/gongjujiaoji/public/js/relogin.coffee" "~/gongjujiaoji/views/relogin.jade" "~/gongjujiaoji/public/js/relogin.coffee" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/public/js/relogin.coffee" "~/Dropbox/computer.org" "~/gongjujiaoji/public/css/choose.css" "~/gongjujiaoji/app.coffee" "~/gongjujiaoji/views/layout.jade" "~/gongjujiaoji/views/index.jade" "~/gongjujiaoji/public/js/login.coffee" "~/gongjujiaoji/public/js/new_tool.coffee" "~/gongjujiaoji/public/js/login.coffee"))
+(setq file-name-history '("/Users/frank/frank_config/.emacs.d/yasnippet/snippets/jade-mode/link.yasnippet" "/Users/frank/gongjujiaoji/public/css/index.css" "/Users/frank/gongjujiaoji/public/js/login.coffee" "/Users/frank/gongjujiaoji/public/css/style.css" "/Users/frank/gongjujiaoji/public/js/index.coffee" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/cl.yasnippet" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/jquery_this_insert.yasnippet" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/jquery_insert.yasnippet" "~/Dropbox/computer.org" "/Users/frank/gongjujiaoji/public/css/index.css" "~/gongjujiaoji/public/js/register.coffee" "/Users/frank/gongjujiaoji/data_backup/fav.coffee" "/Users/frank/gongjujiaoji/public/js/index.coffee" "/Users/frank/frank_config/.emacs.d/emacs-keymap.el" "/Users/frank/frank_config/.emacs.d/emacs-redef.el" "~/frank_config/.emacs.d/yasnippet/snippets/jquery_insert.yasnippet" "/Users/frank/gongjujiaoji/public/js/index.coffee" "~/gongjujiaoji/views/index.jade" "~/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/cl.yasnippet" "~/test.js" "~/test.coffee" "~/gongjujiaoji/public/js/choose.coffee" "~/frank_config/.emacs.d/yasnippet/snippets/jade-mode/link.yasnippet" "~/gongjujiaoji/views/choose.jade" "~/gongjujiaoji/views/layout.jade" "~/Dropbox/computer.org" "~/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/dr.yasnippet" "~/test.coffee" "~/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/dr.yasnippet" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/If.yasnippet"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs"
-  ".emacs"
-  'emacs-lisp-mode
-  '(abbrev-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode yas-minor-mode)
-  8087
-  '(7940 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/test.coffee"
-  "test.coffee<2>"
-  'coffee-mode
-  '(abbrev-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
-  1
-  '(1 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/dr.yasnippet"
-  "dr.yasnippet"
+  "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/jade-mode/link.yasnippet"
+  "link.yasnippet"
   'snippet-mode
   '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
-  90
+  47
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/If.yasnippet"
-  "If.yasnippet"
-  'snippet-mode
-  '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
-  210
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/test.coffee"
-  "test.coffee"
-  'coffee-mode
-  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
-  24
-  '(23 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/gongjujiaoji/views/layout.jade"
   "layout.jade"
   'jade-mode
   '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
-  183
-  '(183 nil)
+  1091
+  '(325 nil)
   nil
   nil
   '((tab-width . 2) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/choose.coffee"
-  "choose.coffee"
+  "/Users/frank/gongjujiaoji/public/js/login.coffee"
+  "login.coffee"
   'coffee-mode
   '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
-  1638
-  '(1768 nil)
+  2038
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/public/css/style.css"
+  "style.css"
+  'css-mode
+  '(abbrev-mode auto-complete-mode linum-mode highlight-parentheses-mode yas-minor-mode)
+  202
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/public/js/index.coffee"
+  "index.coffee"
+  'coffee-mode
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
+  789
+  '(405 nil)
   nil
   nil
   '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/Dropbox/computer.org"
+  "computer.org"
+  'org-mode
+  '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
+  27234
+  '(27170 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
   "/Users/frank/gongjujiaoji/app.coffee"
   "app.coffee"
   'coffee-mode
   '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
-  7631
-  '(3307 nil)
+  9181
+  '(7457 nil)
   nil
   nil
   '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
@@ -109,11 +98,22 @@
   "index.css"
   'css-mode
   '(abbrev-mode auto-complete-mode linum-mode highlight-parentheses-mode yas-minor-mode)
-  1676
-  '(1792 nil)
+  2290
+  '(299 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/views/index.jade"
+  "index.jade"
+  'jade-mode
+  '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
+  250
+  '(116 nil)
+  nil
+  nil
+  '((tab-width . 2) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/gongjujiaoji/public/js/relogin.coffee"
@@ -127,15 +127,70 @@
   '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/js/login.coffee"
-  "login.coffee"
+  "/Users/frank/gongjujiaoji/data_backup/fav.coffee"
+  "fav.coffee"
   'coffee-mode
   '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
-  1211
-  '(1 nil)
+  2620
+  '(2567 nil)
   nil
   nil
   '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/public/js/register.coffee"
+  "register.coffee"
+  'coffee-mode
+  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
+  760
+  '(506 nil)
+  nil
+  nil
+  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/cl.yasnippet"
+  "cl.yasnippet"
+  'snippet-mode
+  '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
+  66
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/coffee-mode/jquery_this_insert.yasnippet"
+  "jquery_this_insert.yasnippet"
+  'snippet-mode
+  '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
+  92
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/frank_config/.emacs.d/emacs-keymap.el"
+  "emacs-keymap.el"
+  'emacs-lisp-mode
+  '(abbrev-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode yas-minor-mode)
+  2443
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/gongjujiaoji/views/choose.jade"
+  "choose.jade"
+  'jade-mode
+  '(abbrev-mode linum-mode highlight-parentheses-mode yas-minor-mode)
+  748
+  '(149 nil)
+  nil
+  nil
+  '((tab-width . 2) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/gongjujiaoji/public/css/choose.css"
@@ -147,15 +202,4 @@
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/data_backup/fav.coffee"
-  "fav.coffee"
-  'coffee-mode
-  '(abbrev-mode auto-complete-mode linum-mode coffee-cos-mode highlight-parentheses-mode yas-minor-mode)
-  1938
-  '(1937 nil)
-  nil
-  nil
-  '((tab-width . 2) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 

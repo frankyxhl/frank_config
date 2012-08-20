@@ -2,7 +2,7 @@
 ;; My Emacs Config
 ;; Frank.Xu (franky.xhl[at]gmail.com)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (ido-mode 1)
+(ido-mode 1)
 ;; .emacs profile, written by shell.xu
 (setq inhibit-startup-screen t);; close welcome screen
 (setq column-number-mode t);; enable column mode
@@ -152,8 +152,8 @@
 (setq skeleton-pair t)
 (global-set-key "(" 'skeleton-pair-insert-maybe)
 (global-set-key "\"" 'skeleton-pair-insert-maybe)
-;; (global-set-key "'" 'skeleton-pair-insert-maybe)
-;; (global-set-key "[" 'skeleton-pair-insert-maybe)
+(global-set-key "'" 'skeleton-pair-insert-maybe)
+(global-set-key "[" 'skeleton-pair-insert-maybe)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; coffee-mode && js2-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -168,13 +168,15 @@
   "coffee-mode-hook"
   (set (make-local-variable 'tab-width) 2))
 
+(setq coffee-args-compile '("-bc" "--bare"))
+
 (add-hook 'coffee-mode-hook
 	  '(lambda() (coffee-custom)))
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-					; lisp-environment
+;; lisp-environment
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'ac-modes 'lisp-mode)
