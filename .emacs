@@ -102,10 +102,10 @@
 ;; '(progn
 ;; (define-key lisp-mode-map (kbd "TAB") 'lisp-indent-or-complete)))
 
-(define-key key-translation-map [?\(] [?\[])
-(define-key key-translation-map [?\[] [?\(])
-(define-key key-translation-map [?\)] [?\]])
-(define-key key-translation-map [?\]] [?\)])
+;; (define-key key-translation-map [?\(] [?\[])
+;; (define-key key-translation-map [?\[] [?\(])
+;; (define-key key-translation-map [?\)] [?\]])
+;; (define-key key-translation-map [?\]] [?\)])
 
 
 (require 'paredit)
@@ -154,6 +154,7 @@
 (global-set-key "\"" 'skeleton-pair-insert-maybe)
 (global-set-key "'" 'skeleton-pair-insert-maybe)
 (global-set-key "[" 'skeleton-pair-insert-maybe)
+(global-set-key "{" 'skeleton-pair-insert-maybe)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; coffee-mode && js2-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
