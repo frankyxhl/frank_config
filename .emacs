@@ -230,3 +230,5 @@
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
+(require 'undo-tree)
+(global-undo-tree-mode)
