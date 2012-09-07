@@ -204,7 +204,7 @@
 
 (require 'color-theme-arjen)
 (require 'htmlize)
-;; (setq-default tab-width 2)
+(setq-default tab-width 2)
 (define-skeleton src 
   "Input #+begin_src #+end_src in org-mode"
   ""
@@ -232,3 +232,6 @@
 (yas-global-mode 1)
 (require 'undo-tree)
 (global-undo-tree-mode)
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
