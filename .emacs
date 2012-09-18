@@ -232,6 +232,52 @@
 (yas-global-mode 1)
 (require 'undo-tree)
 (global-undo-tree-mode)
+;;===========================================================================
+;;evil-mode
+;;===========================================================================
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
+(setq evil-emacs-state-modes nil)
+(setq evil-default-state 'emacs)
+(defun escape-if-next-char (c)
+	"Watches the next letter.  If c, then switch to Evil's normal mode; otherwise insert a k and forward unpressed key to unread-command events"
+	(self-insert-command 1)
+	(let ((next-key (read-event)))
+		(if (= c next-key)
+				(progn
+					(delete-backward-char 1)
+					(do-evil-esc))
+			(setq unread-command-events (list next-key)))))
+
+(defun escape-if-next-char-is-j (arg)
+	(interactive "p")
+	(if (= arg 1)
+			(escape-if-next-char ?j)
+		(self-insert-command arg)))
+
+ ;; (evil-define-command do-evil-esc (arg)
+(evil-define-command do-evil-esc ()
+  "Wait for further keys within `evil-esc-delay'.
+Otherwise send [escape]."
+  ;; :repeat ignore
+  (interactive "P")
+  (if (sit-for evil-esc-delay t)
+      (progn
+        (push 'escape unread-command-events)
+        (when defining-kbd-macro
+          ;; we need to replace the ESC by 'escape in the currently
+          ;; defined keyboard macro
+          (evil-save-echo-area
+            (end-kbd-macro)
+            (setq last-kbd-macro (vconcat last-kbd-macro [escape]))
+            (start-kbd-macro t t))))
+    (push last-command-event unread-command-events))
+    ;; preserve prefix argument
+    ;; (setq prefix-arg arg))
+  ;; disable interception for the next key sequence
+  (evil-esc-mode -1)
+  (setq this-command last-command)
+  (add-hook 'pre-command-hook #'evil-turn-on-esc-mode nil t))
+(define-key evil-insert-state-map (kbd "k") 'escape-if-next-char-is-j)
+
