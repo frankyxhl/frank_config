@@ -279,5 +279,4 @@ Otherwise send [escape]."
   (evil-esc-mode -1)
   (setq this-command last-command)
   (add-hook 'pre-command-hook #'evil-turn-on-esc-mode nil t))
-(define-key evil-insert-state-map (kbd "k") 'escape-if-next-char-is-j)
-
+(define-key evil-insert-state-map (kbd "j") 'escape-if-next-char-is-j)
