@@ -49,8 +49,8 @@
 (load "emacs-keymap")
 (abbrev-mode 1)
 (setq default-abbrev-mode t)
-(add-to-list 'load-path "~/.emacs.d/company")
-(autoload 'company-mode "company" nil t)
+;; (add-to-list 'load-path "~/.emacs.d/company")
+;; (autoload 'company-mode "company" nil t)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   去掉菜单栏
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -224,12 +224,7 @@
 ;; (add-hook 'jade-mode-hook '(lambda () (indent-hint-mode t)))
 ;; (add-hook 'coffee-mode-hook '(lambda () (indent-hint-mode t)))
 
-;;===========================================================================
-;;yasnippet
-;;===========================================================================
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+
 (require 'undo-tree)
 (global-undo-tree-mode)
 ;;===========================================================================
