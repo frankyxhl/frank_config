@@ -224,7 +224,6 @@
 ;; (add-hook 'jade-mode-hook '(lambda () (indent-hint-mode t)))
 ;; (add-hook 'coffee-mode-hook '(lambda () (indent-hint-mode t)))
 
-
 (require 'undo-tree)
 (global-undo-tree-mode)
 ;;===========================================================================

@@ -56,3 +56,5 @@ alias ut='ubuntu-server-tip'
 alias g='grep'
 #turn of correct
 unsetopt correct_all
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

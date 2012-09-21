@@ -71,8 +71,7 @@
   :type 'float
   :group 'auto-complete)
 
-;; (defcustom ac-auto-show-menu 0.8
-(defcustom ac-auto-show-menu 0.1
+(defcustom ac-auto-show-menu 0.8
   "Non-nil means completion menu will be automatically shown."
   :type '(choice (const :tag "Yes" t)
                  (const :tag "Never" nil)
