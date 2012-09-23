@@ -274,3 +274,8 @@ Otherwise send [escape]."
   (setq this-command last-command)
   (add-hook 'pre-command-hook #'evil-turn-on-esc-mode nil t))
 (define-key evil-insert-state-map (kbd "j") 'escape-if-next-char-is-j)
+;;===========================================================================
+;;scss-mode
+;;===========================================================================
+ (autoload 'scss-mode "scss-mode")
+ (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
