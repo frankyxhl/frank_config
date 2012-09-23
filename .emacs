@@ -277,5 +277,6 @@ Otherwise send [escape]."
 ;;===========================================================================
 ;;scss-mode
 ;;===========================================================================
- (autoload 'scss-mode "scss-mode")
- (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(add-to-list 'ac-modes 'scss-mode)

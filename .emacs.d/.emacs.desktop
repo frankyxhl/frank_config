@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Sep 23 13:03:05 2012
+;; Created Sun Sep 23 14:15:40 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -17,23 +17,34 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
+  "/Users/frank/op/sass/custom/_styles.scss"
+  "_styles.scss"
+  'scss-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode)
+  452
+  '(289 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/frank_config/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode)
+  10027
+  '(9999 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
   "/Users/frank/frank_config/.emacs.d/scss-mode.el"
   "scss-mode.el"
   'emacs-lisp-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode)
   1472
   '(1243 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/op/sass/custom/_styles.scss"
-  "_styles.scss"
-  'scss-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  219
-  '(219 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -48,17 +59,6 @@
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs"
-  ".emacs"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode)
-  9941
-  '(9906 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/op/source/_posts/2012-09-21-hello-github.markdown"
