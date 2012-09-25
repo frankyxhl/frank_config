@@ -124,8 +124,10 @@
 (if (eq system-type 'darwin)
   (progn
     (global-set-key [C-f7] 'ns-toggle-fullscreen)
-    (setq mac-option-key-is-meta nil)
-    (setq mac-option-modifier nil)      
+    ;; (setq mac-option-key-is-meta nil)
+    (setq mac-option-key-is-command t)
+    (setq mac-option-modifier 'super)
+    ;; (setq mac-option-modifier nil)      
     (setq mac-command-key-is-meta t)
     (setq mac-command-modifier 'meta)
     ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
@@ -275,8 +277,26 @@ Otherwise send [escape]."
   (add-hook 'pre-command-hook #'evil-turn-on-esc-mode nil t))
 (define-key evil-insert-state-map (kbd "j") 'escape-if-next-char-is-j)
 ;;===========================================================================
-;;scss-mode
+;;Scss-mode
 ;;===========================================================================
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'ac-modes 'scss-mode)
+
+;;===========================================================================
+;;sr-speedbar-mode
+;;===========================================================================
+(require 'sr-speedbar)
+(custom-set-variables
+ '(speedbar-show-unknown-files t)
+)
+(custom-set-variables '(sr-speedbar-right-side nil) '(sr-speedbar-skip-other-window-p t) '(sr-speedbar-max-width 10) '(sr-speedbar-width-x 20))
+(global-set-key (kbd "s-s") 'sr-speedbar-toggle)
+(global-set-key (kbd "s-r") 'sr-speedbar-refresh-toggle)
+(sr-speedbar-open)
+
+;;===========================================================================
+;;text-speedbar-mode
+;;===========================================================================
+(require 'textmate)
+(textmate-mode)

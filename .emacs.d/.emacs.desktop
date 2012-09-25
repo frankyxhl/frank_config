@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Sep 23 14:15:40 2012
+;; Created Tue Sep 25 14:19:29 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -10,105 +10,50 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("save" "transpa" "ac-source-css-property" "ac-source-f" "auto-complete" "ac-source-ya‘¡Ö" "ac-source-ya" "ac-source-" "ask-if-new" "desktop-save" "save-mode" "auto-" "save" "delay" "popup" "pop"))
+(setq search-ring '("default" "sr-speedbar-skip" "right-" "left" "sidebar-footer" "aside" "aside.sidebar" "save" "transpa" "ac-source-css-property" "ac-source-f" "auto-complete" "ac-source-ya‘¡Ö" "ac-source-ya" "ac-source-" "ask-if-new"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/Users/frank/frank_config/.emacs.d/scss-mode.el" "~/gongjujiaoji/public/css/style.css" "~/op/sass/custom/_styles.scss" "/Users/frank/op/sass/custom/_styles.scss" "~/op/_config.yml" "/Users/frank/op/source/_posts/2012-09-21-hello-github.markdown" "~/favourshare/app/models/comment.rb" "~/favourshare/app/models/post.rb" "/Users/frank/favourshare/app/views/comments/_comment.html.erb" "/Users/frank/favourshare/app/controllers/comments_controller.rb" "/Users/frank/favourshare/app/views/posts/show.html.erb" "~/favourshare/config/routes.rb" "/Users/frank/favourshare/app/controllers/posts_controller.rb" "/Users/frank/favourshare/app/views/home/index.html.erb" "/Users/frank/favourshare/config/routes.rb" "/Users/frank/test.rb" "/Users/frank/.emacs.d/auto-complete/ac-dict/css-mode" "/Users/frank/gongjujiaoji/public/css/style.css" "~/.emacs.d/auto-complete/auto-complete-config.el" "emacs-redef.el" "~/.emacs.d/emacs-redef.el" "~/gongjujiaoji/app.coffee" "/Users/frank/github/yasnippet/doc/manual.org" "/Users/frank/.emacs.d/auto-complete/auto-complete-yasnippet.el" "/Users/frank/.emacs.d/emacs-plugin.el" "/Users/frank/.emacs.d/yasnippet/auto-complete-yasnippet.el" "/Users/frank/.emacs.d/yasnippet/yasnippet.el" "/Users/frank/.emacs.d/auto-complete/auto-complete.el" "~/.emacs.d/emacs-plugin.el" "/Users/frank/.emacs.d/auto-complete/auto-complete.el"))
+(setq file-name-history '("~/rails3-mongoid-devise/" "/Users/frank/rails3-mongoid-devise/app/controllers/users_controller.rb" "/Users/frank/.emacs.d/textmate.el" "~/rails3-mongoid-devise/Gemfile" "~/frank_config/.emacs.d/sr-speedbar.el" "/Users/frank/.emacs.d/sr-speedbar.el" "~/rails3-mongoid-devise/Gemfile" "/Users/frank/test.py" "/Users/frank/op/source/_posts/2012-09-23-my-blog-sass.markdown" "/Users/frank/op/source/stylesheets/screen.css" "/Users/frank/op/sass/custom/_layout.scss" "/Users/frank/op/sass/custom/_colors.scss" "/Users/frank/op/sass/custom/_layout.scss" "/Users/frank/frank_config/.emacs.d/scss-mode.el" "~/gongjujiaoji/public/css/style.css" "~/op/sass/custom/_styles.scss" "/Users/frank/op/sass/custom/_styles.scss" "~/op/_config.yml" "/Users/frank/op/source/_posts/2012-09-21-hello-github.markdown" "~/favourshare/app/models/comment.rb" "~/favourshare/app/models/post.rb" "/Users/frank/favourshare/app/views/comments/_comment.html.erb" "/Users/frank/favourshare/app/controllers/comments_controller.rb" "/Users/frank/favourshare/app/views/posts/show.html.erb" "~/favourshare/config/routes.rb" "/Users/frank/favourshare/app/controllers/posts_controller.rb" "/Users/frank/favourshare/app/views/home/index.html.erb" "/Users/frank/favourshare/config/routes.rb" "/Users/frank/test.rb" "/Users/frank/.emacs.d/auto-complete/ac-dict/css-mode"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/Users/frank/op/sass/custom/_styles.scss"
-  "_styles.scss"
-  'scss-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  452
-  '(289 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
 (desktop-create-buffer 206
   "/Users/frank/frank_config/.emacs"
   ".emacs"
   'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode)
-  10027
-  '(9999 nil)
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  10517
+  '(10491 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/scss-mode.el"
-  "scss-mode.el"
+  "/Users/frank/frank_config/.emacs.d/sr-speedbar.el"
+  "sr-speedbar.el"
   'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode)
-  1472
-  '(1243 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/gongjujiaoji/public/css/style.css"
-  "style.css"
-  'css-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  3861
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  9159
   '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/op/source/_posts/2012-09-21-hello-github.markdown"
-  "2012-09-21-hello-github.markdown"
-  'fundamental-mode
-  '(abbrev-mode)
-  160
-  '(84 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/controllers/posts_controller.rb"
-  "posts_controller.rb"
+  "/Users/frank/rails3-mongoid-devise/config/routes.rb"
+  "routes.rb"
   'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  1
-  '(336 nil)
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  156
+  '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/op/_config.yml"
-  "_config.yml"
-  'fundamental-mode
-  '(abbrev-mode)
-  2834
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/posts/show.html.erb"
-  "show.html.erb"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  178
-  '(178 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/models/comment.rb"
-  "comment.rb"
+  "/Users/frank/rails3-mongoid-devise/app/controllers/home_controller.rb"
+  "home_controller.rb"
   'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode)
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
   90
   '(nil nil)
   nil
@@ -116,57 +61,68 @@
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/app/models/post.rb"
-  "post.rb"
+  "/Users/frank/rails3-mongoid-devise/app/controllers/users_controller.rb"
+  "users_controller.rb"
   'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  75
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  118
   '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/app/controllers/comments_controller.rb"
-  "comments_controller.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  192
-  '(50 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/comments/_comment.html.erb"
-  "_comment.html.erb"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  109
-  '(1 nil)
+  "/Users/frank/.emacs.d/textmate.el"
+  "textmate.el"
+  'emacs-lisp-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  17758
+  '(6693 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/config/routes.rb"
-  "routes.rb"
+  "/usr/local/Cellar/emacs/HEAD/share/emacs/24.1.50/lisp/term/ns-win.el.gz"
+  "ns-win.el.gz"
+  'emacs-lisp-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  1
+  '(32819 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/rails3-mongoid-devise/config/boot.rb"
+  "boot.rb"
   'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  1424
-  '(41 nil)
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  1
+  '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/home/index.html.erb"
-  "index.html.erb"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode)
-  15
-  '(22 nil)
+  "/Users/frank/rails3-mongoid-devise/Gemfile"
+  "Gemfile"
+  'fundamental-mode
+  '(abbrev-mode textmate-mode)
+  163
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/rails3-mongoid-devise/db/seeds.rb"
+  "seeds.rb"
+  'ruby-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  725
+  '(725 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
