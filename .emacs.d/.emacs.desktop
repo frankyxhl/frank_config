@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Sep 25 14:19:29 2012
+;; Created Thu Sep 27 15:00:45 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -10,119 +10,31 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("default" "sr-speedbar-skip" "right-" "left" "sidebar-footer" "aside" "aside.sidebar" "save" "transpa" "ac-source-css-property" "ac-source-f" "auto-complete" "ac-source-ya‘¡Ö" "ac-source-ya" "ac-source-" "ask-if-new"))
+(setq search-ring '("ido" "ido-mo" "auto" "default" "sr-speedbar-skip" "right-" "left" "sidebar-footer" "aside" "aside.sidebar" "save" "transpa" "ac-source-css-property" "ac-source-f" "auto-complete" "ac-source-ya‘¡Ö"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/rails3-mongoid-devise/" "/Users/frank/rails3-mongoid-devise/app/controllers/users_controller.rb" "/Users/frank/.emacs.d/textmate.el" "~/rails3-mongoid-devise/Gemfile" "~/frank_config/.emacs.d/sr-speedbar.el" "/Users/frank/.emacs.d/sr-speedbar.el" "~/rails3-mongoid-devise/Gemfile" "/Users/frank/test.py" "/Users/frank/op/source/_posts/2012-09-23-my-blog-sass.markdown" "/Users/frank/op/source/stylesheets/screen.css" "/Users/frank/op/sass/custom/_layout.scss" "/Users/frank/op/sass/custom/_colors.scss" "/Users/frank/op/sass/custom/_layout.scss" "/Users/frank/frank_config/.emacs.d/scss-mode.el" "~/gongjujiaoji/public/css/style.css" "~/op/sass/custom/_styles.scss" "/Users/frank/op/sass/custom/_styles.scss" "~/op/_config.yml" "/Users/frank/op/source/_posts/2012-09-21-hello-github.markdown" "~/favourshare/app/models/comment.rb" "~/favourshare/app/models/post.rb" "/Users/frank/favourshare/app/views/comments/_comment.html.erb" "/Users/frank/favourshare/app/controllers/comments_controller.rb" "/Users/frank/favourshare/app/views/posts/show.html.erb" "~/favourshare/config/routes.rb" "/Users/frank/favourshare/app/controllers/posts_controller.rb" "/Users/frank/favourshare/app/views/home/index.html.erb" "/Users/frank/favourshare/config/routes.rb" "/Users/frank/test.rb" "/Users/frank/.emacs.d/auto-complete/ac-dict/css-mode"))
+(setq file-name-history '("~/favtest/app/views/layouts/application.html.erb" "/Users/frank/favourshare/app/views/layouts/application.html.erb" "~/favtest/app/views/favs/index.html.erb" "~/favourshare/app/views/favs/index.html.erb" "~/favourshare/app/views/layouts/application.html.erb" "~/favourshare/app/views/home/index.html.erb" "~/favourshare/app/views/layouts/application.html.slim" "~/testfav/app/views/layouts/application.html.slim" "~/favourshare/app/views/layouts/application.html.slim" "~/favourshare/config/routes.rb" "~/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "~/favtest/app/controllers/favs_controller.rb" "/Users/frank/favtest/app/views/favs/index.html.slim" "~/favtest/db/seeds.rb" "/Users/frank/favtest/db/favs.rb" "~/gongjujiaoji/data_backup/fav_data.json" "/Users/frank/favtest/db/fav.rb" "/Users/frank/favtest/config/routes.rb" "/Users/frank/rails3-mongoid-devise/README.textile" "/Users/frank/op/source/_posts/2012-09-23-my-blog-sass.markdown" "~/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "/Users/frank/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "/Users/frank/.emacs.d/markdown-mode.el" "~/rails3-mongoid-devise/" "/Users/frank/rails3-mongoid-devise/app/controllers/users_controller.rb" "/Users/frank/.emacs.d/textmate.el" "~/rails3-mongoid-devise/Gemfile" "~/frank_config/.emacs.d/sr-speedbar.el" "/Users/frank/.emacs.d/sr-speedbar.el" "~/rails3-mongoid-devise/Gemfile"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs"
-  ".emacs"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  10517
-  '(10491 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/sr-speedbar.el"
-  "sr-speedbar.el"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  9159
+  "/Users/frank/favourshare/app/views/layouts/application.html.erb"
+  "application.html.erb"
+  'html-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  743
   '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/rails3-mongoid-devise/config/routes.rb"
-  "routes.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  156
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/rails3-mongoid-devise/app/controllers/home_controller.rb"
-  "home_controller.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  90
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/rails3-mongoid-devise/app/controllers/users_controller.rb"
-  "users_controller.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  118
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/.emacs.d/textmate.el"
-  "textmate.el"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  17758
-  '(6693 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/usr/local/Cellar/emacs/HEAD/share/emacs/24.1.50/lisp/term/ns-win.el.gz"
-  "ns-win.el.gz"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  "/Users/frank/favourshare/app/views/favs/index.html.erb"
+  "index.html.erb"
+  'html-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
   1
-  '(32819 nil)
+  '(615 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/rails3-mongoid-devise/config/boot.rb"
-  "boot.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/rails3-mongoid-devise/Gemfile"
-  "Gemfile"
-  'fundamental-mode
-  '(abbrev-mode textmate-mode)
-  163
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/rails3-mongoid-devise/db/seeds.rb"
-  "seeds.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  725
-  '(725 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 

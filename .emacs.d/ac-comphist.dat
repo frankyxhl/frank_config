@@ -1,4 +1,10 @@
-((("text-mode" .
+((("el" .
+	 [2 0])
+	("textmate" .
+	 [1 0 0 0 1 1 0 0])
+	("rails" .
+	 [1 0 0 0 0])
+	("text-mode" .
 	 [0 0 0 0 1 0 0 0 0])
 	("custom-set-variables" .
 	 [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])

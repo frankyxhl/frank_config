@@ -2,7 +2,7 @@
 ;; My Emacs Config
 ;; Frank.Xu (franky.xhl[at]gmail.com)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ido-mode 1)
+
 ;; .emacs profile, written by shell.xu
 (setq inhibit-startup-screen t);; close welcome screen
 (setq column-number-mode t);; enable column mode
@@ -300,3 +300,18 @@ Otherwise send [escape]."
 ;;===========================================================================
 (require 'textmate)
 (textmate-mode)
+;;===========================================================================
+;;markdown-mode
+;;===========================================================================
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'ac-modes 'markdown-mode)
+;;===========================================================================
+;;ido-mode
+;;===========================================================================
+(ido-mode 1)
+ ;; Display ido results vertically, rather than horizontally
+(setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+(defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
+(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
