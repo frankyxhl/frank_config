@@ -1,7 +1,7 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; My Emacs Config
-;; Frank.Xu (franky.xhl[at]gmail.com)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ===========================================================================
+; My Emacs Config
+; Frank.Xu (franky.xhl[at]gmail.com)
+; ===========================================================================
 
 ;; .emacs profile, written by shell.xu
 (setq inhibit-startup-screen t);; close welcome screen
@@ -29,9 +29,9 @@
 (load "emacs-redef")
 (load "emacs-plugin")
 (load "python-indent")
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ===========================================================================
 ;; lily pond mode load
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ===========================================================================
 (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
 (add-to-list 'auto-mode-alist '("\\.ly$" . LilyPond-mode))
 (add-to-list 'auto-mode-alist '("\\.ily$" . LilyPond-mode))
@@ -51,13 +51,7 @@
 (setq default-abbrev-mode t)
 ;; (add-to-list 'load-path "~/.emacs.d/company")
 ;; (autoload 'company-mode "company" nil t)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   去掉菜单栏
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;(menu-bar-mode nil)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   设置字体
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (set-frame-font "Monaco")
 
 ;;Pinbar-mode顶部Alt键
@@ -76,9 +70,9 @@
 ;; (add-to-list 'load-path
 ;; "~/.emacs.d/yasnippet-0.6.1c/snippets")
 ;; (require 'yasnippet-bundle)
-;;------------------------------------------------------------------------------
+; ===========================================================================
 ;; 透明背景transparent background
-;;------------------------------------------------------------------------------
+; ===========================================================================
 (set-frame-parameter (selected-frame) 'alpha '(55 50))
 (add-to-list 'default-frame-alist '(alpha 55 50))
 
@@ -157,9 +151,10 @@
 (global-set-key "'" 'skeleton-pair-insert-maybe)
 (global-set-key "[" 'skeleton-pair-insert-maybe)
 (global-set-key "{" 'skeleton-pair-insert-maybe)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; coffee-mode && js2-mode
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; ===========================================================================
+; coffee-mode && js2-mode
+; ===========================================================================
 (require 'coffee-mode)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
@@ -228,9 +223,9 @@
 
 (require 'undo-tree)
 (global-undo-tree-mode)
-;;===========================================================================
+; ===========================================================================
 ;;evil-mode
-;;===========================================================================
+; ===========================================================================
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
@@ -276,16 +271,16 @@ Otherwise send [escape]."
   (setq this-command last-command)
   (add-hook 'pre-command-hook #'evil-turn-on-esc-mode nil t))
 (define-key evil-insert-state-map (kbd "j") 'escape-if-next-char-is-j)
-;;===========================================================================
+; ===========================================================================
 ;;Scss-mode
-;;===========================================================================
+; ===========================================================================
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'ac-modes 'scss-mode)
 
-;;===========================================================================
+; ===========================================================================
 ;;sr-speedbar-mode
-;;===========================================================================
+; ===========================================================================
 (require 'sr-speedbar)
 (custom-set-variables
  '(speedbar-show-unknown-files t)
@@ -295,23 +290,28 @@ Otherwise send [escape]."
 (global-set-key (kbd "s-r") 'sr-speedbar-refresh-toggle)
 (sr-speedbar-open)
 
-;;===========================================================================
+; ===========================================================================
 ;;text-speedbar-mode
-;;===========================================================================
+; ===========================================================================
 (require 'textmate)
 (textmate-mode)
-;;===========================================================================
+; ===========================================================================
 ;;markdown-mode
-;;===========================================================================
+; ===========================================================================
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'ac-modes 'markdown-mode)
-;;===========================================================================
+
+; ===========================================================================
 ;;ido-mode
-;;===========================================================================
+; ===========================================================================
 (ido-mode 1)
  ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+; ===========================================================================
+; slim-mode
+; ===========================================================================
+(require 'slim-mode)
