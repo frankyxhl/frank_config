@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Sep 28 00:17:13 2012
+;; Created Sun Sep 30 00:41:42 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -10,10 +10,10 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("name" "ido" "ido-mo" "auto" "default" "sr-speedbar-skip" "right-" "left" "sidebar-footer" "aside" "aside.sidebar" "save" "transpa" "ac-source-css-property" "ac-source-f" "auto-complete"))
+(setq search-ring '("monaco" "mon" "define-key" "ido-next-match" "name" "ido" "ido-mo" "auto" "default" "sr-speedbar-skip" "right-" "left" "sidebar-footer" "aside" "aside.sidebar" "save"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/Users/frank/favourshare/app/views/users/show.slim" "~/favourshare/app/views/users/show.html.erb" "/Users/frank/favourshare/app/views/users/show.html.slim" "/Users/frank/favourshare/app/views/home/index.html.erb" "/Users/frank/favourshare/Gemfile" "/Users/frank/favourshare/app/models/user.rb" "/Users/frank/fav_data.json" "/Users/frank/favourshare/app/views/layouts/application.html.erb" "~/favtest/app/views/layouts/application.html.erb" "/Users/frank/favourshare/app/views/layouts/application.html.erb" "~/favtest/app/views/favs/index.html.erb" "~/favourshare/app/views/favs/index.html.erb" "~/favourshare/app/views/layouts/application.html.erb" "~/favourshare/app/views/home/index.html.erb" "~/favourshare/app/views/layouts/application.html.slim" "~/testfav/app/views/layouts/application.html.slim" "~/favourshare/app/views/layouts/application.html.slim" "~/favourshare/config/routes.rb" "~/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "~/favtest/app/controllers/favs_controller.rb" "/Users/frank/favtest/app/views/favs/index.html.slim" "~/favtest/db/seeds.rb" "/Users/frank/favtest/db/favs.rb" "~/gongjujiaoji/data_backup/fav_data.json" "/Users/frank/favtest/db/fav.rb" "/Users/frank/favtest/config/routes.rb" "/Users/frank/rails3-mongoid-devise/README.textile" "/Users/frank/op/source/_posts/2012-09-23-my-blog-sass.markdown" "~/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "/Users/frank/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown"))
+(setq file-name-history '("/Users/frank/Dropbox/weinisi.html" "/Users/frank/Dropbox/weinisi.org" "/Users/frank/favourshare/app/models/user.rb" "~/favourshare/app/views/layouts/application.html.erb" "/Users/frank/favourshare/app/views/users/show.slim" "~/favourshare/app/views/users/show.html.erb" "/Users/frank/favourshare/app/views/users/show.html.slim" "/Users/frank/favourshare/app/views/home/index.html.erb" "/Users/frank/favourshare/Gemfile" "/Users/frank/favourshare/app/models/user.rb" "/Users/frank/fav_data.json" "/Users/frank/favourshare/app/views/layouts/application.html.erb" "~/favtest/app/views/layouts/application.html.erb" "/Users/frank/favourshare/app/views/layouts/application.html.erb" "~/favtest/app/views/favs/index.html.erb" "~/favourshare/app/views/favs/index.html.erb" "~/favourshare/app/views/layouts/application.html.erb" "~/favourshare/app/views/home/index.html.erb" "~/favourshare/app/views/layouts/application.html.slim" "~/testfav/app/views/layouts/application.html.slim" "~/favourshare/app/views/layouts/application.html.slim" "~/favourshare/config/routes.rb" "~/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "~/favtest/app/controllers/favs_controller.rb" "/Users/frank/favtest/app/views/favs/index.html.slim" "~/favtest/db/seeds.rb" "/Users/frank/favtest/db/favs.rb" "~/gongjujiaoji/data_backup/fav_data.json" "/Users/frank/favtest/db/fav.rb" "/Users/frank/favtest/config/routes.rb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
@@ -21,141 +21,86 @@
   ".emacs"
   'emacs-lisp-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  11883
-  '(8754 nil)
+  12108
+  '(12059 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/users/show.slim"
-  "show.slim"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  127
-  '(93 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/controllers/users_controller.rb"
-  "users_controller.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  263
-  '(223 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/home/index.html.erb"
-  "index.html.erb<2>"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  84
-  '(112 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/favourshare/app/models/user.rb"
   "user.rb"
   'ruby-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1676
-  '(1 nil)
+  1816
+  '(1830 t)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/devise/registrations/new.html.erb"
-  "new.html.erb"
+  "/Users/frank/favourshare/app/views/favs/edit.html.erb"
+  "edit.html.erb<2>"
   'html-mode
   '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  199
-  '(546 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/Gemfile"
-  "Gemfile"
-  'fundamental-mode
-  '(abbrev-mode textmate-mode)
-  650
+  27
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/features/users/sign_up.feature"
-  "sign_up.feature"
-  'fundamental-mode
-  '(abbrev-mode textmate-mode)
+  "/Users/frank/favourshare/app/views/users/show.slim"
+  "show.slim"
+  'slim-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
   1
   '(nil nil)
   nil
   nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/favourshare/app/views/devise/registrations/edit.html.erb"
+  "edit.html.erb"
+  'html-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  343
+  '(343 nil)
+  nil
+  nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/config/routes.rb"
-  "routes.rb"
+  "/Users/frank/favourshare/app/models/fav.rb"
+  "fav.rb"
   'ruby-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  235
-  '(207 nil)
+  98
+  '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/layouts/_navigation.html.erb"
-  "_navigation.html.erb"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  406
-  '(388 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/layouts/application.html.erb"
-  "application.html.erb"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  817
-  '(966 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/app/views/favs/index.html.erb"
-  "index.html.erb"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  588
-  '(539 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/fav_data.json"
-  "fav_data.json"
-  'js-mode
+  "/Users/frank/favourshare/app/controllers/users_controller.rb"
+  "users_controller.rb"
+  'ruby-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  7709
-  '(35 nil)
+  218
+  '(262 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix)))
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/favourshare/app/views/favs/new.html.erb"
+  "new.html.erb"
+  'html-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  41
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 

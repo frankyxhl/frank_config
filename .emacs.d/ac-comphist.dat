@@ -1,4 +1,6 @@
-((("slim-mode" .
+((("ido-next-match" .
+	 [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+	("slim-mode" .
 	 [0 0 0 0 1 0 0 0 0])
 	("require" .
 	 [0 0 0 1 0 0 0])
