@@ -160,7 +160,7 @@
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 ;;automatic complie after save file
-(add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
+;; (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
 (add-to-list 'ac-modes 'coffee-mode)
 
 (defun coffee-custom ()
@@ -169,8 +169,8 @@
 
 (setq coffee-args-compile '("-bc" "--bare"))
 
-(add-hook 'coffee-mode-hook
-	  '(lambda() (coffee-custom)))
+;; (add-hook 'coffee-mode-hook
+	  ;; '(lambda() (coffee-custom)))
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
