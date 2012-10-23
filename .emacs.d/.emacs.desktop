@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Oct 11 04:18:31 2012
+;; Created Fri Oct 12 19:11:26 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -17,15 +17,15 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/frank/tmp/text.txt"
-  "text.txt"
-  'text-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1
-  '(1 nil)
+  "/Users/frank/frank_config/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  13445
+  '(13233 nil)
   nil
   nil
-  nil)
+  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/tmp/s.coffee"
@@ -81,17 +81,6 @@
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs"
-  ".emacs"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  2853
-  '(12677 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/Users/frank/op/source/_posts/2012-10-08-show-message-verticle-in-ido-mode.markdown"
