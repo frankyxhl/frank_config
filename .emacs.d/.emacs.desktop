@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Oct 12 19:11:26 2012
+;; Created Wed Dec 19 02:50:31 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.1.50.1
 
@@ -10,10 +10,10 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("pick" "set" "submit" "submi" "dd" "auto" "coffee-sc" "include" "ed" "sty" "route" "coffee-cos-mode" "custom" "coffee" "coffee-custom" "save"))
+(setq search-ring '("sr-s" "rever" "tab-width" "photon" "loginSe" "ip" "checklo" "cookie" "split" "addfav" "green" "success" "login" "tar" "addmem" "iptab"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/Users/frank/tmp/text.txt" "/Users/frank/.emacs.d/textmate.el" "/Users/frank/favourshare/config.ru" "/Users/frank/tmp/s.coffee" "/Users/frank/test.js" "emacs-plugin.el" "~/frank_config/.emacs.d/emacs-plugin.el" "~/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown" "~/op/source/_posts/2012-10-08-show-message-verticle-in-ido-mode.markdown" "~/xunawansha/public/js/ex.coffee" "~/tmp/timeintersection/timeintersection.html" "~/tmp/timeintersection/timeintersection.coffee" "~/timeintersection/timeintersection.js" "~/timeintersection/timeintersection.html" "~/timeintersection/timeintersection.js" "~/tmp/timeinsect.coffee" "~/timeintersection/timeintersection.html" "~/timeintersection/chat.html" "~/timeintersection/timeintersection.css" "~/timeintersection/chat.less" "~/timeintersection/chat.js" "~/xunawansha/public/js/ex.coffee" "~/timeintersection/client/ca.coffee" "~/meteor.js-chat-example/chat.js" "~/timeintersection/client/ca.coffee" "~/xunawansha/public/js/ex.coffee" "~/timeintersection/timeintersection.coffee" "~/timeintersection/client/ca.js" "~/timeintersection/timeintersection.html" "~/selectable.html"))
+(setq file-name-history '("/Users/frank/.config/common-lisp/source-registry.conf" "/Users/frank/bitbucket/cl_toujibiji/test3.lisp" "/Users/frank/.sbclrc" "~/bitbucket/cl_toujibiji/test2.lisp" "~/texas/test.lisp" "/Users/frank/bitbucket/cl_toujibiji/test.lisp" "~/bitbucket/cl_toujibiji/analysis.lisp" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "~/bitbucket/dolwns_photo_data_backup/backup.sh" "/Users/frank/test1.sh" "~/test1.sh" "~/test.sh" "/Users/frank/test.coffee" "~/test.sh" "/Users/frank/bitbucket/cl_toujibiji/analysis.lisp" "/Users/frank/m8/main.coffee" "/Users/frank/m8/index.html" "/Users/frank/texas/data-to-mongo.lisp" "/Users/frank/texas/test.lisp" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "/Users/frank/bitbucket/dolwns_photo_data_backup/sendmail.sh" "/Users/frank/photo_dolwns/routes/common.coffee" "/Users/frank/photo_dolwns/app.coffee" "/Users/frank/bitbucket/dolwns_photo_data_backup/sendmail.sh" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "~/photo_dolwns/public/javascripts/index.coffee" "/Users/frank/.emacs.d/less-css-mode.el" "/Users/frank/node_favourshare/app.coffee" "/Users/frank/node_favourshare/data_backup/fav_data.json" "/Users/frank/gongjujiaoji/data_backup/fav_data.json"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
@@ -21,163 +21,9 @@
   ".emacs"
   'emacs-lisp-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  13445
-  '(13233 nil)
+  10844
+  '(1651 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/tmp/s.coffee"
-  "s.coffee"
-  'coffee-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/textmate.el"
-  "textmate.el"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  18659
-  '(18659 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/favourshare/config.ru"
-  "config.ru"
-  'conf-colon-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/test.js"
-  "test.js"
-  'js2-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs.d/emacs-plugin.el"
-  "emacs-plugin.el"
-  'emacs-lisp-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1125
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/op/source/_posts/2012-10-08-show-message-verticle-in-ido-mode.markdown"
-  "2012-10-08-show-message-verticle-in-ido-mode.markdown"
-  'markdown-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  47
-  '(241 nil)
-  nil
-  nil
-  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/op/source/_posts/2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown"
-  "2012-09-25-add-textmate-and-sr-speedbar-in-emacs.markdown"
-  'markdown-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  119
-  '(114 nil)
-  nil
-  nil
-  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/tmp/timeintersection/timeintersection.coffee"
-  "timeintersection.coffee<2>"
-  'coffee-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1524
-  '(2980 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/tmp/timeintersection/timeintersection.html"
-  "timeintersection.html<2>"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  892
-  '(1627 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/timeintersection/timeintersection.coffee"
-  "timeintersection.coffee"
-  'coffee-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  611
-  '(1508 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/timeintersection/timeintersection.html"
-  "timeintersection.html"
-  'html-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  868
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/meteor.js-chat-example/chat.js"
-  "chat.js"
-  'js2-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  1
-  '(44 t)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/timeintersection/timeintersection.css"
-  "timeintersection.css"
-  'css-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  12189
-  '(10729 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/timeintersection/client/ca.coffee"
-  "ca.coffee"
-  'coffee-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  628
-  '(110 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 

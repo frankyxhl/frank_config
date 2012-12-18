@@ -120,11 +120,13 @@
   (progn
     (global-set-key [C-f7] 'ns-toggle-fullscreen)
     ;; (setq mac-option-key-is-meta nil)
-    (setq mac-option-key-is-command t)
-    (setq mac-option-modifier 'super)
-    ;; (setq mac-option-modifier nil)      
-    (setq mac-command-key-is-meta t)
-    (setq mac-command-modifier 'meta)
+    ;; (setq mac-option-modifier nil)
+		;; mac key set
+    ;; (setq mac-option-key-is-command t)
+    ;; (setq mac-option-modifier 'super)
+    ;; (setq mac-command-key-is-meta t)
+    ;; (setq mac-command-modifier 'meta)
+		;; end key set here
     ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
     ;; (set-frame-font "Monaco 18")
     (add-to-list 'default-frame-alist '(font . "Inconsolata-15")) ;设置新frame的字体大小
@@ -146,6 +148,16 @@
     (setq slime-net-coding-system 'utf-8-unix)
     ))
 
+(defun toggle-mac-key-set ()
+	"toggle mac key"
+    (setq mac-option-key-is-meta t)
+    (setq mac-option-key-is-command nil)
+    (setq mac-option-modifier 'meta)
+    ;; (setq mac-option-modifier nil)      
+    (setq mac-command-key-is-meta nil)
+    (setq mac-command-modifier 'super)
+	)
+
 (setq skeleton-pair t)
 (global-set-key "(" 'skeleton-pair-insert-maybe)
 (global-set-key "\"" 'skeleton-pair-insert-maybe)
@@ -160,7 +172,7 @@
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 ;;automatic complie after save file
-;; (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
+(add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
 (add-to-list 'ac-modes 'coffee-mode)
 
 (defun coffee-custom ()
@@ -169,8 +181,8 @@
 
 (setq coffee-args-compile '("-bc" "--bare"))
 
-;; (add-hook 'coffee-mode-hook
-	  ;; '(lambda() (coffee-custom)))
+(add-hook 'coffee-mode-hook
+	  '(lambda() (coffee-custom)))
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -289,7 +301,7 @@ Otherwise send [escape]."
 (custom-set-variables '(sr-speedbar-right-side nil) '(sr-speedbar-skip-other-window-p t) '(sr-speedbar-max-width 10) '(sr-speedbar-width-x 20))
 (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
 (global-set-key (kbd "s-r") 'sr-speedbar-refresh-toggle)
-(sr-speedbar-open)
+;; (sr-speedbar-open)
 
 ; ===========================================================================
 ;;text-speedbar-mode
@@ -316,6 +328,13 @@ Otherwise send [escape]."
 ; slim-mode
 ; ===========================================================================
 (require 'slim-mode)
+
+
+; ===========================================================================
+; zencoding-mode
+; ===========================================================================
+(require 'zencoding-mode)
+(add-hook 'html-mode-hook 'zencoding-mode)
 
 ; ===========================================================================
 ; mark-multiple
@@ -352,6 +371,8 @@ Otherwise send [escape]."
 '(slime-startup-animation nil)
 '(slime-lisp-implementations '((sbcl ("/usr/local/bin/sbcl"))))))) 
 ;; Stop SLIME’s REPL from grabbing DEL,
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
 ;; which is annoying when backspacing over a '('
 (defun override-slime-repl-bindings-with-paredit ()
 (define-key slime-repl-mode-map
@@ -360,3 +381,10 @@ Otherwise send [escape]."
 ;; User’s stuff:
 ;; (zenburn)
 ;; (slime)
+; ===========================================================================
+;;less-css-mode
+; ===========================================================================
+(require 'less-css-mode)
+(autoload 'less-css-mode "less-css-mode.el" "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
+(add-to-list 'ac-modes 'less-css-mode)
