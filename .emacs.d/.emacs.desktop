@@ -2,27 +2,38 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Dec 19 02:50:31 2012
+;; Created Fri Dec 21 02:14:46 2012
 ;; Desktop file format version 206
-;; Emacs version 24.1.50.1
+;; Emacs version 24.3.50.1
 
 ;; Global section:
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("sr-s" "rever" "tab-width" "photon" "loginSe" "ip" "checklo" "cookie" "split" "addfav" "green" "success" "login" "tar" "addmem" "iptab"))
+(setq search-ring '("kill-terminal" "C-x C-c" "sr-s" "rever" "tab-width" "photon" "loginSe" "ip" "checklo" "cookie" "split" "addfav" "green" "success" "login" "tar"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/Users/frank/.config/common-lisp/source-registry.conf" "/Users/frank/bitbucket/cl_toujibiji/test3.lisp" "/Users/frank/.sbclrc" "~/bitbucket/cl_toujibiji/test2.lisp" "~/texas/test.lisp" "/Users/frank/bitbucket/cl_toujibiji/test.lisp" "~/bitbucket/cl_toujibiji/analysis.lisp" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "~/bitbucket/dolwns_photo_data_backup/backup.sh" "/Users/frank/test1.sh" "~/test1.sh" "~/test.sh" "/Users/frank/test.coffee" "~/test.sh" "/Users/frank/bitbucket/cl_toujibiji/analysis.lisp" "/Users/frank/m8/main.coffee" "/Users/frank/m8/index.html" "/Users/frank/texas/data-to-mongo.lisp" "/Users/frank/texas/test.lisp" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "/Users/frank/bitbucket/dolwns_photo_data_backup/sendmail.sh" "/Users/frank/photo_dolwns/routes/common.coffee" "/Users/frank/photo_dolwns/app.coffee" "/Users/frank/bitbucket/dolwns_photo_data_backup/sendmail.sh" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "~/photo_dolwns/public/javascripts/index.coffee" "/Users/frank/.emacs.d/less-css-mode.el" "/Users/frank/node_favourshare/app.coffee" "/Users/frank/node_favourshare/data_backup/fav_data.json" "/Users/frank/gongjujiaoji/data_backup/fav_data.json"))
+(setq file-name-history '("~/test.coffee" "/Users/frank/frank_config/.emacs.d/anything.el" "/Users/frank/tmp/cl_web/h.lisp" "/Users/frank/h.lisp" "/Users/frank/.config/common-lisp/source-registry.conf" "/Users/frank/bitbucket/cl_toujibiji/test3.lisp" "/Users/frank/.sbclrc" "~/bitbucket/cl_toujibiji/test2.lisp" "~/texas/test.lisp" "/Users/frank/bitbucket/cl_toujibiji/test.lisp" "~/bitbucket/cl_toujibiji/analysis.lisp" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "~/bitbucket/dolwns_photo_data_backup/backup.sh" "/Users/frank/test1.sh" "~/test1.sh" "~/test.sh" "/Users/frank/test.coffee" "~/test.sh" "/Users/frank/bitbucket/cl_toujibiji/analysis.lisp" "/Users/frank/m8/main.coffee" "/Users/frank/m8/index.html" "/Users/frank/texas/data-to-mongo.lisp" "/Users/frank/texas/test.lisp" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "/Users/frank/bitbucket/dolwns_photo_data_backup/sendmail.sh" "/Users/frank/photo_dolwns/routes/common.coffee" "/Users/frank/photo_dolwns/app.coffee" "/Users/frank/bitbucket/dolwns_photo_data_backup/sendmail.sh" "/Users/frank/bitbucket/dolwns_photo_data_backup/backup.sh" "~/photo_dolwns/public/javascripts/index.coffee"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/frank/frank_config/.emacs"
-  ".emacs"
+  "/Users/frank/tmp/cl_web/h.lisp"
+  "h.lisp"
+  'lisp-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode slime-mode eldoc-mode)
+  431
+  '(334 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/frank_config/.emacs.d/anything.el"
+  "anything.el"
   'emacs-lisp-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode fast-paren-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  10844
-  '(1651 nil)
+  4732
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))

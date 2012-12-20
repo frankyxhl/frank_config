@@ -127,10 +127,14 @@
     ;; (setq mac-command-key-is-meta t)
     ;; (setq mac-command-modifier 'meta)
 		;; end key set here
-    ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("STHeiti" . "unicode-bmp"))
-    ;; (set-frame-font "Monaco 18")
-    (add-to-list 'default-frame-alist '(font . "Inconsolata-15")) ;设置新frame的字体大小
-    (set-frame-font "Inconsolata-15") ;设置英文字体
+    ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("黑体-简" . "unicode-bmp"))
+    (set-frame-font "Monaco 16")
+		(set-fontset-font
+		 (frame-parameter nil 'font)
+		 'han
+		 (font-spec :family "Hiragino Sans GB" ))
+    ;; (add-to-list 'default-frame-alist '(font . "Inconsolata-15")) ;设置新frame的字体大小
+    ;; (set-frame-font "Inconsolata-15") ;设置英文字体
     (set-language-environment "UTF-8")
     ;; (ns-toggle-fullscreen)
     )
