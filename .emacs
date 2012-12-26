@@ -245,9 +245,9 @@
 ; ===========================================================================
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
-(evil-mode 1)
-(setq evil-emacs-state-modes nil)
-(setq evil-default-state 'emacs)
+;; (evil-mode 1)
+;; (setq evil-emacs-state-modes nil)
+;; (setq evil-default-state 'emacs)
 (defun escape-if-next-char (c)
 	"Watches the next letter.  If c, then switch to Evil's normal mode; otherwise insert a k and forward unpressed key to unread-command events"
 	(self-insert-command 1)
@@ -377,6 +377,7 @@ Otherwise send [escape]."
 ;; Stop SLIME’s REPL from grabbing DEL,
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl")
+(define-key slime-mode-map (kbd "<f12>") 'slime-selector)
 ;; which is annoying when backspacing over a '('
 (defun override-slime-repl-bindings-with-paredit ()
 (define-key slime-repl-mode-map

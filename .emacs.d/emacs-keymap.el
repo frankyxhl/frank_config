@@ -41,8 +41,12 @@
 (global-set-key [(control \;)] 'comment-line)
 (global-set-key (kbd "C-x ;") 'comment-or-uncomment-region)
 (global-set-key [f11] 'fullscreen)
+
 (global-set-key [f8] 'other-window)
 (global-set-key (kbd "C-.") 'pop-tag-mark)
+
+
+;; (global-set-key [f12] 'slime-selector)
 	
 (defvar my-point-track 0
   "this variable save the point position when begin track
