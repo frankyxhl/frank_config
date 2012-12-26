@@ -13,7 +13,7 @@
         (all-completions ac-prefix candidates)))))
 
 (defface ac-yasnippet-candidate-face
-  '((t (:background "sandybrown" :foreground "black")))
+  '((t (:background "sandybrown" :foreground "red"))) ;black FrankXu
   "Face for yasnippet candidate.")
 
 (defface ac-yasnippet-selection-face

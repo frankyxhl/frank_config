@@ -32,12 +32,13 @@
 ; ===========================================================================
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
-(yas-global-mode 1)
-;; (yas/initialize)
-;;(yas/load-directory "~/.emacs.d/yasnippet/snippets")
+;;(yas-global-mode 1)
+;;(yas/initialize)
+(yas/load-directory "~/.emacs.d/yasnippet/snippets")
 ;; load auto complete
 (add-to-list 'load-path "~/.emacs.d/auto-complete/")
 (require 'auto-complete-config)
+;; (require 'auto-complete-yasnippet)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
 (ac-config-default)
 
