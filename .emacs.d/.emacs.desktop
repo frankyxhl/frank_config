@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Dec 29 01:11:56 2012
+;; Created Sun Dec 30 03:24:56 2012
 ;; Desktop file format version 206
 ;; Emacs version 24.3.50.1
 
@@ -10,75 +10,108 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list '("/Users/frank/gongjujiaoji/emacs_coffee.tags" "/home/frank/TAGS" "/home/frank/python_TAGS"))
-(setq search-ring '("gl" "yas"))
+(setq search-ring '("pre" "Proje" "gl" "yas"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/bitbucket/zhongcui/config/database.yml" "~/test.coffee" "~/test.el" "~/frank_config/.emacs.d/emacs-plugin.el" "~/.emacs.d/yasnippet/snippets/ruby-mode/describe" "/Users/frank/test.rb" "/Users/frank/.emacs.d/yasnippet/snippets/ruby-mode/describe" "/Users/frank/.emacs.d/yasnippet/snippets/ruby-mode/test.yasnippet" "/Users/frank/test.rb" "/Users/frank/.emacs.d/yasnippet/snippets/ruby-mode/describe" "/Users/frank/test.rb" "~/.emacs.d/yasnippet/snippets/ruby-mode/describe-test" "~/test.el" "/Users/frank/test.elisp" "/Users/frank/test.lisp" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/snippet-mode/describe" "~/frank_config/.emacs.d/yasnippet/snippets/snippet-mode/mirror" "/Users/frank/.emacs.d/yasnippet/snippets/snippet-mode/mirror" "~/test.snippet" "/Users/frank/test.snippet" "/Users/frank/frank_config/.emacs.d/emacs-plugin.el" "/Users/frank/.emacs.d/auto-complete/auto-complete-yasnippet.el" "/Users/frank/test.rb" "/Users/frank/test.ruby" "~/test.coffee" "/Users/frank/quicklisp/dists/quicklisp/software/alexandria-20120520-git/hash-tables.lisp" "/Users/frank/frank_config/.emacs.d/emacs-keymap.el" "/Users/frank/op/source/_posts/2012-12-23-sbclnote.markdown" "/Users/frank/texas/test.lisp" "~/test.coffee"))
+(setq file-name-history '("/Users/frank/bitbucket/emukimono/app/assets/stylesheets/layout.css" "~/bitbucket/emukimono/config/routes.rb" "/Users/frank/bitbucket/emukimono/Gemfile" "/Users/frank/bitbucket/zhongcui/app/views/home/products.html.erb" "/Users/frank/bitbucket/zhongcui/Gemfile" "~/bitbucket/zhongcui/app/views/layouts/application.html.erb" "/Users/frank/bitbucket/zhongcui/app/views/layouts/application.html.erb" "/Users/frank/bitbucket/zhongcui_af/app/assets/stylesheets/layout.scss" "/Users/frank/bitbucket/zhongcui_af/app/views/home/index.html.erb" "~/bitbucket/zhongcui_af/app/views/layouts/application.html.erb" "~/bitbucket/zhongcui_af/Gemfile" "/Users/frank/tmp/zhongcui/Gemfile" "/Users/frank/bitbucket/zhongcui/Gemfile" "/Users/frank/bitbucket/zhongcui/app/views/layouts/application.html.erb" "~/bitbucket/zhongcui/config/database.yml" "~/test.coffee" "~/test.el" "~/frank_config/.emacs.d/emacs-plugin.el" "~/.emacs.d/yasnippet/snippets/ruby-mode/describe" "/Users/frank/test.rb" "/Users/frank/.emacs.d/yasnippet/snippets/ruby-mode/describe" "/Users/frank/.emacs.d/yasnippet/snippets/ruby-mode/test.yasnippet" "/Users/frank/test.rb" "/Users/frank/.emacs.d/yasnippet/snippets/ruby-mode/describe" "/Users/frank/test.rb" "~/.emacs.d/yasnippet/snippets/ruby-mode/describe-test" "~/test.el" "/Users/frank/test.elisp" "/Users/frank/test.lisp" "/Users/frank/frank_config/.emacs.d/yasnippet/snippets/snippet-mode/describe"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/frank/bitbucket/zhongcui/app/assets/stylesheets/application.css"
-  "application.css"
-  'css-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  572
-  '(543 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/bitbucket/zhongcui/config/routes.rb"
-  "routes.rb"
-  'ruby-mode
-  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  147
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/bitbucket/zhongcui/Gemfile"
-  "Gemfile"
-  'text-mode
-  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  225
-  '(156 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/frank/bitbucket/zhongcui/app/assets/javascripts/application.js"
+  "/Users/frank/bitbucket/emukimono/app/assets/javascripts/application.js"
   "application.js"
   'js2-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  652
+  600
   '(623 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/bitbucket/zhongcui/config/environments/production.rb"
+  "/Users/frank/bitbucket/emukimono/app/assets/stylesheets/application.css"
+  "application.css"
+  'css-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  572
+  '(600 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/bitbucket/emukimono/config/environments/production.rb"
   "production.rb"
   'ruby-mode
   '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  472
+  438
   '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/Users/frank/bitbucket/zhongcui/config/database.yml"
-  "database.yml"
+  "/Users/frank/bitbucket/emukimono/Gemfile"
+  "Gemfile"
   'text-mode
   '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
-  412
-  '(nil nil)
+  526
+  '(989 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/bitbucket/emukimono/app/views/layouts/application.html.erb"
+  "application.html.erb"
+  'html-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode zencoding-mode)
+  165
+  '(164 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/bitbucket/emukimono/app/assets/stylesheets/layout.css"
+  "layout.css"
+  'css-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  1
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/bitbucket/emukimono/app/views/home/index.html.erb"
+  "index.html.erb"
+  'html-mode
+  '(abbrev-mode yas-minor-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode zencoding-mode)
+  1
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/bitbucket/emukimono/config/application.rb"
+  "application.rb"
+  'ruby-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  2571
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/frank/bitbucket/emukimono/config/routes.rb"
+  "routes.rb"
+  'ruby-mode
+  '(abbrev-mode yas-minor-mode auto-complete-mode linum-mode highlight-parentheses-mode undo-tree-mode textmate-mode)
+  645
+  '(1808 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
