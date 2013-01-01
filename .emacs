@@ -393,3 +393,10 @@ Otherwise send [escape]."
 (autoload 'less-css-mode "less-css-mode.el" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'ac-modes 'less-css-mode)
+; ===========================================================================
+;;helm-mode
+; ===========================================================================
+(add-to-list 'load-path "~/.emacs.d/helm/")
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
