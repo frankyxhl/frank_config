@@ -4,8 +4,8 @@
 (setq python-use-skeletons t)
 
 ;; load pymacs
-(require 'pymacs)
-(setq pymacs-load-path ["~/.emacs.d/"])
+;; (require 'pymacs)
+;; (setq pymacs-load-path ["~/.emacs.d/"])
 
 ;; load ibuffer
 (require 'ibuffer)
