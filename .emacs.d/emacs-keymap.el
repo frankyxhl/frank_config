@@ -2,9 +2,9 @@
 ;;; emacs-keymap.el --- 
 
 ;;; load pymacs --- 
-(if (eq system-type 'darwin)
-    ()
-    (pymacs-load "gen_etags" "gen-etags-"))
+;; (if (eq system-type 'darwin)
+    ;; ()
+    ;; (pymacs-load "gen_etags" "gen-etags-"))
 
 ;;; define keymap
 ;;;(global-set-key [f2] 'kill-this-buffer)
@@ -12,7 +12,7 @@
 (global-set-key [f5] 'ibuffer)
 (global-set-key [C-f5] 'bookmark-bmenu-list);; list bookmark
 (global-set-key [f6] 'shell);; open shell
-(global-set-key [C-f6] 'run-python-cmd)
+;; (global-set-key [C-f6] 'run-python-cmd)
 (global-set-key [f7] 'switch-windows-buffer)
 
 (global-set-key "\M-/" 'hippie-expand)
