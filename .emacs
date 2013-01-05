@@ -135,7 +135,7 @@
 		 (font-spec :family "Hiragino Sans GB" ))
     ;; (add-to-list 'default-frame-alist '(font . "Inconsolata-15")) ;设置新frame的字体大小
     ;; (set-frame-font "Inconsolata-15") ;设置英文字体
-    (set-language-environment "UTF-8")
+    ;; (set-language-environment "UTF-8")
     ;; (ns-toggle-fullscreen)
     )
   (progn
@@ -362,6 +362,7 @@ Otherwise send [escape]."
 (add-to-list 'load-path "~/.emacs.d/slime/contrib")
 (setq slime-backend "~/.emacs.d/slime/swank-loader.lisp")
 (load "slime-autoloads")
+(set-language-environment "UTF-8")
 (require 'slime)
 (require 'slime-autoloads)
 (eval-after-load "slime"
@@ -373,11 +374,13 @@ Otherwise send [escape]."
 '(slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
 '(slime-net-coding-system 'utf-8-unix)
 '(slime-startup-animation nil)
-'(slime-lisp-implementations '((sbcl ("/usr/local/bin/sbcl"))))))) 
+'(slime-lisp-implementations '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix)))))) 
 ;; Stop SLIME’s REPL from grabbing DEL,
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl")
-(define-key slime-mode-map (kbd "<f12>") 'slime-selector)
+(define-key global-map (kbd "C-c s") 'slime-selector)
+;; (define-key slime-repl-mode-map (kbd "<f12>") 'slime-selector)
+;; (define-key slime-mode-map (kbd "<f12>") 'slime-selector)
 ;; which is annoying when backspacing over a '('
 (defun override-slime-repl-bindings-with-paredit ()
 (define-key slime-repl-mode-map
@@ -396,7 +399,7 @@ Otherwise send [escape]."
 ; ===========================================================================
 ;;helm-mode
 ; ===========================================================================
-(add-to-list 'load-path "~/.emacs.d/helm/")
-(require 'helm-config)
-(helm-mode 1)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (add-to-list 'load-path "~/.emacs.d/helm/")
+;; (require 'helm-config)
+;; (helm-mode 1)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
