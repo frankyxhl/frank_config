@@ -491,6 +491,10 @@
 
 ;;;; Default settings
 
+(defun ac-lisp-setup ()
+  (add-to-list 'ac-sources 'ac-source-filename)
+  )
+
 (defun ac-common-setup ()
   ;(add-to-list 'ac-sources 'ac-source-filename)
   )
@@ -513,6 +517,7 @@
   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
   (add-hook 'css-mode-hook 'ac-css-mode-setup)
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+  (add-hook 'auto-lisp-mode-hook 'ac-lisp-setup)
   (global-auto-complete-mode t))
 
 (provide 'auto-complete-config)

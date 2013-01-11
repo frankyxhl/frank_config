@@ -46,7 +46,7 @@
 (setq-default ac-sources '(
 ac-source-yasnippet
 ac-source-filename
-;; ac-source-words-in-all-buffer
+ac-source-words-in-all-buffer
 ac-source-functions
 ;; ac-source-variables
 ;; ac-source-symbols
@@ -64,3 +64,9 @@ ac-source-dictionary))
 (global-auto-complete-mode t)
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+(defun yas/test-at-once ()
+  "test new snippet immediately"
+  (interactive)
+	(yas-load-snippet-buffer (yas--read-table))
+	(yas-tryout-snippet))
+(define-key snippet-mode-map (kbd "C-M-g") 'yas/test-at-once)

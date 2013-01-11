@@ -328,6 +328,10 @@ Otherwise send [escape]."
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+;; (define-key ido-mode-map (kbd "C-n") 'ido-next-match)
+(eval-after-load "ido"
+    '(progn (define-key ido-common-completion-map "\C-n" 'ido-next-match)
+						(define-key ido-common-completion-map "\C-p" 'ido-prev-match))
 ; ===========================================================================
 ; slim-mode
 ; ===========================================================================
@@ -403,3 +407,6 @@ Otherwise send [escape]."
 ;; (require 'helm-config)
 ;; (helm-mode 1)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+(global-set-key (kbd "C-o") 'next-buffer)
+(global-set-key (kbd "M-o") 'previous-buffer)
