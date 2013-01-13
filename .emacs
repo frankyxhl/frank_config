@@ -329,9 +329,21 @@ Otherwise send [escape]."
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 ;; (define-key ido-mode-map (kbd "C-n") 'ido-next-match)
-(eval-after-load "ido"
-    '(progn (define-key ido-common-completion-map "\C-n" 'ido-next-match)
-						(define-key ido-common-completion-map "\C-p" 'ido-prev-match))
+
+(add-hook 'ido-setup-hook 'ido-my-keys)
+;;
+(defun ido-my-keys ()
+ "Add my keybindings for ido."
+ ;; (define-key ido-completion-map " " 'ido-next-match)
+ (define-key ido-completion-map "\C-n" 'ido-next-match)
+ (define-key ido-completion-map "\C-p" 'ido-prev-match))
+
+;; (eval-after-load "ido"
+    ;; '(progn (define-key ido-completion-map "\C-n" 'ido-next-match)
+						;; (define-key ido-completion-map "\C-p" 'ido-prev-match))
+;; ido
+;; (define-key ido-mode-map "\C-n" 'ido-next-match)
+;; (define-key ido-mode-map "\C-p" 'ido-prev-match)
 ; ===========================================================================
 ; slim-mode
 ; ===========================================================================
@@ -400,13 +412,7 @@ Otherwise send [escape]."
 (autoload 'less-css-mode "less-css-mode.el" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'ac-modes 'less-css-mode)
-; ===========================================================================
-;;helm-mode
-; ===========================================================================
-;; (add-to-list 'load-path "~/.emacs.d/helm/")
-;; (require 'helm-config)
-;; (helm-mode 1)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
 
 (global-set-key (kbd "C-o") 'next-buffer)
 (global-set-key (kbd "M-o") 'previous-buffer)
