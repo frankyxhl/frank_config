@@ -416,3 +416,13 @@ Otherwise send [escape]."
 
 (global-set-key (kbd "C-o") 'next-buffer)
 (global-set-key (kbd "M-o") 'previous-buffer)
+; ===========================================================================
+;;less-css-mode
+; ===========================================================================
+(require 'markit)
+(define-key global-map (kbd "C-c i") 'markit-mark-region-exclude)
+(define-key global-map (kbd "C-c I") 'markit-mark-region-include)
+;; C-c v i to mark the region, including the delimiters
+;; C-c v e to mark the region, excluding the delimiters
+;; If you wish to have something like ci", enable delete-selection-mode
+;; (delete-selection-mode)
