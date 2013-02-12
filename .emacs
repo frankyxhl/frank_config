@@ -179,14 +179,19 @@
 (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
 (add-to-list 'ac-modes 'coffee-mode)
 
+(setq coffee-args-compile '("-bc" "--bare"))
+;; (setq inferior-coffee-program "coffee")
 (defun coffee-custom ()
   "coffee-mode-hook"
+	(define-key coffee-mode-map [(meta R)] 'coffee-compile-region)
+	(define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
   (set (make-local-variable 'tab-width) 2))
-
-(setq coffee-args-compile '("-bc" "--bare"))
 
 (add-hook 'coffee-mode-hook
 	  '(lambda() (coffee-custom)))
+
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -304,7 +309,7 @@ Otherwise send [escape]."
 )
 (custom-set-variables '(sr-speedbar-right-side nil) '(sr-speedbar-skip-other-window-p t) '(sr-speedbar-max-width 10) '(sr-speedbar-width-x 20))
 (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-(global-set-key (kbd "s-r") 'sr-speedbar-refresh-toggle)
+;; (global-set-key (kbd "s-r") 'sr-speedbar-refresh-toggle)
 ;; (sr-speedbar-open)
 
 ; ===========================================================================
@@ -421,8 +426,20 @@ Otherwise send [escape]."
 ; ===========================================================================
 (require 'markit)
 (define-key global-map (kbd "C-c i") 'markit-mark-region-exclude)
-(define-key global-map (kbd "C-c I") 'markit-mark-region-include)
+(define-key global-map (kbd "C-c o") 'markit-mark-region-include)
 ;; C-c v i to mark the region, including the delimiters
 ;; C-c v e to mark the region, excluding the delimiters
 ;; If you wish to have something like ci", enable delete-selection-mode
 ;; (delete-selection-mode)
+
+; ===========================================================================
+;;web-mode
+; ===========================================================================
+(require 'web-mode)
+; ===========================================================================
+;;emacs-http-server
+; ===========================================================================
+(add-to-list 'load-path "~/.emacs.d/emacs-http-server")
+(add-to-list 'load-path "~/.emacs.d/skewer-mode")
+(load "~/.emacs.d/skewer-mode/skewer-mode.el")
+(load "~/.emacs.d/skewer-mode/skewer-repl.el")

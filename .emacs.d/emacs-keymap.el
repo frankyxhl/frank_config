@@ -52,7 +52,7 @@
   "this variable save the point position when begin track
 and goto the saved point position when end track.")
 
-(define-key global-map "\C-cs" '(lambda ()
+(define-key global-map "\C-ck" '(lambda ()
                                   (interactive)
                                   (setq my-point-track (point))
                                   (message "saved %d" my-point-track)))
