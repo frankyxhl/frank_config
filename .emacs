@@ -80,7 +80,7 @@
 (global-hl-line-mode t) 		;高亮当前行
 
 (setq-default make-backup-files nil)
-(color-theme-luolE-darknight)
+;; (color-theme-luolE-darknight)
 ;; (color-theme-midnight)
 ;; Debian下中文输入法问题
 ;; (require 'scim-bridge)
