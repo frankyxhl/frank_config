@@ -54,6 +54,7 @@ alias v='/usr/local/bin/vless'
 alias c='rsync -av --progress'
 alias ut='ubuntu-server-tip'
 alias g='grep'
+alias e='emacs -c -a ""'
 #turn of correct
 unsetopt correct_all
 
