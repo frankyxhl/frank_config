@@ -111,7 +111,7 @@
 ;; (add-hook 'scheme-mode-hook		(lambda () (paredit-mode 1)))
 
 (require 'parenface)
-(set-face-foreground 'paren-face "gray30")
+
 
 (setq show-paren-delay 0)
 
@@ -474,4 +474,5 @@ Otherwise send [escape]."
 
 (if window-system
 		(require 'color-theme-arjen)
-    (tool-bar-mode 0))
+	(set-face-foreground 'paren-face "gray30"))
+
