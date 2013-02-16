@@ -419,7 +419,6 @@ Otherwise send [escape]."
 (add-to-list 'ac-modes 'less-css-mode)
 
 
-(global-set-key (kbd "C-o") 'next-buffer)
 (global-set-key (kbd "M-o") 'previous-buffer)
 ; ===========================================================================
 ;;less-css-mode
