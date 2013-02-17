@@ -59,10 +59,5 @@ alias g='grep'
 unsetopt correct_all
 
 
-alias e='emacsclient -c -a ""'
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-if [[  "$(uname)" -eq "Darwin" ]]
-then
-		echo "ok";
-fi
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

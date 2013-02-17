@@ -452,11 +452,7 @@ Otherwise send [escape]."
 ;; you can select the key you prefer to
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-
-
-;; 
 ;; enable a more powerful jump back function from ace jump mode
-;;
 (autoload
   'ace-jump-mode-pop-mark
   "ace-jump-mode"
@@ -473,5 +469,4 @@ Otherwise send [escape]."
 
 (if window-system
 	(progn 
-				 (require 'color-theme-arjen)
-				 (color-theme-arjen)))
+				 (color-theme-luolE-darknight)))
