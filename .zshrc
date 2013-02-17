@@ -54,8 +54,15 @@ alias v='/usr/local/bin/vless'
 alias c='rsync -av --progress'
 alias ut='ubuntu-server-tip'
 alias g='grep'
-alias e='emacsclient -c -a ""'
+
 #turn of correct
 unsetopt correct_all
 
+
+alias e='emacsclient -c -a ""'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [[  "$(uname)" -eq "Darwin" ]]
+then
+		echo "ok";
+fi

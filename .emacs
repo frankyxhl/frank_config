@@ -111,8 +111,7 @@
 ;; (add-hook 'scheme-mode-hook		(lambda () (paredit-mode 1)))
 
 (require 'parenface)
-
-
+(set-face-foreground 'paren-face "gray30")
 (setq show-paren-delay 0)
 
 (global-linum-mode 1)
@@ -473,6 +472,6 @@ Otherwise send [escape]."
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
 (if window-system
-		(require 'color-theme-arjen)
-	(set-face-foreground 'paren-face "gray30"))
-
+	(progn 
+				 (require 'color-theme-arjen)
+				 (color-theme-arjen)))
