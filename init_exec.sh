@@ -12,4 +12,5 @@ ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
 ln -s ~/frank_config/.zshrc ~/.zshrc
 ln -s ~/frank_config/.vimrc ~/.vimrc
 ln -s ~/frank_config/.vim ~/.vim
+ln -s ~/frank_config/.emacsclient ~/.emacsclient
 cp -r .fonts ~/

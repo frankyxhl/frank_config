@@ -1,3 +1,6 @@
+;;========================================
+;; start the emacsserver that listens to emacsclient
+(server-start)
 ; ===========================================================================
 ; My Emacs Config
 ; Frank.Xu (franky.xhl[at]gmail.com)
@@ -114,7 +117,7 @@
 (set-face-foreground 'paren-face "gray30")
 (setq show-paren-delay 0)
 
-(global-linum-mode 1)
+;; (global-linum-mode 1)
 (if (eq system-type 'darwin)
   (progn
     (global-set-key [C-f7] 'ns-toggle-fullscreen)
@@ -127,6 +130,7 @@
     ;; (setq mac-command-modifier 'meta)
 		;; end key set here
     ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("黑体-简" . "unicode-bmp"))
+		;; (setq default-frame-alist '((font . "Monaco-16")))
     (set-frame-font "Monaco 16")
 		(set-fontset-font
 		 (frame-parameter nil 'font)
@@ -424,7 +428,7 @@ Otherwise send [escape]."
 ; ===========================================================================
 (require 'markit)
 (define-key global-map (kbd "C-c i") 'markit-mark-region-exclude)
-(define-key global-map (kbd "C-c o") 'markit-mark-region-include)
+(define-key global-map (kbd "C-c u") 'markit-mark-region-include)
 ;; C-c v i to mark the region, including the delimiters
 ;; C-c v e to mark the region, excluding the delimiters
 ;; If you wish to have something like ci", enable delete-selection-mode
@@ -466,6 +470,11 @@ Otherwise send [escape]."
 ;; (define-key viper-vi-global-user-map (kbd "SPC") 'ace-jump-mode)
 ;;If you use evil
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+; ===========================================================================
+;;fci-mode
+; ===========================================================================
+(require 'fill-column-indicator) 
+(setq fci-rule-column 80)
 
 (if window-system
 	(progn 
