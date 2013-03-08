@@ -183,7 +183,7 @@
 (add-to-list 'ac-modes 'coffee-mode)
 
 (setq coffee-args-compile '("-bc" "--bare"))
-;; (setq inferior-coffee-program "coffee")
+;; (setq inferior-coffee-program "iced")
 (defun coffee-custom ()
   "coffee-mode-hook"
 	(define-key coffee-mode-map [(meta R)] 'coffee-compile-region)
