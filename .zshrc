@@ -60,11 +60,13 @@ unsetopt correct_all
 
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 if [ "`uname`"=="Darwin" ];
 then
 		alias emacs='open -a /Applications/Emacs.app $1'
 		alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c'
+		export LC_CTYPE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
 else
 		alias e='emacsclient -c -a ""'
 fi

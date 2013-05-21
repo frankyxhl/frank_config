@@ -479,3 +479,14 @@ Otherwise send [escape]."
 (if window-system
 	(progn 
 				 (color-theme-luolE-darknight)))
+
+(require 'package)
+(add-to-list 'package-archives 
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
+(when (not (package-installed-p 'nrepl))
+  (package-install 'nrepl))
+;; (setenv "PATH" (concat (getenv "PATH") ":~/bin"))
+;; (setq exec-path (append exec-path '("~/bin")))
+(setq inferior-lisp-program "~/bin/lein")
