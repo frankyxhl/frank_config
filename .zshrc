@@ -49,6 +49,7 @@ alias tar_delete='tar --delete -f '
 alias tar_list='tar tf '
 alias tar_update='tar uPvf '
 alias tar_extract='tar xPvf '
+alias tar_package='tar -zcvf '
 # cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
 alias v='/usr/local/bin/vless'
 alias c='rsync -av --progress'
@@ -57,6 +58,7 @@ alias g='grep'
 alias rsync_remote_file="rsync $1 . -avz --progress"
 #pip install youtube-dl
 alias ytb="youtube-dl $l -f 37/22/35/34"
+alias size="du -sh * | sort -n"
 
 #turn of correct
 unsetopt correct_all
