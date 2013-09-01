@@ -180,7 +180,7 @@
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 ;;automatic complie after save file
 (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
-(add-to-list 'ac-modes 'coffee-mode)
+;; (Add-to-list 'ac-modes 'coffee-mode)
 
 (setq coffee-args-compile '("-bc" "--bare"))
 ;; (setq inferior-coffee-program "iced")
@@ -490,3 +490,9 @@ Otherwise send [escape]."
 ;; (setenv "PATH" (concat (getenv "PATH") ":~/bin"))
 ;; (setq exec-path (append exec-path '("~/bin")))
 (setq inferior-lisp-program "~/bin/lein")
+
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )

@@ -57,13 +57,13 @@ alias ut='ubuntu-server-tip'
 alias g='grep'
 alias rsync_remote_file="rsync $1 . -avz --progress"
 #pip install youtube-dl
-alias ytb="youtube-dl $l -f 37/22/35/34"
+alias ytb="youtube-dl $1 -f 37/22/35/34"
 alias size="du -sh * | sort -n"
 
 #turn of correct
 unsetopt correct_all
 
-
+cmatrix -s
 
 PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 if [ "`uname`"=="Darwin" ];
