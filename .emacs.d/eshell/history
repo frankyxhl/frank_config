@@ -1,0 +1,5 @@
+git status
+git commit
+git commit
+export EDITOR=/usr/bin/vim
+git commit

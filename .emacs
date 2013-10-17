@@ -496,3 +496,13 @@ Otherwise send [escape]."
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
+
+(require 'magit)
+(when (eq system-type 'darwin) 
+  (setq magit-emacsclient-executable
+        "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"))
+
+(setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
+(setq server-name (format "server%s" (emacs-pid)))
+
+(server-start)
