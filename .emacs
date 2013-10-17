@@ -46,6 +46,7 @@
 
 ;;shut up left scroll-bar in linux windows,去掉左边的滚轴
 ;; (scroll-bar-mode nil)
+(menu-bar-mode nil)
 (scroll-bar-mode -1)  
 (setq make-backup-file nil)
 (setq auto-save-default nil)
