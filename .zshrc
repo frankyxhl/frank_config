@@ -60,6 +60,15 @@ alias rsync_remote_file="rsync $1 . -avz --progress"
 alias ytb="youtube-dl $1 -f 37/22/35/34"
 alias size="du -sh * | sort -n"
 
+mvbk() {
+    mv $1 $1.bak
+}
+cpbk() {
+    cp $1 $1.bak
+}
+alias mvbk=mvbk
+alias cpbk=cpbk
+
 #turn of correct
 unsetopt correct_all
 
