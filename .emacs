@@ -183,7 +183,7 @@
 (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
 ;; (Add-to-list 'ac-modes 'coffee-mode)
 
-(setq coffee-args-compile '("-bc" "--bare"))
+;; (setq coffee-args-compile '("-bc" "--bare"))
 ;; (setq inferior-coffee-program "iced")
 (defun coffee-custom ()
   "coffee-mode-hook"
