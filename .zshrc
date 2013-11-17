@@ -42,6 +42,8 @@ export HISTFILE=~/.zhistory
 # # append command to history file once executed
 setopt INC_APPEND_HISTORY
 
+export NODE_PATH=/usr/local/lib/node_modules
+
 alias sub='ls -d */'
 alias l.='ls -d .*'
 alias h='history'
