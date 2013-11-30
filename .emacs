@@ -78,8 +78,8 @@
 ; ===========================================================================
 ;; 透明背景transparent background
 ; ===========================================================================
-(set-frame-parameter (selected-frame) 'alpha '(55 50))
-(add-to-list 'default-frame-alist '(alpha 55 50))
+;; (set-frame-parameter (selected-frame) 'alpha '(55 50))
+;; (add-to-list 'default-frame-alist '(alpha 55 50))
 
 (global-hl-line-mode t) 		;高亮当前行
 
