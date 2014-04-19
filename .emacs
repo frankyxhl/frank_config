@@ -56,7 +56,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/company")
 ;; (autoload 'company-mode "company" nil t)
 ;;(menu-bar-mode nil)
-(set-frame-font "Monaco")
+(set-frame-font "Menlo")
 
 
 ;;Pinbar-mode顶部Alt键
@@ -70,7 +70,7 @@
 (add-hook 'lua-mode-hook 'hs-minor-mode)
 
 (require 'color-theme-luolE-darknight )
-
+;; (require 'tomorrow-night-bright-theme )
 ;; (load "pymacs-settings")
 ;; (add-to-list 'load-path
 ;; "~/.emacs.d/yasnippet-0.6.1c/snippets")
