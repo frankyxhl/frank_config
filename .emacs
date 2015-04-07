@@ -108,14 +108,20 @@
 
 
 (require 'paredit)
-;; (add-hook 'emacs-lisp-mode-hook		(lambda () (paredit-mode 1)))
-;; (add-hook 'lisp-mode-hook		(lambda () (paredit-mode 1)))
-;; (add-hook 'lisp-interaction-mode-hook	(lambda () (paredit-mode 1)))
-;; (add-hook 'python-mode-hook		(lambda () (paredit-mode 1)))
-;; (add-hook 'scheme-mode-hook		(lambda () (paredit-mode 1)))
+(add-hook 'emacs-lisp-mode-hook		(lambda () (paredit-mode 1)))
+(add-hook 'lisp-mode-hook		(lambda () (paredit-mode 1)))
+(add-hook 'lisp-interaction-mode-hook	(lambda () (paredit-mode 1)))
+(add-hook 'python-mode-hook		(lambda () (paredit-mode 1)))
+(add-hook 'scheme-mode-hook		(lambda () (paredit-mode 1)))
 
 (require 'parenface)
-(set-face-foreground 'paren-face "gray30")
+;; (set-face-foreground 'paren-face "gray30")
+(eval-after-load 'parenface
+  (progn
+    (set-face-foreground 'parenface-paren-face "gray30")
+    (set-face-foreground 'parenface-bracket-face "gray30")
+    (set-face-foreground 'parenface-curly-face "gray30")))
+
 (setq show-paren-delay 0)
 
 ;; (global-linum-mode 1)
@@ -150,9 +156,9 @@
     (display-time-mode 1)
     (pc-selection-mode);; use shift + [array] to select    
     (set-fontset-font "fontset-default" 'han '("文泉驿等宽正黑" . "unicode-bmp"))      
-    (load (expand-file-name "~/quicklisp/slime-helper.el"))
+    ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
     ;; Replace "sbcl" with the path to your implementation
-    (setq inferior-lisp-program "sbcl")
+    ;; (setq inferior-lisp-program "sbcl")
     (setq slime-net-coding-system 'utf-8-unix)
     ))
 
@@ -217,6 +223,7 @@
 (add-hook 'lisp-mode-hook		(lambda () (fast-paren-mode 1)))
 (add-hook 'lisp-interaction-mode-hook	(lambda () (fast-paren-mode 1)))
 (add-hook 'slime-mode-hook		(lambda () (fast-paren-mode 1)))
+(add-hook 'clojure-mode-hook		(lambda () (fast-paren-mode 1)))
 (require 'highlight-parentheses)
 
 (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -309,9 +316,23 @@ Otherwise send [escape]."
 ; ===========================================================================
 (require 'sr-speedbar)
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cider-lein-command "/Users/frank/bin/lein")
+ '(inhibit-startup-screen t)
+ '(slime-complete-symbol*-fancy t)
+ '(slime-complete-symbol-function (quote slime-fuzzy-complete-symbol))
+ '(slime-lisp-implementations (quote ((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix))) t)
+ '(slime-net-coding-system (quote utf-8-unix))
+ '(slime-startup-animation nil)
  '(speedbar-show-unknown-files t)
-)
-(custom-set-variables '(sr-speedbar-right-side nil) '(sr-speedbar-skip-other-window-p t) '(sr-speedbar-max-width 10) '(sr-speedbar-width-x 20))
+ '(sr-speedbar-max-width 10)
+ '(sr-speedbar-right-side nil)
+ '(sr-speedbar-skip-other-window-p t)
+ '(sr-speedbar-width-x 20))
+
 (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
 ;; (global-set-key (kbd "s-r") 'sr-speedbar-refresh-toggle)
 ;; (sr-speedbar-open)
@@ -401,8 +422,8 @@ Otherwise send [escape]."
 '(slime-startup-animation nil)
 '(slime-lisp-implementations '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix)))))) 
 ;; Stop SLIME’s REPL from grabbing DEL,
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "sbcl")
+;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; (setq inferior-lisp-program "sbcl")
 (define-key global-map (kbd "C-c s") 'slime-selector)
 ;; (define-key slime-repl-mode-map (kbd "<f12>") 'slime-selector)
 ;; (define-key slime-mode-map (kbd "<f12>") 'slime-selector)
@@ -483,7 +504,7 @@ Otherwise send [escape]."
 
 (require 'package)
 (add-to-list 'package-archives 
-    '("marmalade" .
+    '("melpa" .
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
 (when (not (package-installed-p 'nrepl))
@@ -498,6 +519,10 @@ Otherwise send [escape]."
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
 
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+
 (require 'magit)
 (when (eq system-type 'darwin) 
   (setq magit-emacsclient-executable
@@ -507,3 +532,21 @@ Otherwise send [escape]."
 (setq server-name (format "server%s" (emacs-pid)))
 
 (server-start)
+
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+(setq exec-path (append exec-path '("/Users/frank/bin")))
+(require 'cider)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(setf cider-lein-command "/Users/frank/bin/lein")
+(setq paredit-mode t)
+
