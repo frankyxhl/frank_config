@@ -10,8 +10,8 @@
 (setq inhibit-startup-screen t);; close welcome screen
 (setq column-number-mode t);; enable column mode
 (setq default-major-mode 'text-mode);; set default mode
-(show-paren-mode t);; unknown
-(setq show-paren-style 'parentheses)
+;; (show-paren-mode t);; unknown
+;; (setq show-paren-style 'parentheses)
 (setq visible-bell t)
 (setq frame-title-format "%b");; set title
 (auto-image-file-mode);; enable image view
@@ -314,7 +314,7 @@ Otherwise send [escape]."
 ; ===========================================================================
 ;;sr-speedbar-mode
 ; ===========================================================================
-(require 'sr-speedbar)
+;; (require 'sr-speedbar)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -435,13 +435,6 @@ Otherwise send [escape]."
 ;; User’s stuff:
 ;; (zenburn)
 ;; (slime)
-; ===========================================================================
-;;less-css-mode
-; ===========================================================================
-(require 'less-css-mode)
-(autoload 'less-css-mode "less-css-mode.el" "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
-(add-to-list 'ac-modes 'less-css-mode)
 
 
 (global-set-key (kbd "M-o") 'previous-buffer)
@@ -550,3 +543,13 @@ Otherwise send [escape]."
 (setf cider-lein-command "/Users/frank/bin/lein")
 (setq paredit-mode t)
 
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(defun require-package (PACKAGE &optional MIN-VERSION)
+	"If package exsit then load package,else install it"
+	(if (package-installed-p PACKAGE)
+			(require PACKAGE)
+		(package-install PACKAGE)))

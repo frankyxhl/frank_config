@@ -3,3 +3,22 @@ git commit
 git commit
 export EDITOR=/usr/bin/vim
 git commit
+ls
+echo $SHELL
+pwd
+ls
+cd tmp
+ls
+cat w.js
+ls
+cd
+ls
+cd
+中国webschool設立計画.xlsx
+ls
+ls
+cd .emacs.d/
+ls
+ls
+clear
+clear
