@@ -553,3 +553,6 @@ Otherwise send [escape]."
 	(if (package-installed-p PACKAGE)
 			(require PACKAGE)
 		(package-install PACKAGE)))
+
+;; (setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
+;; (server-start)
