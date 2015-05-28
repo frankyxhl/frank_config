@@ -162,12 +162,6 @@
 		      (floor (* 0.9
 				(face-attribute 'default :height)))))
 
-(defun fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen
-		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
-
-
 (defun copy-sentence (&optional arg)
   "Copy current sentence"
   (interactive "P")

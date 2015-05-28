@@ -125,6 +125,8 @@ then
 				export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
 				export JAVA_HOME=$(/usr/libexec/java_home)
 				export GOPATH=~/mygo				
+                export WORKON_HOME=~/bitbucket
+                source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 
