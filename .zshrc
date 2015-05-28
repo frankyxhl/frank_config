@@ -57,7 +57,7 @@ alias v='/usr/local/bin/vless'
 alias c='rsync -av --progress'
 alias ut='ubuntu-server-tip'
 alias g='grep'
-alias gr='grunt'
+# alias gr='grunt'
 alias rsync_remote_file="rsync $1 . -avz --progress"
 #pip install youtube-dl
 alias ytb="youtube-dl $1 -f 37/22/35/34"
@@ -87,10 +87,7 @@ export LC_ALL=en_US.UTF-8
 # else
 alias e='emacsclient -c -a ""'
 # fi
-export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
-export JAVA_HOME=$(/usr/libexec/java_home)
 
-export GOPATH=~/mygo
 
 # Setup zsh-autosuggestions
 source /Users/frank/.zsh-autosuggestions/autosuggestions.zsh
@@ -121,5 +118,14 @@ if exists percol; then
     bindkey '^R' percol_select_history
 fi
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if [[ `uname` == 'Darwin' ]]
+then
+				export NVM_DIR=~/.nvm
+				source $(brew --prefix nvm)/nvm.sh
+				export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
+				export JAVA_HOME=$(/usr/libexec/java_home)
+				export GOPATH=~/mygo				
+fi
+
+
+

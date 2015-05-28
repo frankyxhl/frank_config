@@ -26,22 +26,12 @@
 
 ;; load other set
 (add-to-list 'load-path "~/.emacs.d/")  ;;should set again if the enviroment has been changed
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0") 
-(require 'color-theme)
-(load "csv-mode")
+
 (load "emacs-redef")
 (load "emacs-plugin")
 (load "python-indent")
-; ===========================================================================
-;; lily pond mode load
-; ===========================================================================
-(autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
-(add-to-list 'auto-mode-alist '("\\.ly$" . LilyPond-mode))
-(add-to-list 'auto-mode-alist '("\\.ily$" . LilyPond-mode))
-(add-hook 'LilyPond-mode-hook (lambda () (turn-on-font-lock)))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;  Below is written by Frank.Xu
+;;;  Belowe is written by Frank.Xu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;shut up left scroll-bar in linux windows,去掉左边的滚轴
@@ -179,32 +169,6 @@
 (global-set-key "[" 'skeleton-pair-insert-maybe)
 (global-set-key "{" 'skeleton-pair-insert-maybe)
 
-; ===========================================================================
-; coffee-mode && js2-mode
-; ===========================================================================
-(require 'coffee-mode)
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-;;automatic complie after save file
-(add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
-;; (Add-to-list 'ac-modes 'coffee-mode)
-
-;; (setq coffee-args-compile '("-bc" "--bare"))
-;; (setq inferior-coffee-program "iced")
-(defun coffee-custom ()
-  "coffee-mode-hook"
-	(define-key coffee-mode-map [(meta R)] 'coffee-compile-region)
-	(define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
-  (set (make-local-variable 'tab-width) 2))
-
-(add-hook 'coffee-mode-hook
-	  '(lambda() (coffee-custom)))
-
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-(setq exec-path (append exec-path '("/usr/local/bin")))
-
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; lisp-environment
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -217,13 +181,6 @@
 (defalias 'ar 'align-regexp)
 (require 'anything)
 
-;; (paredit-mode nil)
-(require 'fast-paren-mode)
-(add-hook 'emacs-lisp-mode-hook		(lambda () (fast-paren-mode 1)))
-(add-hook 'lisp-mode-hook		(lambda () (fast-paren-mode 1)))
-(add-hook 'lisp-interaction-mode-hook	(lambda () (fast-paren-mode 1)))
-(add-hook 'slime-mode-hook		(lambda () (fast-paren-mode 1)))
-(add-hook 'clojure-mode-hook		(lambda () (fast-paren-mode 1)))
 (require 'highlight-parentheses)
 
 (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -244,11 +201,6 @@
   )
 (delete-selection-mode 1)
 
-(add-to-list 'load-path "~/.emacs.d/jade-mode")
-(require 'sws-mode)
-(require 'jade-mode)    
-(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 (require 'mon-css-complete)
 (load "indent-vline")
 ;; (add-hook 'jade-mode-hook '(lambda () (indent-hint-mode t)))
@@ -304,13 +256,6 @@ Otherwise send [escape]."
   (setq this-command last-command)
   (add-hook 'pre-command-hook #'evil-turn-on-esc-mode nil t))
 (define-key evil-insert-state-map (kbd "j") 'escape-if-next-char-is-j)
-; ===========================================================================
-;;Scss-mode
-; ===========================================================================
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-(add-to-list 'ac-modes 'scss-mode)
-
 ; ===========================================================================
 ;;sr-speedbar-mode
 ; ===========================================================================
@@ -374,11 +319,6 @@ Otherwise send [escape]."
 ;; ido
 ;; (define-key ido-mode-map "\C-n" 'ido-next-match)
 ;; (define-key ido-mode-map "\C-p" 'ido-prev-match)
-; ===========================================================================
-; slim-mode
-; ===========================================================================
-(require 'slim-mode)
-
 
 ; ===========================================================================
 ; zencoding-mode
