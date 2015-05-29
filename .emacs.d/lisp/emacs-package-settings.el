@@ -39,6 +39,7 @@ Return a list of installed packages or nil for every skipped package."
 			  'monokai-theme
 			  'parenface
 			  'fill-column-indicator
-			  'highlight-parentheses)
+			  'highlight-parentheses
+			  'cider)
 ;; activate installed packages
 (package-initialize)

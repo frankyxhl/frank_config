@@ -28,3 +28,5 @@
   (lambda ()
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
+
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
