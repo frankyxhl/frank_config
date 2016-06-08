@@ -6,6 +6,7 @@
 #find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 cd && git clone https://github.com/robbyrussell/oh-my-zsh.git
 mv oh-my-zsh .oh-my-zsh
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ln -s ~/frank_config/.emacs ~/.emacs
 ln -s ~/frank_config/.emacs.d ~/.emacs.d
 ln -s ~/frank_config/.tmux.conf ~/.tmux.conf

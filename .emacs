@@ -1,44 +1,56 @@
-;;========================================
-;; start the emacsserver that listens to emacsclient
+(when (eq system-type 'darwin)
+  (add-to-list 'load-path "~/.emacs.d/libs")
+  (add-to-list 'load-path "~/.emacs.d/prelude"))
+
+
+
+(require 'osx-pseudo-daemon)
 (server-start)
-; ===========================================================================
-; My Emacs Config
-; Frank.Xu (franky.xhl[at]gmail.com)
-; ===========================================================================
-;; Packages Need
+(load "init")
 
-;; load other set
-(add-to-list 'load-path "~/.emacs.d/")  ;;should set again if the enviroment has been changed
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(load "emacs-package-settings")
+;; Emacs IRC client
 
-(require 'monokai-theme)
+(require 'prelude-helm) ;; Interface for narrowing and search
+(require 'prelude-helm-everywhere) ;; Enable Helm everywhere
+;; (require 'prelude-company)
+;; (require 'prelude-key-chord) ;; Binds useful features to key combinations
+;; (require 'prelude-mediawiki)
+;; (require 'prelude-evil)
 
-;; Basic settings
+;;; Programming languages support
+(require 'prelude-c)
+(require 'prelude-clojure)
+;; (require 'prelude-coffee)
+;; (require 'prelude-common-lisp)
+(require 'prelude-css)
+(require 'prelude-emacs-lisp)
+;; (require 'prelude-erlang)
+;; (require 'prelude-elixir)
+;; (require 'prelude-go)
+;; (require 'prelude-haskell)
+(require 'prelude-js)
+;; (require 'prelude-latex)
+(require 'prelude-lisp)
+;; (require 'prelude-ocaml)
+(require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
+(require 'prelude-perl)
+(require 'prelude-python)
+
+(require 'prelude-ruby)
+;; (require 'prelude-scala)
+(require 'prelude-scheme)
+(require 'prelude-shell)
+;; (require 'prelude-scss)
+(require 'prelude-web) ;; Emacs mode for web templates
+(require 'prelude-xml)
+;; (require 'prelude-yaml)
 
 
-(setq inhibit-startup-screen t);; close welcome screen
-(setq column-number-mode t);; enable column mode
-(setq visible-bell t)
-(setq frame-title-format "%b");; set title
-(auto-image-file-mode);; enable image view
-(auto-compression-mode 1);; set compression mode
-(transient-mark-mode t);; unknown
-(tool-bar-mode -1);; remove tool bar
-(fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
 
-(put 'dired-find-alternate-file 'disabled nil)
-(global-unset-key [?\C- ])
-
-(global-hl-line-mode t)
-(setq-default make-backup-files nil)
-;; (require 'color-theme-luolE-darknight)
-;; (color-theme-luolE-darknight)
-;; (require 'jazz-theme)
-
-(load "emacs-redef")
-(load "emacs-keymap")
-(load "emacs-plugin")
-(load "emacs-lisp")
-
-(print "Full .emacs file loaded successfully")
+(require 'emacs-package-settings)
+(require 'emacs-config)
+(require 'emacs-setup)
+;; (require 'emacs-plugin)
+(require 'emacs-lisp)
+;; (require 'emacs-clojure)
+(require 'emacs-keymap)

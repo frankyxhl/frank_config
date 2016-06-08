@@ -29,7 +29,7 @@ ZSH_THEME="bira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,19 +85,22 @@ PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # else
-alias e='emacsclient -c -a ""'
+# alias e='emacsclient -c -a ""'
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
 # fi
 
-
+# Load zsh-syntax-highlighting.
+#source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Setup zsh-autosuggestions
-source /Users/frank/.zsh-autosuggestions/autosuggestions.zsh
+#source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
 
 # Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
+#zle-line-init() {
+#    zle autosuggest-start
+#}
 
-zle -N zle-line-init
+#zle -N zle-line-init
 
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # zsh-autosuggestions is designed to be unobtrusive)
@@ -127,6 +130,10 @@ then
 				export GOPATH=~/mygo				
                 export WORKON_HOME=~/bitbucket
                 source /usr/local/bin/virtualenvwrapper.sh
+                alias goto_sdcard="cd /Volumes/Transcend"
+                export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+                export PATH="/Users/frank/.composer/vendor/bin:$PATH"
+        [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
 
