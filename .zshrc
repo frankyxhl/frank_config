@@ -34,9 +34,9 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export HISTSIZE=100000
+export HISTSIZE=200000
 # # number of lines saved in the history after logout
-export SAVEHIST=100000
+export SAVEHIST=200000
 # # location of history
 export HISTFILE=~/.zhistory
 # # append command to history file once executed
