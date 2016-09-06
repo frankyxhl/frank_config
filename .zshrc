@@ -54,7 +54,7 @@ alias tar_extract='tar xPvf '
 alias tar_package='tar -zcvf '
 # cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
 alias v='/usr/local/bin/vless'
-alias c='rsync -av --progress'
+# alias c='rsync -av --progress'
 alias ut='ubuntu-server-tip'
 alias g='grep'
 # alias gr='grunt'
@@ -80,8 +80,8 @@ cmatrix -s
 PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 # if [ "`uname`"=="Darwin" ];
 # then
-		# alias emacs='open -a /Applications/Emacs.app $1'
-		# alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c'
+# alias emacs='open -a /Applications/Emacs.app $1'
+# alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c'
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # else
@@ -110,31 +110,59 @@ function exists { which $1 &> /dev/null }
 
 if exists percol; then
     function percol_select_history() {
-        local tac
-        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-        CURSOR=$#BUFFER         # move cursor
-        zle -R -c               # refresh
-    }
+    local tac
+    exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+    BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+    CURSOR=$#BUFFER         # move cursor
+    zle -R -c               # refresh
+}
 
-    zle -N percol_select_history
-    bindkey '^R' percol_select_history
+zle -N percol_select_history
+bindkey '^R' percol_select_history
 fi
 
 if [[ `uname` == 'Darwin' ]]
 then
-				export NVM_DIR=~/.nvm
-				source $(brew --prefix nvm)/nvm.sh
-				export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
-				export JAVA_HOME=$(/usr/libexec/java_home)
-				export GOPATH=~/mygo				
-                export WORKON_HOME=~/bitbucket
-                source /usr/local/bin/virtualenvwrapper.sh
-                alias goto_sdcard="cd /Volumes/Transcend"
-                export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-                export PATH="/Users/frank/.composer/vendor/bin:$PATH"
-        [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+    export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export GOPATH=~/mygo				
+    export WORKON_HOME=~/bitbucket
+    source /usr/local/bin/virtualenvwrapper.sh
+    alias goto_sdcard="cd /Volumes/Transcend"
+    export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+    export PATH="/Users/frank/.composer/vendor/bin:$PATH"
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
 
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers
+alias rm_docker_not_running_containers='docker rm $(docker ps -q -f status=exited)'
+
+
+# Use `docker-cleanup --dry-run` to see what would be deleted.
+
+function docker-cleanup {
+  EXITED=$(docker ps -q -f status=exited)
+  DANGLING=$(docker images -q -f "dangling=true")
+
+  if [ "$1" == "--dry-run" ]; then
+    echo "==> Would stop containers:"
+    echo $EXITED
+    echo "==> And images:"
+    echo $DANGLING
+  else
+    if [ -n "$EXITED" ]; then
+        docker rm $EXITED
+    else
+        echo "No containers to remove."
+    fi
+    if [ -n "$DANGLING" ]; then
+        docker rmi $DANGLING
+    else
+        echo "No images to remove."
+    fi
+  fi
+}

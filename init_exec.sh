@@ -4,7 +4,7 @@
 # @author: Frank.Xu
 #sudo apt-get install vim-nox tmux zsh 
 #find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
-sudo apt-get install autojump
+sudo apt-get install -y autojump
 cd && git clone https://github.com/robbyrussell/oh-my-zsh.git
 mv oh-my-zsh .oh-my-zsh
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
