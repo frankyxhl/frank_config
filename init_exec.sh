@@ -15,4 +15,5 @@ ln -s ~/frank_config/.zshrc ~/.zshrc
 ln -s ~/frank_config/.vimrc ~/.vimrc
 ln -s ~/frank_config/.vim ~/.vim
 ln -s ~/frank_config/.emacsclient ~/.emacsclient
+ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/themes/bira-no-ruby.zsh-theme
 #cp -r ~/.fonts ~/
