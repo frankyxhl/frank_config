@@ -5,9 +5,15 @@
 #sudo apt-get install vim-nox tmux zsh 
 #find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 sudo apt-get install -y autojump
+
 cd && git clone https://github.com/robbyrussell/oh-my-zsh.git
 mv oh-my-zsh .oh-my-zsh
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+
+# https://github.com/mooz/percol
+sudo pip install percol
+
 ln -s ~/frank_config/.emacs ~/.emacs
 ln -s ~/frank_config/.emacs.d ~/.emacs.d
 ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
@@ -15,5 +21,7 @@ ln -s ~/frank_config/.zshrc ~/.zshrc
 ln -s ~/frank_config/.vimrc ~/.vimrc
 ln -s ~/frank_config/.vim ~/.vim
 ln -s ~/frank_config/.emacsclient ~/.emacsclient
-ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/themes/bira-no-ruby.zsh-theme
+
+mkdir -p ~/.oh-my-zsh/custom/themes/
+ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
 #cp -r ~/.fonts ~/
