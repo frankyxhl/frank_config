@@ -136,8 +136,9 @@ then
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
+# start zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers
 alias rm_docker_not_running_containers='docker rm $(docker ps -q -f status=exited)'
 
