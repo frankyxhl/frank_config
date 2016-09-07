@@ -25,3 +25,7 @@ ln -s ~/frank_config/.emacsclient ~/.emacsclient
 mkdir -p ~/.oh-my-zsh/custom/themes/
 ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
 #cp -r ~/.fonts ~/
+ 
+# Tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source ~/.tmux.conf
