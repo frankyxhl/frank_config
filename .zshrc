@@ -43,6 +43,7 @@ alias rsync_remote_file="rsync $1 . -avz --progress"
 #pip install youtube-dl
 alias ytb="youtube-dl $1 -f 37/22/35/34"
 alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+alias mytree="tree -FAC | less -r"
 
 mvbk() {
     mv $1 $1.bak
