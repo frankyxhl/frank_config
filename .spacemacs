@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     nginx
      javascript
      python
      html
@@ -132,8 +133,8 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '((recents . 15)
+                                (projects . 10))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -359,54 +360,57 @@ you should place your code here."
   ;; (global-set-key (kbd "C-x p") 'fiplr-find-file)
 
 
-  ;;(setq fiplr-ignored-globs '((directories (".git" ".svn"))
+  ;;(setq fiplr-ignored-globs '((directories (".git" ".sin"))
   ;;                            (files ("*.jpg" "*.png" "*.zip" "*~" "*.pyc"))))
 
   ;; Using helm find-file
   (global-set-key (kbd "C-x p") 'helm-projectile-find-file)
-
-
-
   ;; install web-mode
-
   (global-linum-mode)
-
   ;; install ace-jump-mode
   ;; https://github.com/winterTTr/ace-jump-mode
   ;; (require 'ace-jump-mode)
-  (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+  ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+  (define-key global-map (kbd "M-j") 'ace-jump-mode)
 
-
+  (defun my-js2-mode-hook ()
+    (define-key js2-mode-map "M-j" nil))
+  (add-hook 'js2-mode-hook 'my-js2-mode-hook)
 
   (global-set-key (kbd "C-=") 'er/expand-region)
   ;; ctags
   ;; brew install global --with-ctags --with-pygments
   ;; https://github.com/syohex/emacs-helm-gtags/
-
   (global-set-key (kbd "C-x t") 'helm-gtags-find-tag)
+  (global-set-key (kbd "C-t") 'helm-gtags-find-tag)
   (global-set-key (kbd "C-x C-t") 'helm-gtags-find-pattern)
+
   ;;(custom-set-variables
   ;;  '(helm-gtags-prefix-key "\C-t")
   ;; '(helm-gtags-suggested-key-mapping t))
 
+  (defun copy-line (&optional arg)
+    "Copy current line to next new line"
+    (interactive "P")
+    (let ((beg (line-beginning-position)) 
+          (end (line-end-position arg)))
+      (copy-region-as-kill beg end))
+    (message "Line has been copied"))
 
-  (defun toggle-comment-on-line ()
-    "comment or uncomment current line"
-    (interactive)
-    (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+  ;; Original idea from
+  ;; http://www.opensubscriber.com/message/emacs-devel@gnu.org/10971693.html
+  (defun comment-dwim-line (&optional arg)
+    "Replacement for the comment-dwim command.
+        If no region is selected and current line is not blank and we are not at the end of the line,
+        then comment current line.
+        Replaces default behaviour of comment-dwim, when it inserts comment at the end of the line."
+    (interactive "*P")
+    (comment-normalize-vars)
+    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
+        (comment-or-uncomment-region (line-beginning-position) (line-end-position))
+      (comment-dwim arg)))
 
-  (global-set-key (kbd "C-;") 'toggle-comment-on-line)
-
-  (defun duplicate-line()
-    (interactive)
-    (move-beginning-of-line 1)
-    (kill-line)
-    (yank)
-    ;; (open-line 1)
-    ;; (next-line 1)
-    ;; (yank)
-    )
-  (global-set-key (kbd "C-,") 'duplicate-line)
+  (global-set-key (kbd "M-,") 'copy-line)
 
   (require 'inline-string-rectangle)
   (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
@@ -433,7 +437,7 @@ you should place your code here."
 
   (defun toggle-holy-mode ()
     (interactive)
-    (if (bound-and-true-p holy-mode) 
+    (if (bound-and-true-p holy-mode)
         (holy-mode -1)
       (holy-mode t)))
   (global-set-key (kbd "C-z") 'toggle-holy-mode)
@@ -444,6 +448,13 @@ you should place your code here."
         `((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
+
+
+  (set-face-background hl-line-face "gray13")
+
+  (require 'bind-key)
+  (bind-key* "C-;" 'comment-dwim-line)
+  (bind-key* "C-," 'copy-line)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -453,9 +464,12 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (paren-face parinfer highlight-symbol rainbow-mode xpm mark-multiple elpy rainbow-identifiers web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode yapfify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements live-py-mode less-css-mode hy-mode helm-pydoc helm-css-scss haml-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode diff-hl cython-mode company-web web-completion-data company-anaconda auto-dictionary anaconda-mode pythonic yaml-mode web-mode helm-gtags fiplr grizzl ace-jump-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme))))
+    (nginx-mode paren-face parinfer highlight-symbol rainbow-mode xpm mark-multiple elpy rainbow-identifiers web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode yapfify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements live-py-mode less-css-mode hy-mode helm-pydoc helm-css-scss haml-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode diff-hl cython-mode company-web web-completion-data company-anaconda auto-dictionary anaconda-mode pythonic yaml-mode web-mode helm-gtags fiplr grizzl ace-jump-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
