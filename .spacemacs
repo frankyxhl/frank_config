@@ -24,16 +24,18 @@ values."
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
-   ;; If non-nil layers with lazy install support are lazy installed.
+   ;; If non-nil layers with lazy indstall support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     semantic
      nginx
      javascript
      python
+     php
      html
      yaml
      markdown
@@ -44,11 +46,13 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
-     ;; better-defaults
+     gtags
+     better-defaults
      emacs-lisp
      git
-     ;; markdown
-     ;; org
+     github
+     markdown
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -142,9 +146,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(tango-2
+   dotspacemacs-themes '(spacemacs-dark
                          granger
-                         spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -367,22 +370,22 @@ you should place your code here."
   (global-set-key (kbd "C-x p") 'helm-projectile-find-file)
   ;; install web-mode
   (global-linum-mode)
-  ;; install ace-jump-mode
-  ;; https://github.com/winterTTr/ace-jump-mode
-  ;; (require 'ace-jump-mode)
-  ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-  (define-key global-map (kbd "M-j") 'ace-jump-mode)
 
   (defun my-js2-mode-hook ()
     (define-key js2-mode-map "M-j" nil))
   (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+
+  ;; https://github.com/skeeto/skewer-mode
+  (add-hook 'js2-mode-hook 'skewer-mode)
+  (add-hook 'css-mode-hook 'skewer-css-mode)
+  (add-hook 'html-mode-hook 'skewer-html-mode)
 
   (global-set-key (kbd "C-=") 'er/expand-region)
   ;; ctags
   ;; brew install global --with-ctags --with-pygments
   ;; https://github.com/syohex/emacs-helm-gtags/
   (global-set-key (kbd "C-x t") 'helm-gtags-find-tag)
-  (global-set-key (kbd "C-t") 'helm-gtags-find-tag)
+  (global-set-key (kbd "C-t") 'helm-projectile-ag)
   (global-set-key (kbd "C-x C-t") 'helm-gtags-find-pattern)
 
   ;;(custom-set-variables
@@ -408,7 +411,8 @@ you should place your code here."
     (comment-normalize-vars)
     (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
         (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-      (comment-dwim arg)))
+      (comment-dwim arg))
+    (next-line))
 
   (global-set-key (kbd "M-,") 'copy-line)
 
@@ -452,9 +456,22 @@ you should place your code here."
 
   (set-face-background hl-line-face "gray13")
 
+
+  ;; install ace-jump-mode
+  ;; https://github.com/winterTTr/ace-jump-mode
+  ;; (require 'ace-jump-mode)
+  ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+  (setq make-backup-files nil)
   (require 'bind-key)
   (bind-key* "C-;" 'comment-dwim-line)
   (bind-key* "C-," 'copy-line)
+  (bind-key* "M-j" 'ace-jump-mode)
+  (bind-key* (kbd "M-g g") 'ace-jump-line-mode)
+
+  ;; yasnippets
+  (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
+  (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -466,10 +483,11 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (nginx-mode paren-face parinfer highlight-symbol rainbow-mode xpm mark-multiple elpy rainbow-identifiers web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode yapfify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements live-py-mode less-css-mode hy-mode helm-pydoc helm-css-scss haml-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode diff-hl cython-mode company-web web-completion-data company-anaconda auto-dictionary anaconda-mode pythonic yaml-mode web-mode helm-gtags fiplr grizzl ace-jump-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme))))
+    (org-projectile org-present org-pomodoro alert log4e gntp org-download mwim htmlize gnuplot phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode ggtags stickyfunc-enhance srefactor magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht nginx-mode paren-face parinfer highlight-symbol rainbow-mode xpm mark-multiple elpy rainbow-identifiers web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode yapfify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements live-py-mode less-css-mode hy-mode helm-pydoc helm-css-scss haml-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode diff-hl cython-mode company-web web-completion-data company-anaconda auto-dictionary anaconda-mode pythonic yaml-mode web-mode helm-gtags fiplr grizzl ace-jump-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
