@@ -121,7 +121,7 @@ values."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'hybrid
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -400,6 +400,41 @@ you should place your code here."
       (copy-region-as-kill beg end))
     (message "Line has been copied"))
 
+  (defun duplicate-line (arg)
+    "Duplicate current line, leaving point in lower line."
+    (interactive "*p")
+
+    ;; save the point for undo
+    (setq buffer-undo-list (cons (point) buffer-undo-list))
+
+    ;; local variables for start and end of line
+    (let ((bol (save-excursion (beginning-of-line) (point)))
+          eol)
+      (save-excursion
+
+        ;; don't use forward-line for this, because you would have
+        ;; to check whether you are at the end of the buffer
+        (end-of-line)
+        (setq eol (point))
+
+        ;; store the line and disable the recording of undo information
+        (let ((line (buffer-substring bol eol))
+              (buffer-undo-list t)
+              (count arg))
+          ;; insert the line arg times
+          (while (> count 0)
+            (newline)         ;; because there is no newline in 'line'
+            (insert line)
+            (setq count (1- count)))
+          )
+
+        ;; create the undo information
+        (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))
+      ) ; end-of-let
+
+    ;; put the point in the lowest line and return
+    (next-line arg))
+
   ;; Original idea from
   ;; http://www.opensubscriber.com/message/emacs-devel@gnu.org/10971693.html
   (defun comment-dwim-line (&optional arg)
@@ -465,7 +500,9 @@ you should place your code here."
   (setq make-backup-files nil)
   (require 'bind-key)
   (bind-key* "C-;" 'comment-dwim-line)
-  (bind-key* "C-," 'copy-line)
+  (bind-key* "C-," 'duplicate-line)
+  (bind-key* "C-M-," 'copy-line)
+    
   (bind-key* "M-j" 'ace-jump-mode)
   (bind-key* (kbd "M-g g") 'ace-jump-line-mode)
 
