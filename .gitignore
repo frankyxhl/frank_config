@@ -4,3 +4,4 @@
 .emacs.d/tramp
 *.elc
 .emacs.d/elpa/
+.vim/bundle

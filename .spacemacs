@@ -502,7 +502,8 @@ you should place your code here."
   (bind-key* "C-;" 'comment-dwim-line)
   (bind-key* "C-," 'duplicate-line)
   (bind-key* "C-M-," 'copy-line)
-    
+  (bind-key* (kbd "C-S-c") 'mc/edit-lines)
+
   (bind-key* "M-j" 'ace-jump-mode)
   (bind-key* (kbd "M-g g") 'ace-jump-line-mode)
 
