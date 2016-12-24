@@ -60,7 +60,7 @@ unsetopt correct_all
 
 cmatrix -s
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 # if [ "`uname`"=="Darwin" ];
 # then
 # alias emacs='open -a /Applications/Emacs.app $1'
@@ -107,14 +107,14 @@ fi
 if [[ `uname` == 'Darwin' ]]
 then
     export NVM_DIR=~/.nvm
-    source $(brew --prefix nvm)/nvm.sh
-    export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
-    export JAVA_HOME=$(/usr/libexec/java_home)
-    export GOPATH=~/mygo				
+    # source $(brew --prefix nvm)/nvm.sh
+    # export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
+    # export JAVA_HOME=$(/usr/libexec/java_home)
+    #export GOPATH=~/mygo				
     export WORKON_HOME=~/bitbucket
-    source /usr/local/bin/virtualenvwrapper.sh
-    alias goto_sdcard="cd /Volumes/Transcend"
-    export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+    # source /usr/local/bin/virtualenvwrapper.sh
+    # alias goto_sdcard="cd /Volumes/Transcend"
+    # export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
     export PATH="/Users/frank/.composer/vendor/bin:$PATH"
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
