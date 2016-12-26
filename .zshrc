@@ -112,6 +112,8 @@ then
     # export JAVA_HOME=$(/usr/libexec/java_home)
     #export GOPATH=~/mygo				
     export WORKON_HOME=~/bitbucket
+    export NVM_DIR="$HOME/.nvm"
+    . "/usr/local/opt/nvm/nvm.sh"
     # source /usr/local/bin/virtualenvwrapper.sh
     # alias goto_sdcard="cd /Volumes/Transcend"
     # export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"

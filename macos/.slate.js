@@ -27,10 +27,10 @@ slate.bind("1:cmd", function(win) {
   return win.doOperation(fullscreen);
 });
 
-slate.bind("2:cmd", function(win) {
-  return win.doOperation(pushTop);
+slate.bind("3:cmd", function(win) {
+  return win.doOperation(pushRight);
 });
 
-slate.bind("3:cmd", function(win) {
+slate.bind("4:cmd", function(win) {
   return win.doOperation(pushLeft);
 });
