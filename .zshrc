@@ -25,6 +25,15 @@ setopt INC_APPEND_HISTORY
 
 export NODE_PATH=/usr/local/lib/node_modules
 
+alias serve="python3 -m http.server"
+
+# Find the files that has been added/modified most recently
+alias lt='ls -alrt'
+
+# Grabs the disk usage in the current directory
+alias usage='du -ch 2> /dev/null |tail -1'
+
+alias wget='wget -c'
 alias sub='ls -d */'
 alias l.='ls -d .*'
 alias h='history'
@@ -36,7 +45,6 @@ alias tar_package='tar -zcvf '
 # cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
 alias v='/usr/local/bin/vless'
 # alias c='rsync -av --progress'
-alias ut='ubuntu-server-tip'
 alias g='grep'
 # alias gr='grunt'
 alias rsync_remote_file="rsync $1 . -avz --progress"
@@ -55,10 +63,14 @@ cpbk() {
 alias mvbk=mvbk
 alias cpbk=cpbk
 
+function find_lines_contains_string_in_current_folder_recursively() { 
+    find . -name "*.*" -type f | xargs grep "$1" --line-number 
+}
+alias fl=find_lines_contains_string_in_current_folder_recursively
+
 #turn of correct
 unsetopt correct_all
 
-cmatrix -s
 
 # PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 # if [ "`uname`"=="Darwin" ];
@@ -153,3 +165,6 @@ function docker-cleanup {
     fi
   fi
 }
+
+
+cmatrix -s
