@@ -15,8 +15,8 @@ layout monitor1 'WebStorm':REPEAT ${lefthalf3of5}
 layout monitor1 'Sublime Text':REPEAT ${lefthalf3of5}
 layout monitor1 'PyCharm':REPEAT ${lefthalf3of5}
 
-layout monitor2 'iTerm':REPEAT ${righthalf}
-layout monitor2 'Emacs':REPEAT ${lefthalf}
+layout monitor2 'iTerm':REPEAT ${righthalf2of5}
+layout monitor2 'Google Chrome':REPEAT ${lefthalf3of5}
 
 layout monitor3 'Google Chrome':REPEAT ${lefthalf}
 layout monitor3 '文本编辑':REPEAT ${righthalf}
