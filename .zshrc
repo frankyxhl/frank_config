@@ -53,7 +53,8 @@ alias ytb="youtube-dl $1 -f 37/22/35/34"
 alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 alias mytree="tree -FAC | less -r"
 alias capslock_to_ctrl='setxkbmap -layout us -option ctrl:nocaps'
-
+# cd to current project's root path
+alias cdg="cd ./$(git rev-parse --show-cdup)"
 mvbk() {
     mv $1 $1.bak
 }
