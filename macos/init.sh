@@ -8,6 +8,8 @@ brew linkapps emacs-plus
 brew install the_silver_searcher
 
 brew install autojump  python
+brew tap caskroom/cask
+brew cask install caffeine google-chrome
 # Use Python2's pip 
 pip install percol
 
