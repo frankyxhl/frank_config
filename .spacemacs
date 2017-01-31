@@ -493,6 +493,18 @@ you should place your code here."
 
   (set-face-background hl-line-face "gray13")
 
+  (set-language-environment "UTF-8")
+  (set-default-coding-systems 'utf-8)
+  (setq-default pathname-coding-system 'utf-8)
+  (prefer-coding-system 'utf-8)
+  (setq default-process-coding-system '(utf-8 . utf-8))
+  (setq locale-coding-system 'utf-8)
+  (setq file-name-coding-system 'utf-8)
+  (setq default-buffer-file-coding-system 'utf-8)
+
+  ;; (setenv "PYTHONIOENCODING" "UTF-8")
+  (add-hook 'hy-mode-hook 'paredit-mode)
+  (add-hook 'hy-mode-hook 'parinfer-mode)
 
   ;; install ace-jump-mode
   ;; https://github.com/winterTTr/ace-jump-mode
@@ -514,6 +526,16 @@ you should place your code here."
   ;; yasnippets
   (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
   (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
+
+  ;; fast-paren-mode
+  (load-file "~/.emacs.d/private/fast-paren-mode.el")
+  (require 'fast-paren-mode)
+
+  (add-hook 'lisp-mode-hook  'turn-on-fast-paren-mode)
+  (add-hook 'emacs-lisp-mode-hook 'turn-on-fast-paren-mode)
+  (add-hook 'ielm-mode-hook  'turn-on-fast-paren-mode)
+  (add-hook 'lisp-interaction-mode-hook 'turn-on-fast-paren-mode)
+  (add-hook 'slime-repl-mode-hook       'turn-on-fast-paren-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
