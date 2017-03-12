@@ -133,19 +133,19 @@ fi
 
 if [[ `uname` == 'Darwin' ]]
 then
-    export NVM_DIR=~/.nvm
+    # export NVM_DIR=~/.nvm
     # source $(brew --prefix nvm)/nvm.sh
     # export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
     # export JAVA_HOME=$(/usr/libexec/java_home)
     #export GOPATH=~/mygo				
-    export WORKON_HOME=~/bitbucket
-    export NVM_DIR="$HOME/.nvm"
-    . "/usr/local/opt/nvm/nvm.sh"
+    #export WORKON_HOME=~/bitbucket
+    #export NVM_DIR="$HOME/.nvm"
+    #. "/usr/local/opt/nvm/nvm.sh"
     # source /usr/local/bin/virtualenvwrapper.sh
     # alias goto_sdcard="cd /Volumes/Transcend"
     # export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-    export PATH="/Users/frank/.composer/vendor/bin:$PATH"
-    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+    #export PATH="/Users/frank/.composer/vendor/bin:$PATH"
+    #[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
 # start zsh-autosuggestions

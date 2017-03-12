@@ -1,3 +1,5 @@
+brew install zsh tmux vim cmatrix autojump python3 ispell
+
 # Emacs
 brew tap d12frosted/emacs-plus
 brew install emacs-plus
@@ -7,9 +9,8 @@ brew linkapps emacs-plus
 # https://github.com/ggreer/the_silver_searcher
 brew install the_silver_searcher
 
-brew install autojump  python
 brew tap caskroom/cask
-brew cask install caffeine google-chrome
+brew cask install caffeine google-chrome iterm2 slate alfred sourcetree dropbox slack istat-menus
 # Use Python2's pip 
 pip install percol
 
@@ -20,8 +21,9 @@ if [ ! -f ~/.slate ]; then
     ln -s ~/frank_config/macos/.slate ~/.slate
 fi
 
-if [ ! -f ~/.slate ]; then
+if [ ! -f ~/.slate.js ]; then
     ln -s ~/frank_config/macos/.slate.js ~/.slate.js
 fi
 
 
+# chsh -s $(which zsh)
