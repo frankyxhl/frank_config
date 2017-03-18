@@ -25,25 +25,23 @@ layout monitor4 'Google Chrome' ${righthalf} | push left
 layout monitor5 'Google Chrome' push left bar-resize:screenSizeX/2 | push right bar-resize:screenSizeX/2
 
 bind b:cmd focus 'Google Chrome'
-bind b:cmd,shift focus 'Firefox'
 bind k:cmd,shift focus 'Keynote'
-bind o:cmd focus 'Safari'
+bind p:cmd focus 'PhpStorm'
 bind e:cmd,shift focus 'Emacs'
-bind e:cmd focus 'Sublime Text'
 bind o:cmd,shift focus 'PyCharm'
-bind p:cmd,shift focus 'PG Commander'
-bbind a:cmd,shift focus 'Atom'
 bind h:cmd,shift focus 'HipChat'
 bind s:cmd,shift focus 'Slack'
 bind i:cmd focus 'iTerm2'
-bind i:cmd,shift focus 'IntelliJ IDEA'
 bind h:cmd,shift focus 'HipChat'
 
 bind tab:cmd switch
 bind 0:cmd ${righthalf}
-bind 9:cmd ${lefthalf}
+bind 1:cmd ${full}
 bind 2:cmd ${leftVerticle}
-bind 8:cmd layout monitor1
-bind 7:cmd layout monitor2
-bind 6:cmd layout monitor3
 bind 5:cmd layout monitor4
+bind 6:cmd layout monitor3
+bind 7:cmd layout monitor2
+bind 8:cmd layout monitor1
+bind 9:cmd ${lefthalf}
+
+

@@ -1,4 +1,4 @@
-brew install zsh tmux vim cmatrix autojump python3 ispell
+brew install zsh tmux vim cmatrix autojump python3 ispell mosh
 
 # Emacs
 brew tap d12frosted/emacs-plus
@@ -9,8 +9,20 @@ brew linkapps emacs-plus
 # https://github.com/ggreer/the_silver_searcher
 brew install the_silver_searcher
 
+# Gtags
+# https://www.gnu.org/software/global/
+brew install global --with-pygments --with-ctags
+
 brew tap caskroom/cask
-brew cask install caffeine google-chrome iterm2 slate alfred sourcetree dropbox slack istat-menus
+# font
+brew tap caskroom/fonts
+
+# Common Tools
+brew cask install caffeine google-chrome iterm2 slate alfred dropbox slack istat-menus
+# Programming Tools
+brew cask install meld sourcetree font-source-code-pro 
+
+
 # Use Python2's pip 
 pip install percol
 

@@ -10,7 +10,7 @@ ZSH_THEME="bira-no-ruby"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions docker-compose docker history history-substring-search mosh)
+plugins=(git zsh-autosuggestions docker-compose docker history history-substring-search mosh autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,6 +83,11 @@ function find_files() {
 alias ff=find_files
 
 
+# Git
+alias git_diff="git diff HEAD^ HEAD"
+
+
+
 #turn of correct
 unsetopt correct_all
 
@@ -133,6 +138,8 @@ fi
 
 if [[ `uname` == 'Darwin' ]]
 then
+    alias meld="open -W -a Meld --args "
+    alias vim="/usr/local/Cellar/vim/8.0.0442/bin/vim"
     # export NVM_DIR=~/.nvm
     # source $(brew --prefix nvm)/nvm.sh
     # export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
