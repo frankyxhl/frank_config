@@ -84,7 +84,7 @@ alias ff=find_files
 
 
 # Git
-alias git_diff="git diff HEAD^ HEAD"
+alias git_diff_with_last_version="git icdiff HEAD^ HEAD"
 
 
 
