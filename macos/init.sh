@@ -18,16 +18,16 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 
 # Common Tools
-brew cask install caffeine google-chrome iterm2 slate alfred dropbox slack istat-menus ripgrep
+brew cask install caffeine google-chrome iterm2 slate alfred dropbox slack istat-menus mattr-slate
 # Programming Tools
-brew cask install meld sourcetree font-source-code-pro icdiff
+brew cask install meld sourcetree font-source-code-pro icdiff ripgrep 
 
 
 # Use Python2's pip 
 pip install percol
 
 # Python3
-pip3 install httpie 
+pip3 install httpie ipython
 
 # Slate
 # https://github.com/jigish/slate
