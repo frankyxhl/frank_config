@@ -34,6 +34,7 @@ bind h:cmd,shift focus 'HipChat'
 bind s:cmd,shift focus 'Slack'
 bind i:cmd focus 'iTerm2'
 bind h:cmd,shift focus 'HipChat'
+bind p:cmd,shift focus 'WebStorm'
 
 bind tab:cmd switch
 bind 0:cmd ${righthalf}
