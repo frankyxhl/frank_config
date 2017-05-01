@@ -101,7 +101,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # else
 # alias e='emacsclient -c -a ""'
-# alias e='emacsclient -t'
+alias e='emacsclient -t'
 # alias ec='emacsclient -c'
 # fi
 
@@ -139,7 +139,7 @@ fi
 if [[ `uname` == 'Darwin' ]]
 then
     alias meld="open -W -a Meld --args "
-    alias vim="/usr/local/Cellar/vim/8.0.0442/bin/vim"
+    alias vim="/usr/local/Cellar/vim/8.0.0473/bin/vim"
     # export NVM_DIR=~/.nvm
     # source $(brew --prefix nvm)/nvm.sh
     # export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
