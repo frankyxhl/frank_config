@@ -18,7 +18,7 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 
 # Common Tools
-brew cask install caffeine google-chrome iterm2 slate alfred dropbox slack istat-menus mattr-slate
+brew cask install caffeine google-chrome iterm2 slate alfred dropbox istat-menus mattr-slate
 # Programming Tools
 brew cask install meld sourcetree font-source-code-pro icdiff ripgrep 
 
