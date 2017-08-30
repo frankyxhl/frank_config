@@ -30,6 +30,9 @@ alias serve="python3 -m http.server"
 # Find the files that has been added/modified most recently
 alias lt='ls -alrt'
 
+# https://github.com/mitchellh/vagrant/issues/4412
+alias vagrant_box_update_and_remove_old='curl -LSs http://bit.ly/box-update-all | bash'
+
 # Grabs the disk usage in the current directory
 alias usage='du -ch 2> /dev/null |tail -1'
 
@@ -101,7 +104,8 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # else
 # alias e='emacsclient -c -a ""'
-alias e='emacsclient -t'
+# alias e='emacsclient -t'
+alias e='emacsclient -c'
 # alias ec='emacsclient -c'
 # fi
 
