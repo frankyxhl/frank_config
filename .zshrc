@@ -27,6 +27,9 @@ export NODE_PATH=/usr/local/lib/node_modules
 
 alias serve="python3 -m http.server"
 
+# goto current git project root path
+alias git-root='cd $(git rev-parse --show-cdup)'
+
 # Find the files that has been added/modified most recently
 alias lt='ls -alrt'
 
