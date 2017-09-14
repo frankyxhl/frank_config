@@ -555,6 +555,10 @@ you should place your code here."
   ;; (global-set-key (kbd "C-i") 'god-mode-all)
   ;; (bind-key* "C-i" 'god-mode-all)
 
+  ;; Turn off Javascript semi warning
+  (setq js2-strict-missing-semi-warning nil)
+
+  ;; Magit
   ;; npm install -g tern js-beautify eslint jslint
   (add-hook 'js-mode-hook (lambda () (tern-mode t)))
   (eval-after-load 'tern
