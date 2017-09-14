@@ -559,6 +559,8 @@ you should place your code here."
   (setq js2-strict-missing-semi-warning nil)
 
   ;; Magit
+  (setq magit-repository-directories `("~/Projects/"))
+
   ;; npm install -g tern js-beautify eslint jslint
   (add-hook 'js-mode-hook (lambda () (tern-mode t)))
   (eval-after-load 'tern
