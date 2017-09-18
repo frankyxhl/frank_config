@@ -5,6 +5,14 @@ alias rm_docker_not_running_containers='docker rm $(docker ps -q -f status=exite
 
 
 alias rm_docker_untagged_images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+
+
+# Delete all containers
+# docker rm $(docker ps -a -q)
+# Delete all images
+# docker rmi $(docker images -q)
+alias docker_initialize='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+
 # Use `docker-cleanup --dry-run` to see what would be deleted.
 
 function docker-cleanup {
@@ -29,4 +37,7 @@ function docker-cleanup {
         fi
     fi
 }
+
+
+
 
