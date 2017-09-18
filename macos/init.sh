@@ -9,6 +9,9 @@ brew linkapps emacs-plus
 # https://github.com/ggreer/the_silver_searcher
 brew install the_silver_searcher
 
+# https://github.com/peco/peco
+brew install peco
+
 # Gtags
 # https://www.gnu.org/software/global/
 brew install global --with-pygments --with-ctags
@@ -20,10 +23,10 @@ brew tap caskroom/fonts
 # Common Tools
 brew cask install caffeine google-chrome iterm2 slate alfred dropbox istat-menus mattr-slate
 # Programming Tools
-brew cask install meld sourcetree font-source-code-pro icdiff ripgrep 
+brew cask install meld sourcetree font-source-code-pro icdiff ripgrep
 
 
-# Use Python2's pip 
+# Use Python2's pip
 pip install percol
 
 # Python3

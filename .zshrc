@@ -23,183 +23,31 @@ export HISTFILE=~/.zhistory
 # # append command to history file once executed
 setopt INC_APPEND_HISTORY
 
-export NODE_PATH=/usr/local/lib/node_modules
+# export NODE_PATH=/usr/local/lib/node_modules
 
-alias serve="python3 -m http.server"
-
-# goto current git project root path
-alias git-root='cd $(git rev-parse --show-cdup)'
-
-# Find the files that has been added/modified most recently
-alias lt='ls -alrt'
-
-# https://github.com/mitchellh/vagrant/issues/4412
-alias vagrant_box_update_and_remove_old='curl -LSs http://bit.ly/box-update-all | bash'
-
-# Grabs the disk usage in the current directory
-alias usage='du -ch 2> /dev/null |tail -1'
-
-alias wget='wget -c'
-alias sub='ls -d */'
-alias l.='ls -d .*'
-alias h='history'
-alias tar_delete='tar --delete -f '
-alias tar_list='tar tf '
-alias tar_update='tar uPvf '
-alias tar_extract='tar xPvf '
-alias tar_package='tar -zcvf '
-# cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
-alias v='/usr/local/bin/vless'
-# alias c='rsync -av --progress'
-alias g='grep'
-# alias gr='grunt'
-alias rsync_remote_file="rsync $1 . -avz --progress"
-#pip install youtube-dl
-alias ytb="youtube-dl $1 -f 37/22/35/34"
-alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
-alias mytree="tree -FAC | less -r"
-alias capslock_to_ctrl='setxkbmap -layout us -option ctrl:nocaps'
-mvbk() {
-    mv $1 $1.bak
-}
-cpbk() {
-    cp $1 $1.bak
-}
-alias mvbk=mvbk
-alias cpbk=cpbk
-
-alias wget-website='wget \
-    --recursive \
-    --no-clobber \
-    --page-requisites \
-    --html-extension \
-    --convert-links \
-    --restrict-file-names=windows \
-    --domains website.org \
-    --no-parent \ '
-
-function find_lines_contains_string_in_current_folder_recursively() { 
-    find . -name "*" -type f | xargs grep "$1" --line-number 
-}
-alias fl=find_lines_contains_string_in_current_folder_recursively
-
-function find_files() { 
-    find . -name "*$1*" -print
-}
-alias ff=find_files
-
-
-# Git
-alias git_diff_with_last_version="git icdiff HEAD^ HEAD"
-
-# Below is from:
-# https://stackoverflow.com/questions/13541615/how-to-remove-files-that-are-listed-in-the-gitignore-but-still-on-the-repositor#answer-36573710
-# Perform a dry run and see what will be removed
-alias git_test_exclude_files_from_git_ignore="git clean -xdn"
-# Execute it
-alias git_exclude_files_from_git_ignore="git clean -xdf"
-
+[ -f .zshrc.d/common.sh ] && source .zshrc.d/common.sh
+[ -f .zshrc.d/tar.sh ] && source .zshrc.d/tar.sh
+[ -f .zshrc.d/search.sh ] && source .zshrc.d/search.sh
+[ -f .zshrc.d/git.sh ] && source .zshrc.d/git.sh
+[ -f .zshrc.d/docker.sh ] && source .zshrc.d/docker.sh
+[ -f .zshrc.d/percol.sh ] && source .zshrc.d/percol.sh
 
 #turn of correct
 unsetopt correct_all
-
-
-# PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
-# if [ "`uname`"=="Darwin" ];
-# then
-# alias emacs='open -a /Applications/Emacs.app $1'
-# alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c'
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-# else
-# alias e='emacsclient -c -a ""'
-# alias e='emacsclient -t'
-alias e='emacsclient -c'
-# alias ec='emacsclient -c'
-# fi
-
-# Load zsh-syntax-highlighting.
-#source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Setup zsh-autosuggestions
-#source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-#zle-line-init() {
-#    zle autosuggest-start
-#}
-
-#zle -N zle-line-init
+# export LC_CTYPE=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # zsh-autosuggestions is designed to be unobtrusive)
 bindkey '^T' autosuggest-toggle
 
-function exists { which $1 &> /dev/null }
-
-if exists percol; then
-    function percol_select_history() {
-    local tac
-    exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-    BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-    CURSOR=$#BUFFER         # move cursor
-    zle -R -c               # refresh
-}
-
-zle -N percol_select_history
-bindkey '^R' percol_select_history
-fi
-
 if [[ `uname` == 'Darwin' ]]
 then
     alias meld="open -W -a Meld --args "
     alias vim="/usr/local/Cellar/vim/8.0.0473/bin/vim"
-    # export NVM_DIR=~/.nvm
-    # source $(brew --prefix nvm)/nvm.sh
-    # export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:~/platform-tools:~/Development/adt-bundle-mac-x86_64-20131030/sdk/tools
-    # export JAVA_HOME=$(/usr/libexec/java_home)
-    #export GOPATH=~/mygo				
-    #export WORKON_HOME=~/bitbucket
-    #export NVM_DIR="$HOME/.nvm"
-    #. "/usr/local/opt/nvm/nvm.sh"
-    # source /usr/local/bin/virtualenvwrapper.sh
-    # alias goto_sdcard="cd /Volumes/Transcend"
-    # export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-    #export PATH="/Users/frank/.composer/vendor/bin:$PATH"
-    #[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
 # start zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers
-alias rm_docker_not_running_containers='docker rm $(docker ps -q -f status=exited)'
-
-
-alias rm_docker_untagged_images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
-# Use `docker-cleanup --dry-run` to see what would be deleted.
-
-function docker-cleanup {
-  EXITED=$(docker ps -q -f status=exited)
-  DANGLING=$(docker images -q -f "dangling=true")
-
-  if [ "$1" == "--dry-run" ]; then
-    echo "==> Would stop containers:"
-    echo $EXITED
-    echo "==> And images:"
-    echo $DANGLING
-  else
-    if [ -n "$EXITED" ]; then
-        docker rm $EXITED
-    else
-        echo "No containers to remove."
-    fi
-    if [ -n "$DANGLING" ]; then
-        docker rmi $DANGLING
-    else
-        echo "No images to remove."
-    fi
-  fi
-}
-
 
 cmatrix -s

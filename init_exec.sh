@@ -18,6 +18,7 @@ ln -s ~/frank_config/.emacs ~/.emacs
 ln -s ~/frank_config/.emacs.d ~/.emacs.d
 ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
 ln -s ~/frank_config/.zshrc ~/.zshrc
+ln -s ~/frank_config/.zshrc.d ~/.zshrc.d
 ln -s ~/frank_config/.vimrc ~/.vimrc
 ln -s ~/frank_config/.vim ~/.vim
 ln -s ~/frank_config/.emacsclient ~/.emacsclient
