@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @date: 2012-03-02
 # @author: Frank.Xu
-#sudo apt-get install vim-nox tmux zsh 
+sudo apt-get install -y vim tmux zsh 
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 # sudo apt-get install -y autojump python2.7 python-pip
 
@@ -13,6 +13,7 @@ git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggesti
 
 # https://github.com/mooz/percol
 # sudo pip2 install percol
+
 
 ln -s ~/frank_config/.emacs ~/.emacs
 ln -s ~/frank_config/.emacs.d ~/.emacs.d
