@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @date: 2017-09-16
+# @date: 2017-09-20
 # @author: Frank.Xu
+# @version_info: 0.1.0
+# @description: Initial install for Raspberry Pi
 import os, sys
 
 def is_python3():
