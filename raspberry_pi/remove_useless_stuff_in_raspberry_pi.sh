@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/bash
 # -*- coding: utf-8 -*-
 # @date: 2012-09-20
 # @author: Frank.Xu
