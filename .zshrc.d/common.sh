@@ -19,6 +19,8 @@ alias lt='ls -alrt'
 alias tree="tree -FAC | less -r"
 
 alias serve="python3 -m http.server"
+# or http-server
+# https://github.com/indexzero/http-server
 
 
 # alias gr='grunt'
@@ -26,7 +28,7 @@ alias rsync_remote_file="rsync $1 . -avz --progress"
 #pip install youtube-dl
 alias ytb="youtube-dl $1 -f 37/22/35/34"
 
-alias capslock_to_ctrl='setxkbmap -layout us -option ctrl:nocaps'
+alias swap_capslock_to_ctrl='setxkbmap -layout us -option ctrl:nocaps'
 
 
 mvbk() {
