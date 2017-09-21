@@ -6,10 +6,10 @@ if [[ $UID -eq 0 ]]; then
 # TODO Below is not a good solution. Should refactor it later.
 # Suggestion is to compile all these files first.
 elif [ $HOST = 'MacbookPro.local' ] || [ $HOST = 'MacbookAir.local' ]; then
-    local user_host='%{$terminfo[bold]$fg[yellow]%}%n@%m%{$reset_color%}'
-else
     local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
-fi
+else
+  local user_host='%{$terminfo[bold]$fg[yellow]%}%n@%m%{$reset_color%}'
+  fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
 
