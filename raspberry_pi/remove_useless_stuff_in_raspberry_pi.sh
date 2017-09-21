@@ -3,7 +3,7 @@
 # @date: 2012-09-20
 # @author: Frank.Xu
 # @version: 0.1
-# @description: Remove not useless packages in Pi
+# @description: Remove useless packages in Pi
 
 sudo apt-get remove --purge wolfram-engine libreoffice*
 sudo apt-get clean
