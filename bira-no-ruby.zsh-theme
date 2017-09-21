@@ -1,11 +1,14 @@
 # ZSH Theme - Preview: http://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
+local pc_list=('MacbookPro.local' 'MacbookAir.local')
 
 if [[ $UID -eq 0 ]]; then
     local user_host='%{$terminfo[bold]$fg[red]%}%n@%m%{$reset_color%}'
-else
+elif [[ ${pc_list[(r)$HOST]}==$HOST ]]; then
     local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
+else
+    local user_host='%{$terminfo[bold]$fg[yellow]%}%n@%m%{$reset_color%}'
 fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
