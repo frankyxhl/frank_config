@@ -13,3 +13,10 @@
 (add-hook 'hy-mode-hook 'paredit-mode)
 (add-hook 'hy-mode-hook 'parinfer-mode)
 
+
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'parinfer-mode)
+
+
+(smartparens-global-mode 1)
+(global-paren-face-mode 1)
