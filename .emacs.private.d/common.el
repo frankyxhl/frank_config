@@ -34,6 +34,7 @@
 
 
 (setq make-backup-files nil)
+;; Global binding keys
 (require 'bind-key)
 (bind-key* "C-;" 'comment-dwim-line)
 (bind-key* "C-," 'duplicate-line)
@@ -43,8 +44,8 @@
 (bind-key* "M-j" 'ace-jump-mode)
 
 ;; Yasnippets
-;; (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
-;; (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
 
 ;; god-mode
 (require 'god-mode)
