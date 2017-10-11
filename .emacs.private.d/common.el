@@ -39,15 +39,8 @@
 (bind-key* "C-," 'duplicate-line)
 (bind-key* "C-M-," 'copy-line)
 (bind-key* (kbd "C-S-c") 'mc/edit-lines)
-
-(bind-key* "M-j" 'ace-
-
-
-
-
-
-jump-mode)
 (bind-key* (kbd "M-g g") 'avy-goto-line)
+(bind-key* "M-j" 'ace-jump-mode)
 
 ;; Yasnippets
 ;; (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
@@ -82,6 +75,7 @@ jump-mode)
 
 (set-face-background hl-line-face "gray13")
 
+;; utf-8 settings
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
 (setq-default pathname-coding-system 'utf-8)
@@ -97,7 +91,9 @@ jump-mode)
 (global-set-key (kbd "C->") 'mark-next-like-this)
 (global-set-key (kbd "C-*") 'mark-all-like-this)
 
-(setq python-indent-offset 4)
-(setq dumb-jump-mode t)
-
 (setq ispell-extra-args '("--lang=en_US"))
+
+;; Python
+(setq python-indent-offset 4)
+;; https://github.com/jacktasia/dumb-jump
+(setq dumb-jump-mode t)
