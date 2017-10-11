@@ -43,6 +43,10 @@ if [ ! -f ~/.slate.js ]; then
     ln -s ~/frank_config/macos/.slate.js ~/.slate.js
 fi
 
+if [ ! -f ~/.spacemacs ]; then
+    ln -s ~/frank_config/.spacemacs ~/.spacemacs
+fi
+
 if [ ! -f ~/.emacs.prviate.el ]; then
     ln -s ~/frank_config/.emacs.private.el ~/.emacs.private.el
 fi
@@ -51,5 +55,5 @@ if [ ! -d ~/.emacs.prviate.d ]; then
     ln -s ~/frank_config/.emacs.private.d ~/.emacs.private.d
 fi
 
-
+# Set zsh as default shell
 # chsh -s $(which zsh)

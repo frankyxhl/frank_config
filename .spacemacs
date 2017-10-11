@@ -50,7 +50,6 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
-     gtags
      better-defaults
      emacs-lisp
      git
@@ -68,32 +67,33 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages
-   '(
-     tern-auto-complete
-     god-mode
-     s
-     ace-jump-mode
-     helm-gtags
-     web-mode
-     rainbow-mode
-     elpy
-     mark-multiple
-     parinfer
-     paren-face)
-   )
-  ;; A list of packages that cannot be updated.
-  dotspacemacs-frozen-packages '()
-  ;; A list of packages that will not be installed and loaded.
-  dotspacemacs-excluded-packages '()
-  ;; Defines the behaviour of Spacemacs when installing packages.
-  ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
-  ;; `used-only' installs only explicitly used packages and uninstall any
-  ;; unused packages as well as their unused dependencies.
-  ;; `used-but-keep-unused' installs only the used packages but won't uninstall
-  ;; them if they become unused. `all' installs *all* packages supported by
-  ;; Spacemacs and never uninstall them. (default is `used-only')
-  dotspacemacs-install-packages '(used-only))
+   dotspacemacs-additional-packages '(
+                                      ivy
+                                      swiper
+                                      tern-auto-complete
+                                      god-mode
+                                      s
+                                      ace-jump-mode
+                                      helm-gtags
+                                      web-mode
+                                      ;; rainbow-mode
+                                      elpy
+                                      mark-multiple
+                                      parinfer
+                                      paren-face
+                                      )
+   ;; A list of packages that cannot be updated.
+   dotspacemacs-frozen-packages '()
+   ;; A list of packages that will not be installed and loaded.
+   dotspacemacs-excluded-packages '(rainbow-delimiters)
+   ;; Defines the behaviour of Spacemacs when installing packages.
+   ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
+   ;; `used-only' installs only explicitly used packages and uninstall any
+   ;; unused packages as well as their unused dependencies.
+   ;; `used-but-keep-unused' installs only the used packages but won't uninstall
+   ;; them if they become unused. `all' installs *all* packages supported by
+   ;; Spacemacs and never uninstall them. (default is `used-only')
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -117,7 +117,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
@@ -144,24 +144,26 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 25)
-                                (projects . 20))
+   dotspacemacs-startup-lists '((recents . 15)
+                                (projects . 10))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'emacs-lisp-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
+                         spacemacs-light
+                         zonokai-blue
                          granger
-                         spacemacs-light)
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Menlo"
-                               :size 12
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -274,8 +276,18 @@ values."
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
-   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
-   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; Control line numbers activation.
+   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; This variable can also be set to a property list for finer control:
+   ;; '(:relative nil
+   ;;   :disabled-for-modes dired-mode
+   ;;                       doc-view-mode
+   ;;                       markdown-mode
+   ;;                       org-mode
+   ;;                       pdf-view-mode
+   ;;                       text-mode
+   ;;   :size-limit-kb 1000)
    ;; (default nil)
    dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
@@ -327,246 +339,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
-  (require 'package)
-  (package-initialize)
-
-  ;; all the packages (in particular autoloads)
-  (add-to-list 'package-archives
-               '("elpy" . "https://jorgenschaefer.github.io/packages/"))
-
-  ;; the list of packages available 
-  ;; (unless package-archive-contents
-  ;;  (package-refresh-contents))
-
-                                        ; install the missing packages
-  ;; (dolist (package package-list)
-  ;;  (unless (package-installed-p package)
-  ;;    (package-install package)))
-
-  (global-set-key [f5] 'ibuffer)
-  (global-set-key [f8] 'other-window)
-
-  ;; Install Python code
-  ;; pip install jedi flake8 importmagic autopep8 rope
-  (elpy-enable)
-  ;; (run-python)
-  ;; (run-python) to start intractive python
-
-  ;; (setq auto-save-default nil)
-  ;; store all backup and autosave files in the tmp dir
-  (setq backup-directory-alist
-        `((".*" . ,temporary-file-directory)))
-  (setq auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t)))
-  ;; Install Javascript Code
-  ;; npm install -g tern
-  ;; enable turn-mode
-
-  ;; install mode
-  ;; color-identifiers-mode
-  ;; rainbo-identifiers-mode
-
-  ;; find-file-in-project
-  ;; https://github.com/grizzl/fiplr
-
-  ;; find file in current projects
-  ;; (global-set-key (kbd "C-x p") 'fiplr-find-file)
-
-
-  ;;(setq fiplr-ignored-globs '((directories (".git" ".sin"))
-  ;;                            (files ("*.jpg" "*.png" "*.zip" "*~" "*.pyc"))))
-
-  ;; Using helm find-file
-  (global-set-key (kbd "C-x p") 'helm-projectile-find-file)
-  ;; install web-mode
-  (global-linum-mode)
-
-  (defun my-js2-mode-hook ()
-    (define-key js2-mode-map "M-j" nil))
-  (add-hook 'js2-mode-hook 'my-js2-mode-hook)
-
-  ;; https://github.com/skeeto/skewer-mode
-  (add-hook 'js2-mode-hook 'skewer-mode)
-  (add-hook 'css-mode-hook 'skewer-css-mode)
-  (add-hook 'html-mode-hook 'skewer-html-mode)
-
-  (global-set-key (kbd "C-=") 'er/expand-region)
-  ;; ctags
-  ;; brew install global --with-ctags --with-pygments
-  ;; https://github.com/syohex/emacs-helm-gtags/
-  (global-set-key (kbd "C-x t") 'helm-gtags-find-tag)
-  (global-set-key (kbd "C-t") 'helm-projectile-ag)
-  (global-set-key (kbd "C-x C-t") 'helm-gtags-find-pattern)
-
-  ;;(custom-set-variables
-  ;;  '(helm-gtags-prefix-key "\C-t")
-  ;; '(helm-gtags-suggested-key-mapping t))
-
-  (defun copy-line (&optional arg)
-    "Copy current line to next new line"
-    (interactive "P")
-    (let ((beg (line-beginning-position)) 
-          (end (line-end-position arg)))
-      (copy-region-as-kill beg end))
-    (message "Line has been copied"))
-
-  (defun duplicate-line (arg)
-    "Duplicate current line, leaving point in lower line."
-    (interactive "*p")
-
-    ;; save the point for undo
-    (setq buffer-undo-list (cons (point) buffer-undo-list))
-
-    ;; local variables for start and end of line
-    (let ((bol (save-excursion (beginning-of-line) (point)))
-          eol)
-      (save-excursion
-
-        ;; don't use forward-line for this, because you would have
-        ;; to check whether you are at the end of the buffer
-        (end-of-line)
-        (setq eol (point))
-
-        ;; store the line and disable the recording of undo information
-        (let ((line (buffer-substring bol eol))
-              (buffer-undo-list t)
-              (count arg))
-          ;; insert the line arg times
-          (while (> count 0)
-            (newline)         ;; because there is no newline in 'line'
-            (insert line)
-            (setq count (1- count)))
-          )
-
-        ;; create the undo information
-        (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))
-      ) ; end-of-let
-
-    ;; put the point in the lowest line and return
-    (next-line arg))
-
-  ;; Original idea from
-  ;; http://www.opensubscriber.com/message/emacs-devel@gnu.org/10971693.html
-  (defun comment-dwim-line (&optional arg)
-    "Replacement for the comment-dwim command.
-        If no region is selected and current line is not blank and we are not at the end of the line,
-        then comment current line.
-        Replaces default behaviour of comment-dwim, when it inserts comment at the end of the line."
-    (interactive "*P")
-    (comment-normalize-vars)
-    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
-        (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-      (comment-dwim arg))
-    (next-line))
-
-  (global-set-key (kbd "M-,") 'copy-line)
-
-  (require 'inline-string-rectangle)
-  (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
-
-  (require 'mark-more-like-this)
-  (global-set-key (kbd "C-<") 'mark-previous-like-this)
-  (global-set-key (kbd "C->") 'mark-next-like-this)
-  (global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
-  (global-set-key (kbd "C-*") 'mark-all-like-this)
-
-  (add-hook 'sgml-mode-hook
-            (lambda ()
-              (require 'rename-sgml-tag)
-              (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)))
-
-  ;; Hook rainbow-mode
-  (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
-  (add-hook 'html-mode-hook (lambda () (rainbow-mode 1)))
-
-  (smartparens-global-mode 1)
-  (global-paren-face-mode 1)
-
-
-
-  (defun toggle-holy-mode ()
-    (interactive)
-    (if (bound-and-true-p holy-mode)
-        (holy-mode -1)
-      (holy-mode t)))
-  (global-set-key (kbd "C-z") 'toggle-holy-mode)
-  (global-set-key (kbd "M-p") 'ace-window)
-
-  ;; (aggressive-indent-global-mode)
-  (setq backup-directory-alist
-        `((".*" . ,temporary-file-directory)))
-  (setq auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t)))
-
-
-  (set-face-background hl-line-face "gray13")
-
-  (set-language-environment "UTF-8")
-  (set-default-coding-systems 'utf-8)
-  (setq-default pathname-coding-system 'utf-8)
-  (prefer-coding-system 'utf-8)
-  (setq default-process-coding-system '(utf-8 . utf-8))
-  (setq locale-coding-system 'utf-8)
-  (setq file-name-coding-system 'utf-8)
-  (setq default-buffer-file-coding-system 'utf-8)
-
-  ;; (setenv "PYTHONIOENCODING" "UTF-8")
-  (add-hook 'hy-mode-hook 'paredit-mode)
-  (add-hook 'hy-mode-hook 'parinfer-mode)
-
-  ;; install ace-jump-mode
-  ;; https://github.com/winterTTr/ace-jump-mode
-  ;; (require 'ace-jump-mode)
-  ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-  (setq make-backup-files nil)
-  (require 'bind-key)
-  (bind-key* "C-;" 'comment-dwim-line)
-  (bind-key* "C-," 'duplicate-line)
-  (bind-key* "C-M-," 'copy-line)
-  (bind-key* (kbd "C-S-c") 'mc/edit-lines)
-
-  (bind-key* "M-j" 'ace-jump-mode)
-  (bind-key* (kbd "M-g g") 'avy-goto-line)
-
-  ;; magit
-  (global-set-key (kbd "C-x g") 'magit-status)
-
-  ;; yasnippets
-  ;; (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
-  ;; (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
-  
-
-  ;; fast-paren-mode
-  (load-file "~/.emacs.d/private/fast-paren-mode.el")
-  (require 'fast-paren-mode)
-
-  (add-hook 'lisp-mode-hook  'turn-on-fast-paren-mode)
-  (add-hook 'emacs-lisp-mode-hook 'turn-on-fast-paren-mode)
-  (add-hook 'ielm-mode-hook  'turn-on-fast-paren-mode)
-  (add-hook 'lisp-interaction-mode-hook 'turn-on-fast-paren-mode)
-  (add-hook 'slime-repl-mode-hook       'turn-on-fast-paren-mode)
-  (add-hook 'hy-mode-hook  'turn-on-fast-paren-mode)
-  ;; god-mode
-  (require 'god-mode)
-  (setq god-exempt-major-modes nil)
-  (setq god-exempt-predicates nil)
-  ;; (global-set-key (kbd "C-i") 'god-mode-all)
-  ;; (bind-key* "C-i" 'god-mode-all)
-
-  ;; Turn off Javascript semi warning
-  (setq js2-strict-missing-semi-warning nil)
-
-  ;; Magit
-  (setq magit-repository-directories `("~/Projects/"))
-
-  ;; npm install -g tern js-beautify eslint jslint
-  (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-  (eval-after-load 'tern
-    '(progn
-       (require 'tern-auto-complete)
-       (tern-ac-setup)))
+  (load-file "~/.emacs.private.el")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -576,16 +349,32 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (tern-auto-complete tide typescript-mode csv-mode god-mode clojure-snippets clj-refactor inflections edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode s fsm svg find-file-in-project ivy org-projectile org-present org-pomodoro alert log4e gntp org-download mwim htmlize gnuplot phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode ggtags stickyfunc-enhance srefactor magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht nginx-mode paren-face parinfer highlight-symbol rainbow-mode xpm mark-multiple elpy rainbow-identifiers web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode yapfify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements live-py-mode less-css-mode hy-mode helm-pydoc helm-css-scss haml-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck emmet-mode diff-hl cython-mode company-web web-completion-data company-anaconda auto-dictionary anaconda-mode pythonic yaml-mode web-mode helm-gtags fiplr grizzl ace-jump-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme))))
+    (tern-auto-complete swiper rainbow-mode parinfer paren-face mark-multiple magit-gh-pulls helm-gtags god-mode github-search github-clone github-browse-file git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gist gh marshal logito pcache ht elpy find-file-in-project ivy diff-hl ace-jump-mode yapfify web-mode web-beautify unfill tide typescript-mode tagedit stickyfunc-enhance srefactor smeargle slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download nginx-mode mwim mmm-mode markdown-toc markdown-mode magit-gitflow livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc hy-mode htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-anaconda company coffee-mode clojure-snippets clj-refactor inflections edn multiple-cursors paredit peg cider-eval-sexp-fu cider queue clojure-mode auto-yasnippet yasnippet auto-dictionary anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (symon string-inflection sayid password-generator org-brain ivy-purpose impatient-mode helm-purpose window-purpose imenu-list evil-org evil-lion editorconfig browse-at-remote tern-auto-complete swiper rainbow-mode parinfer paren-face mark-multiple magit-gh-pulls helm-gtags god-mode github-search github-clone github-browse-file git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gist gh marshal logito pcache ht elpy find-file-in-project ivy diff-hl ace-jump-mode yapfify web-mode web-beautify unfill tide typescript-mode tagedit stickyfunc-enhance srefactor smeargle slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download nginx-mode mwim mmm-mode markdown-toc markdown-mode magit-gitflow livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc hy-mode htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-anaconda company coffee-mode clojure-snippets clj-refactor inflections edn multiple-cursors paredit peg cider-eval-sexp-fu cider queue clojure-mode auto-yasnippet yasnippet auto-dictionary anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)

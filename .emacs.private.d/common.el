@@ -44,6 +44,10 @@
 (bind-key* "M-j" 'ace-jump-mode)
 
 ;; Yasnippets
+(defun disable-yas-if-no-snippets ()
+  (when (and yas-minor-mode (null (yas--get-snippet-tables)))
+    (yas-minor-mode -1)))
+(add-hook 'yas-minor-mode-hook #'disable-yas-if-no-snippets)
 (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
 (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
 
