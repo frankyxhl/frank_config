@@ -8,3 +8,8 @@
 (add-hook 'lisp-interaction-mode-hook 'turn-on-fast-paren-mode)
 (add-hook 'slime-repl-mode-hook       'turn-on-fast-paren-mode)
 (add-hook 'hy-mode-hook  'turn-on-fast-paren-mode)
+
+
+(add-hook 'hy-mode-hook 'paredit-mode)
+(add-hook 'hy-mode-hook 'parinfer-mode)
+
