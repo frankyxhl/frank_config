@@ -67,20 +67,20 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-     ivy
-     swiper
-     tern-auto-complete
-     god-mode
-     s
-     ace-jump-mode
-     helm-gtags
-     web-mode
-     ;; rainbow-mode
-     elpy
-     mark-multiple
-     parinfer
-     paren-face
-     )
+                                      ivy
+                                      swiper
+                                      tern-auto-complete
+                                      god-mode
+                                      s
+                                      ace-jump-mode
+                                      helm-gtags
+                                      web-mode
+                                      rainbow-mode
+                                      elpy
+                                      mark-multiple
+                                      parinfer
+                                      paren-face
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
