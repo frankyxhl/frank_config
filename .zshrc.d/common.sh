@@ -6,6 +6,7 @@ alias g='grep'
 # Grabs the disk usage in the current directory
 alias usage='du -ch 2> /dev/null |tail -1'
 alias wget='wget -c'
+
 alias sub='ls -d */'
 alias l.='ls -d .*'
 
@@ -22,6 +23,8 @@ alias serve="python3 -m http.server"
 # or http-server
 # https://github.com/indexzero/http-server
 
+# Network
+alias axel='axel -a'
 
 # alias gr='grunt'
 alias rsync_remote_file="rsync $1 . -avz --progress"
