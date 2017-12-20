@@ -102,3 +102,10 @@
 (setq python-indent-offset 4)
 ;; https://github.com/jacktasia/dumb-jump
 (setq dumb-jump-mode t)
+
+
+;; drag-stuff
+;; https://github.com/rejeep/drag-stuff.el
+(drag-stuff-global-mode t)
+(drag-stuff-define-keys)
+
