@@ -33,6 +33,8 @@ alias ytb="youtube-dl $1 -f 37/22/35/34"
 
 alias swap_capslock_to_ctrl='setxkbmap -layout us -option ctrl:nocaps'
 
+# https://askubuntu.com/questions/17275/progress-and-speed-with-cp
+alias cpp="rsync -ah --progress"
 
 mvbk() {
     mv $1 $1.bak
