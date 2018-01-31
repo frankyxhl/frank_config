@@ -14,7 +14,7 @@ brew install peco
 
 # Gtags
 # https://www.gnu.org/software/global/
-brew install global --with-pygments --with-ctags
+# brew install global --with-pygments --with-ctags
 
 brew tap caskroom/cask
 # font
@@ -24,7 +24,8 @@ brew tap caskroom/fonts
 brew cask install caffeine google-chrome iterm2 slate alfred dropbox istat-menus mattr-slate
 # Programming Tools
 brew cask install meld sourcetree font-source-code-pro icdiff ripgrep
-
+# Optional Tools
+# brew cask install db-browser-for-sqlite
 
 # Use Python2's pip
 pip install percol
