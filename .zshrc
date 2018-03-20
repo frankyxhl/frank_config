@@ -45,6 +45,9 @@ if [[ `uname` == 'Darwin' ]]
 then
     alias meld="open -W -a Meld --args "
     alias vim="/usr/local/Cellar/vim/8.0.0473/bin/vim"
+    if [[ -z "$LC_ALL" ]]; then
+        export LC_ALL='en_US.UTF-8'
+    fi
 fi
 
 # start zsh-autosuggestions
