@@ -109,3 +109,11 @@
 (drag-stuff-global-mode t)
 (drag-stuff-define-keys)
 
+;; Theme and font setting
+;; C-x C-+ and C-x C-- to increase or decrease the buffer text size
+;; (set-default-font "Monaco 20")
+;; Spacemacs theme: https://themegallery.robdor.com/
+(defun change-to-ppt-mode ()
+  (interactive)
+;; (set-default-font "Source Code Pro 13")
+  (set-default-font "Monaco 18"))
