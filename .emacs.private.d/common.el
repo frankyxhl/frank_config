@@ -115,5 +115,11 @@
 ;; Spacemacs theme: https://themegallery.robdor.com/
 (defun change-to-ppt-mode ()
   (interactive)
-;; (set-default-font "Source Code Pro 13")
-  (set-default-font "Monaco 18"))
+  (set-default-font "Source Code Pro 18")
+  )
+
+
+(defun change-back-from-ppt-mode ()
+  (interactive)
+  (set-default-font "Source Code Pro 13"))
+
