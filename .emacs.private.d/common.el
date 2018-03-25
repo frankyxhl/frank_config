@@ -109,6 +109,15 @@
 (drag-stuff-global-mode t)
 (drag-stuff-define-keys)
 
+;; To avoid yas confilct in org-mode disable
+;; From: https://gist.github.com/takaxp/8604aa8660be93edd3b89df811851c64
+(defun my:yas-expand (&optional field)
+  "Disable `yas-expand' in src-block."
+  (interactive)
+  (org-cycle))
+(define-key yas-minor-mode-map (kbd "<tab>") 'my:yas-expand)
+
+
 ;; Theme and font setting
 ;; C-x C-+ and C-x C-- to increase or decrease the buffer text size
 ;; (set-default-font "Monaco 20")
