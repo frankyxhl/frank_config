@@ -114,7 +114,9 @@
 (defun my:yas-expand (&optional field)
   "Disable `yas-expand' in src-block."
   (interactive)
-  (org-cycle))
+  (if (equal major-mode 'org-mode)
+      (org-cycle)
+    (yas-expand field)))
 (define-key yas-minor-mode-map (kbd "<tab>") 'my:yas-expand)
 
 
