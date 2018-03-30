@@ -120,6 +120,26 @@
 (define-key yas-minor-mode-map (kbd "<tab>") 'my:yas-expand)
 
 
+;; To avoid drag-stuff-right confilct in org-mode disable
+(defun my:drag-stuff-right (&optional field)
+  "Disable `drag-stuff-right' in src-block."
+  (interactive)
+  (if (equal major-mode 'org-mode)
+      (org-metaright)
+    (drag-stuff-right)))
+(define-key drag-stuff-mode-map (kbd "<M-right>") 'my:drag-stuff-right)
+
+;; To avoid drag-stuff-left confilct in org-mode disable
+(defun my:drag-stuff-left (&optional field)
+  "Disable `drag-stuff-left' in src-block."
+  (interactive)
+  (if (equal major-mode 'org-mode)
+      (org-metaleft)
+    (drag-stuff-left)))
+(define-key drag-stuff-mode-map (kbd "<M-left>") 'my:drag-stuff-left)
+
+
+
 ;; Theme and font setting
 ;; C-x C-+ and C-x C-- to increase or decrease the buffer text size
 ;; (set-default-font "Monaco 20")
