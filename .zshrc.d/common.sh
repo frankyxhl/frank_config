@@ -26,8 +26,7 @@ alias serve="python3 -m http.server"
 # Network
 alias axel='axel -a'
 
-# alias gr='grunt'
-alias rsync_remote_file="rsync $1 . -avz --progress"
+alias rsync_remote_file="rsync --partial -azvv --progress $1 ."
 #pip install youtube-dl
 alias ytb="youtube-dl $1 -f 37/22/35/34"
 
