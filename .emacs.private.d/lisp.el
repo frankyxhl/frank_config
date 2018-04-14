@@ -7,6 +7,8 @@
 
 ;; clojure-mode
 (add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'parinfer-mode)
 
 ;; lisp-mode
 (add-hook 'lisp-mode-hook  'turn-on-fast-paren-mode)
@@ -15,7 +17,6 @@
 ;; hy-mode
 (add-to-list 'auto-mode-alist '("\\.hy\\'" . hy-mode))
 (add-to-list 'interpreter-mode-alist '("hy" . hy-mode))
-
 (add-hook 'hy-mode-hook 'turn-on-fast-paren-mode)
 (add-hook 'hy-mode-hook 'paredit-mode)
 (add-hook 'hy-mode-hook 'parinfer-mode)
