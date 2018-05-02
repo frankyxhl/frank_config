@@ -24,6 +24,8 @@ brew tap caskroom/fonts
 brew cask install caffeine google-chrome iterm2 slate alfred dropbox istat-menus mattr-slate
 # Programming Tools
 brew cask install meld sourcetree font-source-code-pro icdiff ripgrep
+# brew cask install vagrant virtualbox
+
 # Optional Tools
 # brew cask install db-browser-for-sqlite
 
