@@ -154,3 +154,7 @@
   (interactive)
   (set-default-font "Source Code Pro 13"))
 
+
+(defun insert-current-timestamp ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%H:%M:%S")))
