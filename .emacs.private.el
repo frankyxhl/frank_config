@@ -52,5 +52,6 @@
 
 (add-to-list 'load-path "~/.emacs.private.d")
 (load "lisp")
+(load "rust")
 (load "common")
 (load "web")
