@@ -1,10 +1,10 @@
 # Docker alias
 
 # http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers
-alias rm_docker_not_running_containers='docker rm $(docker ps -q -f status=exited)'
+alias docker_rm_not_running_containers='docker rm $(docker ps -q -f status=exited)'
 
 
-alias rm_docker_untagged_images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias docker_rm_untagged_images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
 
 # Delete all containers
@@ -12,6 +12,12 @@ alias rm_docker_untagged_images='docker rmi $(docker images | grep "^<none>" | a
 # Delete all images
 # docker rmi $(docker images -q)
 alias docker_initialize='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+
+# Update all running containers status to no.
+# Let them can stop later
+alias docker_update_running_containers_to_restart_no='docker update --restart=no $(docker ps -a -q)'
+
+alias docker_stop_running_containers='docker stop $(docker ps -a -q)'
 
 # Use `docker-cleanup --dry-run` to see what would be deleted.
 
