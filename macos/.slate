@@ -25,6 +25,7 @@ layout monitor4 'Google Chrome' ${righthalf} | push left
 layout monitor5 'Google Chrome' push left bar-resize:screenSizeX/2 | push right bar-resize:screenSizeX/2
 
 bind b:cmd focus 'Google Chrome'
+bind n:cmd focus 'Firefox'
 bind k:cmd,shift focus 'Keynote'
 bind p:cmd focus 'PhpStorm'
 bind e:cmd,shift focus 'Emacs'
