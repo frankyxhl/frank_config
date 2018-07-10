@@ -53,4 +53,6 @@ fi
 # start zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-cmatrix -s
+if [ $HOST = 'MacbookPro.local' ] || [ $HOST = 'MacBook-Air' ]; then
+    cmatrix -s
+fi
