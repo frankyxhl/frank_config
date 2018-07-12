@@ -3,6 +3,7 @@
 # @date: 2012-03-02
 # @date: 2018-07-10
 # @author: Frank Xu
+sudo true
 sudo apt-get install -y git vim tmux zsh
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 # sudo apt-get install -y autojump python2.7 python-pip
@@ -35,6 +36,14 @@ fi
 
 if [ ! -f  ~/.emacsclient ]; then
     ln -s ~/frank_config/.emacsclient ~/.emacsclient
+fi
+
+if [ ! -f  ~/.tmux.conf ]; then
+    ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
+fi
+
+if [ ! -f  ~/.tmux ]; then
+    ln -s ~/frank_config/.tmux ~/.tmux
 fi
 
 mkdir -p ~/.oh-my-zsh/custom/themes/
