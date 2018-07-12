@@ -45,6 +45,8 @@ if [[ `uname` == 'Darwin' ]]
 then
     alias meld="open -W -a Meld --args "
     alias vim="/usr/local/Cellar/vim/8.0.0473/bin/vim"
+    # For remacs purpose
+    export PATH="/usr/local/opt/texinfo/bin:$PATH"
     if [[ -z "$LC_ALL" ]]; then
         export LC_ALL='en_US.UTF-8'
     fi
