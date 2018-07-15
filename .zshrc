@@ -32,6 +32,9 @@ setopt INC_APPEND_HISTORY
 [ -f .zshrc.d/docker.sh ] && source .zshrc.d/docker.sh
 [ -f .zshrc.d/percol.sh ] && source .zshrc.d/percol.sh
 
+# Custom each computer
+[ -f ~/.zshrc.local.sh ] && source ~/.zshrc.local.sh
+
 #turn of correct
 unsetopt correct_all
 # export LC_CTYPE=en_US.UTF-8
