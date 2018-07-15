@@ -42,15 +42,12 @@ if [ ! -f  ~/.tmux.conf ]; then
     ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
 fi
 
-if [ ! -f  ~/.tmux ]; then
-    ln -s ~/frank_config/.tmux ~/.tmux
-fi
-
 mkdir -p ~/.oh-my-zsh/custom/themes/
 ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
 #cp -r ~/.fonts ~/
 
 # Tmux
+mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
 
