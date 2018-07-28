@@ -50,6 +50,8 @@ then
     alias vim="/usr/local/Cellar/vim/8.0.0473/bin/vim"
     # For remacs purpose
     export PATH="/usr/local/opt/texinfo/bin:$PATH"
+    # Add flutter
+    export PATH="/Users/frank/Projects/private/flutter/flutter/bin:$PATH"
     if [[ -z "$LC_ALL" ]]; then
         export LC_ALL='en_US.UTF-8'
     fi
@@ -61,3 +63,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 if [ $HOST = 'MacbookPro.local' ] || [ $HOST = 'MacBook-Air' ]; then
     cmatrix -s
 fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
