@@ -27,6 +27,12 @@ alias serve="python3 -m http.server"
 alias axel='axel -a'
 
 alias rsync_remote_file="rsync --partial -azvv --progress $1 ."
+
+count(){
+    COUNT=`ls "$@" | wc -l`
+    echo "FOUND $COUNT"
+}
+
 #pip install youtube-dl
 alias ytb="youtube-dl $1 -f 37/22/35/34"
 
