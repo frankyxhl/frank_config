@@ -11,6 +11,7 @@ alias righthalf2of5 move screenOriginX+screenSizeX*3/5;screenOriginY screenSizeX
 
 layout monitor1 'iTerm2':REPEAT ${righthalf2of5}
 layout monitor1 'Emacs':REPEAT ${lefthalf3of5}
+layout monitor1 'IntelliJ IDEA':REPEAT ${lefthalf3of5}
 layout monitor1 'WebStorm':REPEAT ${lefthalf3of5}
 layout monitor1 'Sublime Text':REPEAT ${lefthalf3of5}
 layout monitor1 'PyCharm':REPEAT ${lefthalf3of5}
