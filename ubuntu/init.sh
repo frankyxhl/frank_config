@@ -8,8 +8,13 @@ sudo apt-get install -y git vim tmux zsh
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 # sudo apt-get install -y autojump python2.7 python-pip
 
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+if [! -d ~/.oh-my-zsh ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
+
+if [! -d ~/.zsh/zsh-autosuggestions ]; then
+    git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+fi
 
 
 # https://github.com/mooz/percol
@@ -42,14 +47,21 @@ if [ ! -f  ~/.tmux.conf ]; then
     ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
 fi
 
-mkdir -p ~/.oh-my-zsh/custom/themes/
-ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
+if [! -d ~/.oh-my-zsh/custom/themes ]; then
+    mkdir -p ~/.oh-my-zsh/custom/themes
+fi
+
+if [ ! -f  ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then
+    ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
+fi
 #cp -r ~/.fonts ~/
 
 # Tmux
-mkdir -p ~/.tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source ~/.tmux.conf
+if [! -d ~/.tmux/plugins ]; then
+    mkdir -p ~/.tmux/plugins
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    tmux source ~/.tmux.conf
+fi
 
 # Set zsh as default shell
 sudo chsh -s $(which zsh)
