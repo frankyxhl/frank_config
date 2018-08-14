@@ -1,13 +1,11 @@
 #!/usr/bin/bash
 # -*- coding: utf-8 -*-
 # @date: 2012-03-02
-# @date: 2018-07-10
 # @author: Frank Xu
 sudo true
 sudo apt-get install -y git vim tmux zsh autojump
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 # sudo apt-get install -y autojump python2.7 python-pip
-
 
 # https://github.com/mooz/percol
 # sudo pip2 install percol
@@ -44,15 +42,15 @@ if [ ! -f  ~/.tmux.conf ]; then
 fi
 
 echo 'configure oh-my-zsh'
-if [! -d ~/.oh-my-zsh ]; then
+if [ ! -d ~/.oh-my-zsh ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
-if [! -d ~/.zsh/zsh-autosuggestions ]; then
+if [ ! -d ~/.zsh/zsh-autosuggestions ]; then
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 fi
 
-if [! -d ~/.oh-my-zsh/custom/themes ]; then
+if [ ! -d ~/.oh-my-zsh/custom/themes ]; then
     mkdir -p ~/.oh-my-zsh/custom/themes
 fi
 
@@ -63,7 +61,7 @@ fi
 #cp -r ~/.fonts ~/
 
 echo 'configure Tmux'
-if [! -d ~/.tmux/plugins ]; then
+if [ ! -d ~/.tmux/plugins ]; then
     mkdir -p ~/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     tmux source ~/.tmux.conf
