@@ -24,3 +24,25 @@ nnoremap <silent> <Leader><C-x> :<C-u>call AddSubtract("\<C-x>", 'b')<CR>
 
 noremap ; :
 " nnoremap : ;
+
+" Below config is from
+" https://www.youtube.com/watch?v=XA2WjJbmmoM&t=1454s
+" https://github.com/changemewtf/no_plugins/blob/master/no_plugins.vim
+" enter the current millenium
+set nocompatible
+
+" enable syntax and plugins (for netrw)
+syntax enable
+filetype plugin on
+
+" FINDING FILES:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
