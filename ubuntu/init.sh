@@ -50,8 +50,13 @@ if [ ! -d ~/.zsh/zsh-autosuggestions ]; then
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 fi
 
+
 if [ ! -d ~/.oh-my-zsh/custom/themes ]; then
     mkdir -p ~/.oh-my-zsh/custom/themes
+fi
+
+if [ ! -d ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 fi
 
 echo 'configure oh-my-zsh custom theme'
