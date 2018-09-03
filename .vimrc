@@ -46,3 +46,33 @@ set wildmenu
 
 " Create the `tags` file (may need to install ctags first)
 command! MakeTags !ctags -R .
+
+" Sudo 
+" :w !sudo tee %
+
+" Vim快速选中、删除、复制引号或括号中的内容
+" ci'、ci"、ci(、ci[、ci{、ci< - 分别更改这些配对标点符号中的文本内容
+" di'、di"、di(或dib、di[、di{或diB、di< - 分别删除这些配对标点符号中的文本内容
+" yi'、yi"、yi(、yi[、yi{、yi< - 分别复制这些配对标点符号中的文本内容
+" vi'、vi"、vi(、vi[、vi{、vi< - 分别选中这些配对标点符号中的文本内容
+
+" Rectangle insert
+" https://stackoverflow.com/questions/1174274/how-can-i-prepend-text-in-the-middle-of-the-line-to-multiple-lines-in-vim
+
+" Autocomplete 
+" - ^x^n for JUST this file
+" - ^x^f for filenames (works with our path trick!)
+" - ^x^] for tags only
+" - ^n for anything specified by the 'complete' option
+"
+" Autocomplete file path
+" In INSERT MODE
+" C-x C-f
+"
+
+
+hi ColorColumn ctermbg=NONE ctermfg=red
+match ColorColumn /\%>79v.*\%<81v/
+
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=239

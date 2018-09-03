@@ -8,6 +8,9 @@ alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
 alias lefthalf3of5 move screenOriginX;screenOriginY screenSizeX*3/5;screenSizeY
 alias righthalf2of5 move screenOriginX+screenSizeX*3/5;screenOriginY screenSizeX*2/5;screenSizeY
+alias lefthalf4of5 move screenOriginX;screenOriginY screenSizeX*4/5;screenSizeY
+alias righthalf1of5 move screenOriginX+screenSizeX*4/5;screenOriginY screenSizeX*1/5;screenSizeY
+
 
 layout monitor1 'iTerm2':REPEAT ${righthalf2of5}
 layout monitor1 'Emacs':REPEAT ${lefthalf3of5}
@@ -15,18 +18,22 @@ layout monitor1 'IntelliJ IDEA':REPEAT ${lefthalf3of5}
 layout monitor1 'WebStorm':REPEAT ${lefthalf3of5}
 layout monitor1 'Sublime Text':REPEAT ${lefthalf3of5}
 layout monitor1 'PyCharm':REPEAT ${lefthalf3of5}
+layout monitor1 'Xcode':REPEAT ${lefthalf3of5}
 
 layout monitor2 'iTerm':REPEAT ${righthalf2of5}
+layout monitor2 '文本编辑':REPEAT ${righthalf2of5}
 layout monitor2 'Google Chrome':REPEAT ${lefthalf3of5}
 
-layout monitor3 'Google Chrome':REPEAT ${lefthalf}
-layout monitor3 '文本编辑':REPEAT ${righthalf}
+layout monitor3 'Xcode':REPEAT ${lefthalf4of5}
+layout monitor3 'Simulator':REPEAT ${righthalf1of5}
 
 layout monitor4 'Google Chrome' ${righthalf} | push left
 layout monitor5 'Google Chrome' push left bar-resize:screenSizeX/2 | push right bar-resize:screenSizeX/2
 
 bind b:cmd focus 'Google Chrome'
 bind n:cmd focus 'Firefox'
+bind x:cmd,shift focus 'Xcode'
+bind a:cmd,shift focus 'AppCode'
 bind k:cmd,shift focus 'Keynote'
 bind e:cmd,shift focus 'Emacs'
 bind v:cmd,shift focus 'Code'
