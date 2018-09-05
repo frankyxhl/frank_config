@@ -76,3 +76,24 @@ match ColorColumn /\%>79v.*\%<81v/
 
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=239
+
+" https://github.com/junegunn/vim-plug/wiki/tutorial
+" Now run :PlugInstall to install the plugins.
+call plug#begin('~/.vim/plugged')
+
+" https://github.com/junegunn/seoul256.vim
+Plug 'junegunn/seoul256.vim'
+Plug 'easymotion/vim-easymotion'
+
+call plug#end()
+
+let g:seoul256_background = 233
+"let g:seoul256_current_bg = black
+colo seoul256
+
+" https://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim#answer-24047539
+" easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+set winaltkeys=no
+map <ESC>j <Plug>(easymotion-f)
+nmap <ESC>j <Plug>(easymotion-overwin-f)
