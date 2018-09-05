@@ -4,6 +4,13 @@
 (global-set-key [f5] 'ibuffer)
 (global-set-key [f8] 'other-window)
 
+;; Solve issue
+;; https://github.com/syohex/emacs-helm-ag/issues/316
+(if (eq system-type 'darwin)
+    (add-to-list 'exec-path "/usr/local/bin/")
+  )
+
+
 ;; (setq auto-save-default nil)
 ;; store all backup and;; fast-paren-mode
 (setq backup-directory-alist
