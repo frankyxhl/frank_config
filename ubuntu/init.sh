@@ -72,6 +72,9 @@ if [ ! -d ~/.tmux/plugins ]; then
     tmux source ~/.tmux.conf
 fi
 
+# Install default Vim's plugin
+vim +PlugInstall +qall
+
 # Set zsh as default shell
 echo 'change default sh to zsh'
 chsh -s $(which zsh)

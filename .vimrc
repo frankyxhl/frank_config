@@ -89,7 +89,7 @@ call plug#end()
 
 let g:seoul256_background = 233
 "let g:seoul256_current_bg = black
-colo seoul256
+silent! colo seoul256
 
 " https://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim#answer-24047539
 " easymotion
