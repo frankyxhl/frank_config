@@ -55,3 +55,4 @@
 (load "rust")
 (load "common")
 (load "web")
+(load "evil")
