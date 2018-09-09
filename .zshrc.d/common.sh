@@ -3,6 +3,9 @@
 alias e='emacsclient -c'
 alias g='grep'
 
+# let Cal show 3 months in default
+alias cal='cal -3'
+
 # Grabs the disk usage in the current directory
 alias usage='du -ch 2> /dev/null |tail -1'
 alias wget='wget -c'
