@@ -57,7 +57,7 @@ Replaces default behaviour of comment-dwim, when it inserts comment at the end o
     (comment-dwim arg))
   (next-line))
 
-(global-set-key (kbd "M-,") 'copy-line)
+;; (global-set-key (kbd "M-,") 'copy-line)
 
 
 
@@ -67,4 +67,4 @@ Replaces default behaviour of comment-dwim, when it inserts comment at the end o
       (holy-mode -1)
     (holy-mode t)))
 (global-set-key (kbd "C-z") 'toggle-holy-mode)
-(global-set-key (kbd "M-p") 'ace-window)
+;; (global-set-key (kbd "M-p") 'ace-window)
