@@ -1,3 +1,5 @@
+" Cheat sheet
+" https://vim.rtorr.com/lang/zh_cn/
 set hlsearch
 set number
 syntax on

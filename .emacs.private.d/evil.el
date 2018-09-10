@@ -8,3 +8,5 @@
 
 (define-key evil-normal-state-map "\C-t" 'helm-projectile-ag)
 (define-key evil-normal-state-map "z" 'Control-X-prefix)
+
+(define-key evil-normal-state-map "/" 'swiper)

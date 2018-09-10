@@ -22,7 +22,7 @@
 ;; Using helm find-file
 (global-set-key (kbd "C-x p") 'helm-projectile-find-file)
 ;; install web-mode
-(global-linum-mode)
+;; (global-linum-mode)
 
 
 (global-set-key (kbd "C-=") 'er/expand-region)
