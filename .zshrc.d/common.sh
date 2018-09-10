@@ -1,6 +1,6 @@
 # Common function
 
-alias e='emacsclient -c'
+alias e="emacsclient -a ''"
 alias g='grep'
 
 # let Cal show 3 months in default
