@@ -3,7 +3,7 @@
 set hlsearch
 set number
 syntax on
-imap jj <ESC>
+imap jk <ESC>
 " colorscheme Tomorrow-Night-Bright
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 filetype plugin indent on
