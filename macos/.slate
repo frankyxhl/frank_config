@@ -11,6 +11,7 @@ alias righthalf2of5 move screenOriginX+screenSizeX*3/5;screenOriginY screenSizeX
 alias lefthalf4of5 move screenOriginX;screenOriginY screenSizeX*4/5;screenSizeY
 alias righthalf1of5 move screenOriginX+screenSizeX*4/5;screenOriginY screenSizeX*1/5;screenSizeY
 
+alias coversubtitle move screenOriginX;screenOriginY+220 screenSizeX;screenSizeY
 
 layout monitor1 'iTerm2':REPEAT ${righthalf2of5}
 layout monitor1 'Emacs':REPEAT ${lefthalf3of5}
@@ -47,6 +48,7 @@ bind tab:cmd switch
 bind 0:cmd ${righthalf}
 bind 1:cmd ${full}
 bind 2:cmd ${leftVerticle}
+bind 3:cmd ${coversubtitle}
 bind 5:cmd layout monitor4
 bind 6:cmd layout monitor3
 bind 7:cmd layout monitor2
