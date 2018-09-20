@@ -23,7 +23,7 @@ def install():
         ("Installing percol"                 ,["sudo pip install percol"]),
         ("Install custom themes"             ,["mkdir -p ~/.oh-my-zsh/custom/themes/",
                                                "ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme"]),
-        ("Install Tmux plugin",              ["git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"]),
+        ("Install Tmux plugin"               ,["git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"]),
         ("Installing Tmux building environment", ["sudo apt install -y autoconf autogen libevent-dev libncurses5-dev"])
         # TODO check below
         # ?? # print_then_run("tmux source ~/.tmux.conf")
