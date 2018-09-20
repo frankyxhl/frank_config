@@ -68,7 +68,7 @@
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
-(setq magit-repository-directories `("~/Projects/"))
+(setq magit-repository-directories `(("~/Projects/" . 2) ("~/frank_config/" . 0)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
