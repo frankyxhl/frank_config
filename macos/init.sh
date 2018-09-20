@@ -58,5 +58,9 @@ if [ ! -d ~/.emacs.prviate.d ]; then
     ln -s ~/frank_config/.emacs.private.d ~/.emacs.private.d
 fi
 
+if [ ! -d ~/.xonshrc ]; then
+    ln -s ~/frank_config/.xonshrc ~/.xonshrc
+fi
+
 # Set zsh as default shell
 # chsh -s $(which zsh)

@@ -72,6 +72,10 @@ if [ ! -d ~/.tmux/plugins ]; then
     tmux source ~/.tmux.conf
 fi
 
+if [ ! -d ~/.xonshrc ]; then
+    ln -s ~/frank_config/.xonshrc ~/.xonshrc
+fi
+
 # Install default Vim's plugin
 vim +PlugInstall +qall
 

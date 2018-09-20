@@ -47,7 +47,8 @@ def link():
         ".zshrc.d",
         ".vimrc",
         ".vim",
-        ".emacsclient"
+        ".emacsclient",
+        ".xonsh"
     ]
     for name in linking_name_list:
         cmd = "ln -s ~/frank_config/{} ~/{}".format(name, name)
