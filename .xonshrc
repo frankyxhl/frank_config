@@ -11,6 +11,10 @@ def _find_files(args, stdin=None):
         echo "For example: 'find bar'"
         return
 
+    if $(type fd):
+        fd @(args[0])
+        return
+
     search_expr = "*{}*".format(args[0])
     find . -iname @(search_expr) -type f -print
 
