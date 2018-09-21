@@ -29,7 +29,7 @@ alias serve="python3 -m http.server"
 # Network
 alias axel='axel -a'
 
-alias rsync_remote_file="rsync --partial -azvv --progress $1 ."
+alias rsync_remote_file="rsync --partial -azv --progress $1 ."
 
 count(){
     COUNT=`ls "$@" | wc -l`
