@@ -1,4 +1,4 @@
-$PROMPT = '╭─{BOLD_GREEN}{user}@{hostname} {BOLD_#3498db}{cwd} {branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{WHITE} \n╰─λ '
+$PROMPT = '╭─{BOLD_GREEN}{user}@{hostname} {BOLD_#3498db}{cwd} {branch_color}{curr_branch: {}}{NO_COLOR} {WHITE} \n╰─λ '
 
 def _find_files(args, stdin=None):
     if len(args) is 0:
