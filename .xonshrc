@@ -33,3 +33,15 @@ def _find_lines_contains_string_in_current_folder_recursively(args, stdin=None):
     find . -name "*" -type f | xargs grep @(args[0]) --line-number
 
 aliases['fl'] = _find_lines_contains_string_in_current_folder_recursively
+
+
+def _today():
+    from os.path import isdir
+    get_today = $(date '+%Y%m%d')
+    today = get_today.rstrip()
+    if not isdir(today):
+        mkdir @(today)
+    cd @(today)
+
+aliases['today'] = _today
+
