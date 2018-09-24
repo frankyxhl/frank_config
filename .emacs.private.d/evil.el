@@ -12,3 +12,6 @@
 (define-key evil-normal-state-map ":" 'comment-dwim-line)
 
 (define-key evil-normal-state-map "/" 'swiper)
+
+(evil-define-key 'normal clojurescript-mode-map (kbd "M-.") 'cider-find-var)
+(evil-define-key 'normal clojurescript-mode-map (kbd "M-,") 'cider-pop-back)
