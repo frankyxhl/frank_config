@@ -6,3 +6,4 @@
 .emacs.d/elpa/
 .vim/bundle
 .vim/plugged
+bin
