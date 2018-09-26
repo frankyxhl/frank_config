@@ -21,6 +21,7 @@ alias v='/usr/local/bin/vless'
 # Find the files that has been added/modified most recently
 alias lt='ls -alrt'
 
+
 alias tree="tree -FAC | less -r"
 
 alias serve="python3 -m http.server"
@@ -76,3 +77,23 @@ today(){
     fi
     cd $TODAY
 }
+
+
+color_ll(){
+    if command_exists exa ; then
+        exa -l
+    else
+        ls -lh
+    fi
+}
+alias ll=color_ll
+
+color_ls(){
+    if command_exists exa; then
+        exa
+    else
+        ls
+    fi
+}
+alias ls=color_ls
+alias l=color_ls
