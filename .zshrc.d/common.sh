@@ -1,4 +1,5 @@
 # Common function
+[ -f ~/.zshrc.d/lib.sh ] && source ~/.zshrc.d/lib.sh
 
 alias e="emacsclient -a ''"
 alias g='grep'
