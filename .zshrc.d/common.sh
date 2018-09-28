@@ -81,18 +81,18 @@ today(){
 
 color_ll(){
     if command_exists exa ; then
-        exa -l
+        exa -l $*
     else
-        ls -lh
+        ls -lh $*
     fi
 }
 alias ll=color_ll
 
 color_ls(){
     if command_exists exa; then
-        exa
+        exa $*
     else
-        ls
+        ls $*
     fi
 }
 alias ls=color_ls
