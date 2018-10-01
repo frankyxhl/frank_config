@@ -1,26 +1,32 @@
 # Common function
 [ -f ~/.zshrc.d/lib.sh ] && source ~/.zshrc.d/lib.sh
 
+# Alias
 alias e="emacsclient -a ''"
-alias g='grep'
+alias g='git'
 
 # let Cal show 3 months in default
 alias cal='cal -3'
-
-# Grabs the disk usage in the current directory
-alias usage='du -ch 2> /dev/null |tail -1'
 alias wget='wget -c'
 
+
+# ls command enhancement
+
+# ls folders only
 alias sub='ls -d */'
+alias ld='ls -d */'
+
+# List dotfiles only
 alias l.='ls -d .*'
+
+# List ordered by time
+alias lt='ls -alrt'
 
 # cp /usr/share/vim/vim{version}/macros/less.sh /usr/local/bin/vless
 alias v='/usr/local/bin/vless'
 # alias c='rsync -av --progress'
 
 # Find the files that has been added/modified most recently
-alias lt='ls -alrt'
-
 
 alias tree="tree -FAC | less -r"
 
@@ -33,15 +39,17 @@ alias axel='axel -a'
 
 alias rsync_remote_file="rsync --partial -azv --progress $1 ."
 
-count(){
+count-files(){
     COUNT=`ls "$@" | wc -l`
-    echo "FOUND $COUNT"
+    echo "$COUNT files found."
 }
+
+alias count-file-lines='wc -l'
 
 #pip install youtube-dl
 alias ytb="youtube-dl $1 -f 37/22/35/34"
 
-alias swap_capslock_to_ctrl='setxkbmap -layout us -option ctrl:nocaps'
+alias swap-capslock-to-ctrl='setxkbmap -layout us -option ctrl:nocaps'
 
 # https://askubuntu.com/questions/17275/progress-and-speed-with-cp
 alias cpp="rsync -ah --progress"
@@ -68,7 +76,12 @@ alias wget-website='wget \
     --restrict-file-names=windows \
     --no-parent \ '
 
+# Grabs the disk usage in the current directory
+alias usage='du -ch 2> /dev/null |tail -1'
+
 alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+
+alias disk='df -h'
 
 today(){
     TODAY=$(date '+%Y%m%d')
