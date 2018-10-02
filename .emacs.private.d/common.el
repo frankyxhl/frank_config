@@ -165,3 +165,4 @@
 (defun insert-current-timestamp ()
   (interactive)
   (insert (format-time-string "%Y-%m-%dT%H:%M:%S")))
+(add-to-list 'yas-snippet-dirs "~/.emacs.private.d/snippets")

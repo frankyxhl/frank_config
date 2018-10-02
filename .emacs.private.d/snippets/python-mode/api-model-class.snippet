@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : api-model-class
+#key : amc
+#contributor : Frank Xu
+# --
+class ${1:model-name}Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = $1
+        fields = "__all__"
+
+$0
