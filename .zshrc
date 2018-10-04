@@ -30,7 +30,8 @@ setopt INC_APPEND_HISTORY
 [ -f .zshrc.d/search.sh ] && source .zshrc.d/search.sh
 [ -f .zshrc.d/git.sh ] && source .zshrc.d/git.sh
 [ -f .zshrc.d/docker.sh ] && source .zshrc.d/docker.sh
-[ -f .zshrc.d/percol.sh ] && source .zshrc.d/percol.sh
+# [ -f .zshrc.d/percol.sh ] && source .zshrc.d/percol.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Custom each computer
 [ -f ~/.zshrc.local.sh ] && source ~/.zshrc.local.sh
@@ -59,4 +60,3 @@ fi
 
 # start zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
