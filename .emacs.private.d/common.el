@@ -166,3 +166,5 @@
   (interactive)
   (insert (format-time-string "%Y-%m-%dT%H:%M:%S")))
 (add-to-list 'yas-snippet-dirs "~/.emacs.private.d/snippets")
+
+(setq python-shell-interpreter "python3")
