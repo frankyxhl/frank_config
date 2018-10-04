@@ -110,3 +110,12 @@ color_ls(){
 }
 alias ls=color_ls
 alias l=color_ls
+
+# https://github.com/sharkdp/bat
+cat_or_bat(){
+    if command_exists bat; then
+        alias cat='bat'
+    fi
+}
+
+cat_or_bat
