@@ -165,6 +165,13 @@
 (defun insert-current-timestamp ()
   (interactive)
   (insert (format-time-string "%Y-%m-%dT%H:%M:%S")))
+
+
+(define-derived-mode xonsh-mode python-mode "Xonsh Mode"
+  "A mode for .xsh files.")
+
+(add-to-list 'auto-mode-alist '("\\.xsh\\'" . xonsh-mode))
+
 (add-to-list 'yas-snippet-dirs "~/.emacs.private.d/snippets")
 
 (setq python-shell-interpreter "python3")
