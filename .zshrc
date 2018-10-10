@@ -25,11 +25,11 @@ setopt INC_APPEND_HISTORY
 
 # export NODE_PATH=/usr/local/lib/node_modules
 
-[ -f .zshrc.d/common.sh ] && source .zshrc.d/common.sh
-[ -f .zshrc.d/tar.sh ] && source .zshrc.d/tar.sh
-[ -f .zshrc.d/search.sh ] && source .zshrc.d/search.sh
-[ -f .zshrc.d/git.sh ] && source .zshrc.d/git.sh
-[ -f .zshrc.d/docker.sh ] && source .zshrc.d/docker.sh
+source ~/.zshrc.d/common.sh
+source ~/.zshrc.d/tar.sh
+source ~/.zshrc.d/search.sh
+source ~/.zshrc.d/git.sh
+source ~/.zshrc.d/docker.sh
 # [ -f .zshrc.d/percol.sh ] && source .zshrc.d/percol.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

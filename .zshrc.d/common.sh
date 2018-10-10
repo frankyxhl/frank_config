@@ -83,15 +83,13 @@ alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G
 
 alias disk='df -h'
 
-mkdir_and_enter_today_folder(){
+today(){
     TODAY=$(date '+%Y%m%d')
     if [ ! -d "$TODAY" ]; then
         mkdir $TODAY
     fi
     cd $TODAY
 }
-
-alias today=mkdir_and_enter_today_folder
 
 color_ll(){
     if command_exists exa ; then
