@@ -5,7 +5,7 @@ local user_host_format="%n@%m"
 local host_format="%m"
 
 # left_format is usernamd and hostname
-if [[ $USER -eq 'frank' ]]; then
+if [ $USER = 'frank' ]; then
     left_format=$host_format
 else
     left_format=$user_host_format
