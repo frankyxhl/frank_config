@@ -56,3 +56,6 @@
 (load "common")
 (load "web")
 (load "evil")
+
+(if (file-exists-p "~/.emacs.local.el")
+    (load-file "~/.emacs.local.el"))
