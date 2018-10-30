@@ -14,16 +14,11 @@ def is_python3():
         sys.exit(1)
 
 
-def arch_upgrade():
-    cmd = "sudo pacman -Syu"
-    os.system(cmd)
-
-
 def arch_install():
     print_and_cmd_list = [
-
         ("Sudo true"                         ,["sudo true"]),
-        ("Installing packages..."            ,["sudo pacman -Syy vim tmux zsh mosh"]),
+        ("Upgrade"                           ,["yes | sudo pacman -Syu"]),
+        ("Installing packages..."            ,["yes | sudo pacman -Syy vim tmux zsh mosh"]),
         ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
         # sudo apt-get install -y autojump python2.7 python-pip
         ("Installing oh-my-zsh.."            ,["git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"]),
@@ -62,6 +57,5 @@ def link():
 
 if __name__ == "__main__":
     is_python3()
-    arch_upgrade()
     arch_install()
     link()
