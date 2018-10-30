@@ -15,13 +15,15 @@ def is_python3():
 
 
 def arch_upgrade():
-    cmd = "pacman -Syu"
+    cmd = "sudo pacman -Syu"
     os.system(cmd)
 
 
 def arch_install():
     print_and_cmd_list = [
-        ("Installing packages..."            ,["pacman -Syy vim tmux zsh mosh"]),
+
+        ("Sudo true"                         ,["sudo true"]),
+        ("Installing packages..."            ,["sudo pacman -Syy vim tmux zsh mosh"]),
         ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
         # sudo apt-get install -y autojump python2.7 python-pip
         ("Installing oh-my-zsh.."            ,["git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"]),
