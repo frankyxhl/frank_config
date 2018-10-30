@@ -21,11 +21,13 @@ def arch_install():
         ("Installing packages..."            ,["yes | sudo pacman -Syy vim tmux zsh mosh"]),
         # ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
         # sudo apt-get install -y autojump python2.7 python-pip
-        ("Installing oh-my-zsh.."            ,["if [ ! -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh;fi"]),
-        # ("Installing zsh-autosuggestions..." ,["git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions"]),
-        ("Install custom themes"             ,["if [ ! -d ~/.oh-my-zsh/custom/themes ]; then mkdir -p ~/.oh-my-zsh/custom/themes;fi",
-                                               "if [ ! -f ~/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme;fi"]),
-        ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi"]),
+        ("Installing oh-my-zsh.."            ,["if [ ! -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; fi"]),
+        ("Install Zsh-autosuggestions in oh-my-zsh", [
+            "if [ ! -d ~/.oh-my-zsh/custom/plugins ]; then mkdir -p ~/.oh-my-zsh/custom/plugins; fi",
+            "if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi"]),
+        ("Install custom themes"             ,["if [ ! -d ~/.oh-my-zsh/custom/themes ]; then mkdir -p ~/.oh-my-zsh/custom/themes; fi",
+                                               "if [ ! -f ~/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme; fi"]),
+        ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
     ]
     for (show_message, cmd_list) in print_and_cmd_list:
         print(show_message)
