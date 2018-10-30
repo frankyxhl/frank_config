@@ -19,13 +19,13 @@ def arch_install():
         ("Sudo true"                         ,["sudo true"]),
         ("Upgrade"                           ,["yes | sudo pacman -Syu"]),
         ("Installing packages..."            ,["yes | sudo pacman -Syy vim tmux zsh mosh"]),
-        ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
+        # ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
         # sudo apt-get install -y autojump python2.7 python-pip
-        ("Installing oh-my-zsh.."            ,["git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"]),
+        ("Installing oh-my-zsh.."            ,["if [ ! -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh;fi"]),
         # ("Installing zsh-autosuggestions..." ,["git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions"]),
-        ("Install custom themes"             ,["mkdir -p ~/.oh-my-zsh/custom/themes/",
-                                               "if [ ! -f ~/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme;"]),
-        ("Install Tmux plugin"               ,["git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"]),
+        ("Install custom themes"             ,["if [ ! -d ~/.oh-my-zsh/custom/themes ]; then mkdir -p ~/.oh-my-zsh/custom/themes;fi",
+                                               "if [ ! -f ~/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme;fi"]),
+        ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi"]),
     ]
     for (show_message, cmd_list) in print_and_cmd_list:
         print(show_message)
@@ -50,7 +50,7 @@ def link():
         ".xonsh"
     ]
     for name in linking_name_list:
-        cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};".format(name, name, name)
+        cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
         print(cmd)
         os.system(cmd)
 
