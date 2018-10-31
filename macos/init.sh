@@ -58,7 +58,7 @@ if [ ! -d ~/.emacs.prviate.d ]; then
     ln -s ~/frank_config/.emacs.private.d ~/.emacs.private.d
 fi
 
-if [ ! -d ~/.xonshrc ]; then
+if [ ! -f ~/.xonshrc ]; then
     ln -s ~/frank_config/.xonshrc ~/.xonshrc
 fi
 

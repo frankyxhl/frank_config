@@ -70,7 +70,9 @@ def link():
         ".tmux.conf",
         ".zshrc",
         ".vimrc",
-        ".xonsh"
+        ".xonshrc",
+        ".spacemacs",
+        ".emacs.private.el"
     ]
     for name in filename_list:
         cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
@@ -79,7 +81,8 @@ def link():
         os.system(cmd)
     folder_list = [
         ".zshrc.d",
-        ".vim"
+        ".vim",
+        ".emacs.private.d"
     ]
     for name in folder_list:
         cmd = "if [ ! -d ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
