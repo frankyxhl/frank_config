@@ -6,12 +6,37 @@
 # @description: Install python packages for emacs(spacemacs)
 import os, sys
 
-
 def is_python3():
     print("Checking Python3")
     if sys.version_info < (3, 0):
-        print("Sorry, this program require Python version bigger than 3.x")
+        print("Sorry, this program requires Python's version bigger than 3")
         sys.exit(1)
+
+class TColors:
+    """
+    Terminal Colors
+    """
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+BAR = "="*80
+
+def green_print(s):
+    return "{}{}{}".format(TColors.OKGREEN, s, TColors.ENDC)
+
+
+def blue_print(s):
+    return "{}{}{}".format(TColors.OKBLUE, s, TColors.ENDC)
+
+
+def warning_print(s):
+    return "{}{}{}".format(TColors.WARNING, s, TColors.ENDC)
 
 
 def arch_install():
@@ -30,7 +55,8 @@ def arch_install():
         ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
     ]
     for (show_message, cmd_list) in print_and_cmd_list:
-        print(show_message)
+        print(green_print(show_message))
+        print(blue_print(BAR))
         for cmd in cmd_list:
             print(cmd)
             if os.system(cmd) != 0:
@@ -39,21 +65,26 @@ def arch_install():
 
 
 def link():
-    print("Linking dot files to home path...")
-    linking_name_list = [
-        ".emacs",
-        ".emacs.d",
+    print("Linking dot files and folder to home path...")
+    filename_list = [
         ".tmux.conf",
         ".zshrc",
-        ".zshrc.d",
         ".vimrc",
+    ]
+    for name in filename_list:
+        cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
+        print(green_print(cmd))
+        print(blue_print(BAR))
+        os.system(cmd)
+    folder_list = [
+        ".zshrc.d",
         ".vim",
-        ".emacsclient",
         ".xonsh"
     ]
-    for name in linking_name_list:
-        cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
-        print(cmd)
+    for name in folder_list:
+        cmd = "if [ ! -d ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
+        print(green_print(cmd))
+        print(blue_print(BAR))
         os.system(cmd)
 
 
