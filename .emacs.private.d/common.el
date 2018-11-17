@@ -1,3 +1,8 @@
+;; .cache/recentf
+;; https://github.com/syl20bnr/spacemacs/issues/5186#issuecomment-399220611
+(cancel-timer recentf-auto-save-timer)
+
+
 ;; load functions
 (load "func")
 
