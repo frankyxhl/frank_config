@@ -8,6 +8,7 @@ alias g='git'
 # let Cal show 3 months in default
 alias cal='cal -3'
 alias wget='wget -c'
+alias cls='clear'
 
 
 # ls command enhancement
