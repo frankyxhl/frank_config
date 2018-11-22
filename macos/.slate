@@ -40,8 +40,9 @@ bind e:cmd,shift focus 'Emacs'
 bind v:cmd,shift focus 'Code'
 bind o:cmd,shift focus 'PyCharm'
 bind s:cmd,shift focus 'Slack'
-bind i:cmd focus 'iTerm2'
+bind i:cmd       focus 'iTerm2'
 bind i:cmd,shift focus 'IntelliJ IDEA'
+bind p:cmd       focus 'Parallels Desktop'
 bind p:cmd,shift focus 'WebStorm'
 
 bind tab:cmd switch
