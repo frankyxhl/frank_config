@@ -56,6 +56,7 @@
 (load "common")
 (load "web")
 (load "evil")
+(load "org-override")
 
 (if (file-exists-p "~/.emacs.local.el")
     (load-file "~/.emacs.local.el"))

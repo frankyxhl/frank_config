@@ -3,6 +3,8 @@
 (cancel-timer recentf-auto-save-timer)
 
 
+
+
 ;; load functions
 (load "func")
 
@@ -115,42 +117,9 @@
 ;; https://github.com/jacktasia/dumb-jump
 (setq dumb-jump-mode t)
 
-
-;; drag-stuff
 ;; https://github.com/rejeep/drag-stuff.el
 (drag-stuff-global-mode t)
 (drag-stuff-define-keys)
-
-;; To avoid yas confilct in org-mode disable
-;; From: https://gist.github.com/takaxp/8604aa8660be93edd3b89df811851c64
-(defun my:yas-expand (&optional field)
-  "Disable `yas-expand' in src-block."
-  (interactive)
-  (if (equal major-mode 'org-mode)
-      (org-cycle)
-    (yas-expand field)))
-(define-key yas-minor-mode-map (kbd "<tab>") 'my:yas-expand)
-
-
-;; To avoid drag-stuff-right confilct in org-mode disable
-(defun my:drag-stuff-right (&optional field)
-  "Disable `drag-stuff-right' in src-block."
-  (interactive)
-  (if (equal major-mode 'org-mode)
-      (org-metaright)
-    (drag-stuff-right)))
-(define-key drag-stuff-mode-map (kbd "<M-right>") 'my:drag-stuff-right)
-
-;; To avoid drag-stuff-left confilct in org-mode disable
-(defun my:drag-stuff-left (&optional field)
-  "Disable `drag-stuff-left' in src-block."
-  (interactive)
-  (if (equal major-mode 'org-mode)
-      (org-metaleft)
-    (drag-stuff-left)))
-(define-key drag-stuff-mode-map (kbd "<M-left>") 'my:drag-stuff-left)
-
-
 
 ;; Theme and font setting
 ;; C-x C-+ and C-x C-- to increase or decrease the buffer text size
@@ -158,19 +127,15 @@
 ;; Spacemacs theme: https://themegallery.robdor.com/
 (defun change-to-ppt-mode ()
   (interactive)
-  (set-default-font "Source Code Pro 18")
-  )
-
+  (set-default-font "Source Code Pro 18"))
 
 (defun change-back-from-ppt-mode ()
   (interactive)
   (set-default-font "Source Code Pro 13"))
 
-
 (defun insert-current-timestamp ()
   (interactive)
   (insert (format-time-string "%Y-%m-%dT%H:%M:%S")))
-
 
 (define-derived-mode xonsh-mode python-mode "Xonsh Mode"
   "A mode for .xsh files.")
