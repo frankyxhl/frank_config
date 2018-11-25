@@ -13,5 +13,16 @@
 
 (define-key evil-normal-state-map "/" 'swiper)
 
-(evil-define-key 'normal clojurescript-mode-map (kbd "M-.") 'cider-find-var)
-(evil-define-key 'normal clojurescript-mode-map (kbd "M-,") 'cider-pop-back)
+(with-eval-after-load 'clojurescript
+  (progn
+    (evil-define-key 'normal clojurescript-mode-map (kbd "M-.") 'cider-find-var)
+    (evil-define-key 'normal clojurescript-mode-map (kbd "M-,") 'cider-pop-back)))
+
+(with-eval-after-load 'python
+  (progn
+    (evil-define-key 'normal python-mode-map (kbd "M-.") 'xref-find-definitions)
+    (evil-define-key 'normal python-mode-map (kbd "M-,") 'xref-pop-marker-stack)))
+
+(require 'org)
+(with-eval-after-load 'org
+  (evil-define-key 'normal evil-org-mode-map (kbd "M-j") 'ace-jump-mode))

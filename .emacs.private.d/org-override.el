@@ -26,6 +26,3 @@
     (drag-stuff-left)))
 (define-key drag-stuff-mode-map (kbd "<M-left>") 'my:drag-stuff-left)
 
-(require 'org)
-(with-eval-after-load 'org
-  (evil-define-key 'normal evil-org-mode-map (kbd "M-j") 'ace-jump-mode))
