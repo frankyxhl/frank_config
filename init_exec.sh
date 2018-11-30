@@ -30,7 +30,7 @@ if [ ! -f  ~/.vimrc ]; then
     ln -s ~/frank_config/.vimrc ~/.vimrc
 fi
 
-if [ ! -f ~/~/.vim ]; then
+if [ ! -f ~/.vim ]; then
     ln -s ~/frank_config/.vim ~/.vim
 fi
 
