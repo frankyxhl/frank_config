@@ -119,3 +119,6 @@ cat_or_bat(){
 }
 
 cat_or_bat
+
+# More color: https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
+export LS_COLORS=$LS_COLORS:'di=0;35:'
