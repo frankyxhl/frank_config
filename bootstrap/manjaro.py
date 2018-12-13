@@ -43,9 +43,9 @@ def arch_install():
     print_and_cmd_list = [
         ("Sudo true"                         ,["sudo true"]),
         ("Upgrade"                           ,["yes | sudo pacman -Syu"]),
-        ("Installing packages..."            ,["yes | sudo pacman -Syy vim tmux zsh mosh fzf"]),
+        ("Installing packages..."            ,["yes | sudo pacman -Syy vim tmux zsh mosh"]),
         # ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
-        # sudo apt-get install -y autojump python2.7 python-pip
+        # sudo apt-get install -y python2.7 python-pip
         ("Installing oh-my-zsh.."            ,["if [ ! -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; fi"]),
         ("Install Zsh-autosuggestions in oh-my-zsh", [
             "if [ ! -d ~/.oh-my-zsh/custom/plugins ]; then mkdir -p ~/.oh-my-zsh/custom/plugins; fi",

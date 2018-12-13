@@ -13,7 +13,7 @@ sudo chsh -s $(which zsh)
 
 sudo apt install -y git vim tmux
 # find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
-# sudo apt-get install -y autojump python2.7 python-pip
+# sudo apt-get install -y python2.7 python-pip
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions

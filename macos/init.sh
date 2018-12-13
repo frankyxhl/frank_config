@@ -1,4 +1,4 @@
-brew install zsh tmux vim cmatrix autojump python3 ispell mosh
+brew install zsh tmux vim cmatrix python3 ispell mosh
 
 # Emacs
 brew tap d12frosted/emacs-plus

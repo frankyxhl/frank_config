@@ -3,9 +3,9 @@
 # @date: 2012-03-02
 # @author: Frank Xu
 sudo true
-sudo apt-get install -y git vim tmux zsh autojump
+sudo apt-get install -y git vim tmux zsh 
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
-# sudo apt-get install -y autojump python2.7 python-pip
+# sudo apt-get install -y python2.7 python-pip
 
 # https://github.com/mooz/percol
 # sudo pip2 install percol

@@ -16,7 +16,7 @@ def install():
     print_and_cmd_list = [
         ("Installing packages..."            ,["sudo apt-get install -y vim tmux zsh ntfs-3g"]),
         ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
-        # sudo apt-get install -y autojump python2.7 python-pip
+        # sudo apt-get install -y python2.7 python-pip
         ("Installing oh-my-zsh.."            ,["git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"]),
         # ("Installing zsh-autosuggestions..." ,["git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions"]),
         # https://github.com/mooz/percol
@@ -51,7 +51,7 @@ def link():
         ".xonsh"
     ]
     for name in linking_name_list:
-        cmd = "ln -s ~/frank_config/{} ~/{}".format(name, name)
+        cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};".format(name, name, name)
         print(cmd)
         os.system(cmd)
 
