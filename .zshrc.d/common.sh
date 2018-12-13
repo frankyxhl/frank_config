@@ -20,6 +20,13 @@ alias ld='ls -d */'
 # List dotfiles only
 alias l.='ls -d .*'
 
+# https://unix.stackexchange.com/questions/125385/combined-mkdir-and-cd#answer-125386
+mc ()
+{
+    mkdir -p -- "$1" &&
+       cd -P -- "$1"
+}
+
 # List ordered by time
 alias lt='ls -alrt'
 
