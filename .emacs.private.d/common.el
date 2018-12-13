@@ -37,7 +37,7 @@
 ;; brew install global --with-ctags --with-pygments
 ;; https://github.com/syohex/emacs-helm-gtags/
 (global-set-key (kbd "C-x t") 'helm-gtags-find-tag)
-(global-set-key (kbd "C-t") 'helm-projectile-ag)
+(global-set-key (kdb "C-t") 'spacemacs/helm-project-smart-do-search-region-or-symbol)
 (global-set-key (kbd "C-x C-t") 'helm-gtags-find-pattern)
 
 ;; (aggressive-indent-global-mode)
