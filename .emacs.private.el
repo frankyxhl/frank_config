@@ -60,3 +60,6 @@
 
 (if (file-exists-p "~/.emacs.local.el")
     (load-file "~/.emacs.local.el"))
+
+(if (string-equal system-type "windows-nt") ; Microsoft Windows
+    (load "windows"))
