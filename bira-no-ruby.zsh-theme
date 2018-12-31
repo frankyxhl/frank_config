@@ -11,7 +11,7 @@ else
     left_format=$user_host_format
 fi
 
-if [[ $UID -eq 0 ]]; then
+if [ $UID -eq 0 ]; then
     local user_host='%{$terminfo[bold]$fg[red]%}${left_format}%{$reset_color%}'
 # TODO Below is not a good solution. Should refactor it later.
 # Suggestion is to compile all these files first.
