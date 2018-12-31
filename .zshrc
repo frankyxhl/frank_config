@@ -35,6 +35,11 @@ source ~/.zshrc.d/docker.sh
 
 # Custom each computer
 [ -f ~/.zshrc.local.sh ] && source ~/.zshrc.local.sh
+# If is Cygwin
+if [ "$(get_os_name)" = "Cygwin" ]; then
+    [ -f ~/.zshrc.d/windows.sh ] && source ~/.windows.zsh
+fi
+
 
 #turn of correct
 unsetopt correct_all
