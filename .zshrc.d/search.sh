@@ -29,3 +29,5 @@ find_files() {
     find . -iname "*$1*" -type f -print
 }
 alias ff=find_files
+
+alias rg="rg --glob='!*.min.js'"
