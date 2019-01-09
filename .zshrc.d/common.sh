@@ -34,8 +34,6 @@ alias lt='ls -alrt'
 alias v='/usr/local/bin/vless'
 # alias c='rsync -av --progress'
 
-# Find the files that has been added/modified most recently
-
 alias tree="tree -FAC | less -r"
 
 alias serve="python3 -m http.server"
