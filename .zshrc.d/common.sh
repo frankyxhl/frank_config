@@ -125,10 +125,16 @@ cat_or_bat(){
     fi
 }
 
-cat_or_bat
+# cat_or_bat
 
 # More color: https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
-export LS_COLORS=$LS_COLORS:'di=0;35:'
+export LS_COLORS=$LS_COLORS:'di=1;34:'
 
 # Use vi as default editor
 export EDITOR=vi
+
+
+# https://www.jianshu.com/p/c5a2369fa613
+# COMMAND # (wget -O - pi.dk/3 || curl pi.dk/3/) | bash
+alias p='parallel'
+alias pp='parallel --pipe -k'
