@@ -104,7 +104,7 @@ color_ll(){
         ls -lh $@
     fi
 }
-alias ll=color_ll
+# alias ll=color_ll
 
 color_ls(){
     if command_exists exa; then
@@ -113,8 +113,8 @@ color_ls(){
         ls $@
     fi
 }
-alias ls=color_ls
-alias l=color_ls
+# alias ls=color_ls
+# alias l=color_ls
 
 # https://github.com/sharkdp/bat
 cat_or_bat(){
