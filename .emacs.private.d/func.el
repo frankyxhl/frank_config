@@ -68,3 +68,15 @@ Replaces default behaviour of comment-dwim, when it inserts comment at the end o
     (holy-mode t)))
 (global-set-key (kbd "C-z") 'toggle-holy-mode)
 ;; (global-set-key (kbd "M-p") 'ace-window)
+
+;; http://ergoemacs.org/emacs/emacs_line_ending_char.html
+;; https://stackoverflow.com/questions/23712076/how-to-remove-m-in-emacs#answer-23725763
+(defun delete-carriage-returns ()
+  "Remove Carriage Return in the file. Know as windows encoding trailing newline"
+  (interactive)
+  (save-excursion
+    (goto-char 0)
+    (while (search-forward "\r" nil :noerror)
+      (replace-match ""))))
+
+(defalias 'remove-windows-trailing-newlines 'delete-carriage-returns)
