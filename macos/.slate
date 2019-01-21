@@ -38,12 +38,11 @@ bind a:cmd,shift focus 'AppCode'
 bind k:cmd,shift focus 'Keynote'
 bind e:cmd,shift focus 'Emacs'
 bind v:cmd,shift focus 'Code'
-bind o:cmd,shift focus 'PyCharm'
+bind p:cmd,shift focus 'PyCharm'
 bind s:cmd,shift focus 'Slack'
 bind i:cmd       focus 'iTerm2'
 bind i:cmd,shift focus 'IntelliJ IDEA'
 bind p:cmd       focus 'Parallels Desktop'
-bind p:cmd,shift focus 'WebStorm'
 
 bind tab:cmd switch
 bind 0:cmd ${righthalf}

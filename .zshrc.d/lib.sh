@@ -16,3 +16,10 @@ get_os_name(){
     echo ${OS_NAME}
 }
 
+get_content_in_double_quote(){
+    awk -F'"' '{i = 1; while (i <= NF) {if ($i ~/=$/) print $(i+1);i++}}' $1
+}
+
+get_magnet_links_from_url(){
+    curl $1 | grep "<a href=" | get_content_in_double_quote | grep magnet
+}

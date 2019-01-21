@@ -135,10 +135,8 @@ export EDITOR=vi
 
 # https://www.jianshu.com/p/c5a2369fa613
 # COMMAND # (wget -O - pi.dk/3 || curl pi.dk/3/) | bash
-alias p='parallel'
-alias pp='parallel --pipe -k'
+# parallel
 
-alias sc="vim ~/.ssh/config"
 
 # https://www.quora.com/What-is-the-most-useful-bash-script-that-you-have-ever-written
 weather(){
@@ -180,3 +178,15 @@ extract () {
         echo "'$1' is not a valid file."
     fi
 }
+
+pp(){
+    case $(get_os_name) in
+        Mac) echo $PATH | sed 's/:/\
+/g';;
+        *) echo $PATH | sed -e "s/:/\n/g" ;;
+    esac 
+}
+
+alias sc="vim ~/.ssh/config"
+alias zc="vim ~/.zshrc.d/common.sh"
+alias zl="vim ~/.zshrc.local.sh"
