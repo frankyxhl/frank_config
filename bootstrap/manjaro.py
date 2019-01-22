@@ -6,6 +6,9 @@
 # @description: Install python packages for emacs(spacemacs)
 import os, sys
 
+# TODO: https://github.com/rupa/z
+# TODO: https://github.com/Wyntau/fzf-zsh
+# TODO: http://terminal.sexy
 def is_python3():
     print("Checking Python3")
     if sys.version_info < (3, 0):

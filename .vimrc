@@ -1,7 +1,5 @@
-" Cheat sheet
-" https://vim.rtorr.com/lang/zh_cn/
 set hlsearch
-set number
+set number relativenumber
 syntax on
 imap jk <ESC>
 " colorscheme Tomorrow-Night-Bright
@@ -10,7 +8,6 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 
 function! AddSubtract(char, back)
       let pattern = &nrformats =~ 'alpha' ? '[[:alpha:][:digit:]]' : '[[:digit:]]'
@@ -72,7 +69,6 @@ command! MakeTags !ctags -R .
 " C-x C-f
 "
 
-
 hi ColorColumn ctermbg=NONE ctermfg=red
 match ColorColumn /\%>79v.*\%<81v/
 
@@ -86,6 +82,7 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/junegunn/seoul256.vim
 Plug 'junegunn/seoul256.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
