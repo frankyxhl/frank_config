@@ -83,6 +83,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'https://github.com/tpope/vim-commentary.git'
 
 call plug#end()
 
@@ -96,3 +97,6 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 set winaltkeys=no
 map <ESC>j <Plug>(easymotion-f)
 nmap <ESC>j <Plug>(easymotion-overwin-f)
+nmap cc Vgc0j
+nmap , yyp
+

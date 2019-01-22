@@ -190,3 +190,4 @@ pp(){
 alias sc="vim ~/.ssh/config"
 alias zc="vim ~/.zshrc.d/common.sh"
 alias zl="vim ~/.zshrc.local.sh"
+alias rc="vim ~/.vimrc"
