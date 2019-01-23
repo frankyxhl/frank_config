@@ -100,3 +100,4 @@ nmap <ESC>j <Plug>(easymotion-overwin-f)
 nmap cc Vgc0j
 nmap , yyp
 
+map <F6> :setlocal spell! spelllang=en_us<CR>
