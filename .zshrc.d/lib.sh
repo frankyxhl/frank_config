@@ -1,6 +1,6 @@
 # https://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#answer-4785518
 command_exists () {
-    type "$1" &> /dev/null ;
+    type "$1" >/dev/null 2>&1;
 }
 
 # https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux#answer-3466183

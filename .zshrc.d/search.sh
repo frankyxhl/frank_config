@@ -1,6 +1,8 @@
 # Text search
 [ -f ~/.zshrc.d/lib.sh ] && source ~/.zshrc.d/lib.sh
 
+alias rg="rg --hidden --glob='!.git' --glob='!*.min.js'"
+
 find_lines_contains_string_in_current_folder_recursively() {
     if [ $# -eq 0 ] ; then
         echo "Please input the content you want to search."
@@ -10,6 +12,7 @@ find_lines_contains_string_in_current_folder_recursively() {
     if command_exists rg ; then
         rg "$1"
     else
+        echo "Can not find 'rg' command, use 'find' and 'grep' instead."
         find . -name "*" -type f | xargs grep "$1" --line-number
     fi
 }
@@ -30,4 +33,3 @@ find_files() {
 }
 alias ff=find_files
 
-alias rg="rg --glob='!*.min.js'"

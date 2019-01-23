@@ -184,7 +184,7 @@ pp(){
         Mac) echo $PATH | sed 's/:/\
 /g';;
         *) echo $PATH | sed -e "s/:/\n/g" ;;
-    esac 
+    esac
 }
 
 alias cfsc="vim ~/.ssh/config"
