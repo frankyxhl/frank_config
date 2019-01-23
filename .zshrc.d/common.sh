@@ -187,7 +187,7 @@ pp(){
     esac 
 }
 
-alias sc="vim ~/.ssh/config"
-alias zc="vim ~/.zshrc.d/common.sh"
-alias zl="vim ~/.zshrc.local.sh"
-alias rc="vim ~/.vimrc"
+alias cfsc="vim ~/.ssh/config"
+alias cfzc="vim ~/.zshrc.d/common.sh"
+alias cfzl="vim ~/.zshrc.local.sh"
+alias cfv="vim ~/.vimrc"
