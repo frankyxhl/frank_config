@@ -3,6 +3,10 @@
 
 alias rg="rg --hidden --glob='!.git' --glob='!*.min.js'"
 
+find_lines(){
+    find . -name "*" -type f | xargs grep "$1" --line-number
+}
+
 find_lines_contains_string_in_current_folder_recursively() {
     if [ $# -eq 0 ] ; then
         echo "Please input the content you want to search."
