@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Try to run http.server. Default port is 8000.
+If 8000 is in use, use 8001...
+"""
+
+import socket
+import errno
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+__author__ = "Frank Xu"
+__copyright__ = "Copyright 2019. Frank Xu"
+__credits__ = ["Frank Xu"]
+__license__ = "WTFP 2.0"
+__version__ = "0.1.0"
+__maintainer__ = "Frank Xu"
+__email__ = "frank@frankxu.me"
+__status__ = "Dev"
+
+BIND = "0.0.0.0"
+
+def main():
+    port = 8000
+    while port < 8010:
+        try:
+            httpd = HTTPServer((BIND, port), SimpleHTTPRequestHandler)
+            print("Running http server at {0}:{1}".format(BIND, port))
+            httpd.serve_forever()
+        except socket.error as e:
+            if e.errno == errno.EADDRINUSE:
+                inuse_port = port
+                port += 1
+                print("Port '{}' is already in use. Try new port '{}'".format(inuse_port, port))
+                continue
+            else:
+                print(e)
+                break
+
+if __name__ == '__main__':
+    main()

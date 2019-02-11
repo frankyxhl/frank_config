@@ -37,7 +37,7 @@ alias v='/usr/local/bin/vless'
 
 alias tree="tree -FAC | less -r"
 
-alias serve="python3 -m http.server"
+# alias serve="python3 -m http.server"
 # or http-server
 # https://github.com/indexzero/http-server
 
