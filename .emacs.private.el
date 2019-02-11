@@ -63,3 +63,6 @@
 
 (if (string-equal system-type "windows-nt") ; Microsoft Windows
     (load "windows"))
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.private.d/aweshell"))
+(require 'aweshell)
