@@ -75,6 +75,13 @@ match ColorColumn /\%>79v.*\%<81v/
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40 ctermbg=239
 
+" "https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+
+endif
 " https://github.com/junegunn/vim-plug/wiki/tutorial
 " Now run :PlugInstall to install the plugins.
 call plug#begin('~/.vim/plugged')
