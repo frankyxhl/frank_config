@@ -57,6 +57,8 @@ def arch_install():
                                                "if [ ! -f ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme; fi",
                                                "if [ ! -d ~/.zsh/zsh-autosuggestions ]; then git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions; fi"]),
         ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
+        ("Install default Vim's plugin",      ["vim +PlugInstall +qall"]),
+
         ("Change default sh to zsh"          ,["chsh - s $(which zsh)"]),
     ]
     for (show_message, cmd_list) in print_and_cmd_list:
@@ -75,6 +77,7 @@ def link():
         ".tmux.conf",
         ".zshrc",
         ".vimrc",
+        ".vim",
         ".xonshrc",
         ".spacemacs",
         ".emacs.private.el"
