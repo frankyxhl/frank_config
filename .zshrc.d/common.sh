@@ -98,6 +98,14 @@ today(){
     cd $TODAY
 }
 
+yesterday(){
+    YESTERDAY=$(date -v-1d '+%Y%m%d')
+    if [ ! -d "$YESTERDAY" ]; then
+        mkdir $YESTERDAY
+    fi
+    cd $YESTERDAY
+}
+
 color_ll(){
     if command_exists exa ; then
         exa -l $@
