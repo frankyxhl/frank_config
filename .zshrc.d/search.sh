@@ -37,6 +37,13 @@ find_files() {
 }
 alias ff=find_files
 
+remove_find_files(){
+    find_files "$1"
+    find_files "$1" | xargs rm
+}
+
+alias rff=remove_find_files
+
 find_files_detail(){
     if [ $# -eq 0 ] ; then
         echo "Please input the file names you want to search."
@@ -51,5 +58,7 @@ find_files_detail(){
     find . -iname "*$1*" -type f -print | xargs ls -lrth
 }
 
-alias ffd=find_files_detail
+
+
+alias dff=find_files_detail
 
