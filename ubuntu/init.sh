@@ -59,6 +59,10 @@ if [ ! -d ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 fi
 
+if [ ! -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
 echo 'configure oh-my-zsh custom theme'
 if [ ! -f  ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then
     ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
