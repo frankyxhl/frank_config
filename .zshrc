@@ -37,7 +37,7 @@ source ~/.zshrc.d/docker.sh
 [ -f ~/.zshrc.local.sh ] && source ~/.zshrc.local.sh
 # If is Cygwin
 if [ "$(get_os_name)" = "Cygwin" ]; then
-    [ -f ~/.zshrc.d/windows.sh ] && source ~/.windows.zsh
+    [ -f ~/.zshrc.d/windows.sh ] && source ~/.zshrc.d/.windows.sh
 fi
 
 
