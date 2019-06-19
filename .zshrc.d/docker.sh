@@ -21,6 +21,12 @@ alias docker_stop_running_containers='docker stop $(docker ps -a -q)'
 
 # Use `docker-cleanup --dry-run` to see what would be deleted.
 
+# Remove all containers
+alias docker_rm_all_containers='docker rm $(docker ps -aq)'
+
+# Remove all images
+alias docker_rm_all_images='docker rmi $(docker images -q)'
+
 function docker-cleanup {
     EXITED=$(docker ps -q -f status=exited)
     DANGLING=$(docker images -q -f "dangling=true")
