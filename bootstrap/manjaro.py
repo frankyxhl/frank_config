@@ -59,6 +59,7 @@ def arch_install():
         ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
         ("Install default Vim's plugin",      ["vim +PlugInstall +qall"]),
 
+        # TODO Seems error in majanro i3wm because it's uxvt
         ("Change default sh to zsh"          ,["chsh - s $(which zsh)"]),
     ]
     for (show_message, cmd_list) in print_and_cmd_list:

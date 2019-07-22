@@ -53,7 +53,7 @@ bindkey '^T' autosuggest-toggle
 if [[ `uname` == 'Darwin' ]]
 then
     alias meld="open -W -a Meld --args "
-    alias vim="/usr/local/Cellar/vim/8.0.0473/bin/vim"
+    alias vim="/usr/local/Cellar/vim/8.1.1550/bin/vim"
     # For remacs purpose
     export PATH="/usr/local/opt/texinfo/bin:$PATH"
     # Add flutter
