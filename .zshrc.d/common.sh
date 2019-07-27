@@ -86,7 +86,7 @@ alias wget-website='wget \
 # Grabs the disk usage in the current directory
 alias usage='du -ch 2> /dev/null |tail -1'
 
-alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+# alias size='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 
 alias disk='df -h'
 
