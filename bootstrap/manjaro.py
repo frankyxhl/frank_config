@@ -55,7 +55,8 @@ def arch_install():
             "if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi"]),
         ("Install custom themes"             ,["if [ ! -d ~/.oh-my-zsh/custom/themes ]; then mkdir -p ~/.oh-my-zsh/custom/themes; fi",
                                                "if [ ! -f ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme; fi",
-                                               "if [ ! -d ~/.zsh/zsh-autosuggestions ]; then git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions; fi"]),
+                                               "if [ ! -d ~/.zsh/zsh-autosuggestions ]; then git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions; fi"
+                                               "if [ ! -d ~/.zsh/zsh-syntax-highlighting ]; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; fi"]),
         ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
         ("Install default Vim's plugin",      ["vim +PlugInstall +qall"]),
 
@@ -84,7 +85,7 @@ def link():
         ".emacs.private.el"
     ]
     for name in filename_list:
-        cmd = "if [ ! -f ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
+        cmd = "if [ ! -f ~/{0} ]; then ln -s ~/frank_config/{0} ~/{0};fi".format(name)
         print(green_print(cmd))
         print(blue_print(BAR))
         os.system(cmd)
@@ -94,7 +95,7 @@ def link():
         ".emacs.private.d"
     ]
     for name in folder_list:
-        cmd = "if [ ! -d ~/{} ]; then ln -s ~/frank_config/{} ~/{};fi".format(name, name, name)
+        cmd = "if [ ! -d ~/{0} ]; then ln -s ~/frank_config/{0} ~/{0};fi".format(name)
         print(green_print(cmd))
         print(blue_print(BAR))
         os.system(cmd)
