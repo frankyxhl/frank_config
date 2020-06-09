@@ -62,6 +62,3 @@ then
         export LC_ALL='en_US.UTF-8'
     fi
 fi
-
-# start zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

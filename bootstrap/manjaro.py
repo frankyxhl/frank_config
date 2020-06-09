@@ -44,24 +44,24 @@ def warning_print(s):
 
 def arch_install():
     print_and_cmd_list = [
-        ("Sudo true"                         ,["sudo true"]),
-        ("Upgrade"                           ,["yes | sudo pacman -Syu"]),
-        ("Installing packages..."            ,["yes | sudo pacman -Syy vim tmux zsh mosh"]),
+        ("Sudo true", ["sudo true"]),
+        ("Upgrade", ["yes | sudo pacman -Syu"]),
+        ("Installing packages...", ["yes | sudo pacman -Syy vim tmux zsh mosh"]),
         # ("Use Vim's visul mode ..."          ,["find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;"]),
         # sudo apt-get install -y python2.7 python-pip
-        ("Installing oh-my-zsh.."            ,["if [ ! -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; fi"]),
+        ("Installing oh-my-zsh..", ["if [ ! -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; fi"]),
         ("Install Zsh-autosuggestions in oh-my-zsh", [
             "if [ ! -d ~/.oh-my-zsh/custom/plugins ]; then mkdir -p ~/.oh-my-zsh/custom/plugins; fi",
             "if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi"]),
-        ("Install custom themes"             ,["if [ ! -d ~/.oh-my-zsh/custom/themes ]; then mkdir -p ~/.oh-my-zsh/custom/themes; fi",
-                                               "if [ ! -f ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme; fi",
-                                               "if [ ! -d ~/.zsh/zsh-autosuggestions ]; then git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions; fi"
-                                               "if [ ! -d ~/.zsh/zsh-syntax-highlighting ]; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; fi"]),
-        ("Install Tmux plugin"               ,["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
-        ("Install default Vim's plugin",      ["vim +PlugInstall +qall"]),
+        ("Install custom themes", ["if [ ! -d ~/.oh-my-zsh/custom/themes ]; then mkdir -p ~/.oh-my-zsh/custom/themes; fi",
+                                  "if [ ! -f ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme; fi",
+                                  "if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions]; then git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi",
+                                  "if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; fi"]),
+        ("Install Tmux plugin", ["if [ ! -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi"]),
+        ("Install default Vim's plugin", ["vim +PlugInstall +qall"]),
 
         # TODO Seems error in majanro i3wm because it's uxvt
-        ("Change default sh to zsh"          ,["chsh - s $(which zsh)"]),
+        ("Change default sh to zsh", ["chsh - s $(which zsh)"]),
     ]
     for (show_message, cmd_list) in print_and_cmd_list:
         print(green_print(show_message))

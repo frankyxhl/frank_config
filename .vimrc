@@ -91,6 +91,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -108,3 +109,5 @@ nmap cc Vgc0j
 nmap , yyp
 
 map <F6> :setlocal spell! spelllang=en_us<CR>
+
+nnoremap S :%s//g<Left><Left>
