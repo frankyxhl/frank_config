@@ -15,9 +15,9 @@ plugins=(git zsh-autosuggestions docker-compose docker history history-substring
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export HISTSIZE=200000
+export HISTSIZE=2000000
 # # number of lines saved in the history after logout
-export SAVEHIST=200000
+export SAVEHIST=2000000
 # # location of history
 export HISTFILE=~/.zhistory
 # # append command to history file once executed
@@ -30,7 +30,6 @@ source ~/.zshrc.d/tar.sh
 source ~/.zshrc.d/search.sh
 source ~/.zshrc.d/git.sh
 source ~/.zshrc.d/docker.sh
-# [ -f .zshrc.d/percol.sh ] && source .zshrc.d/percol.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Custom each computer
@@ -40,25 +39,10 @@ if [ "$(get_os_name)" = "Cygwin" ]; then
     [ -f ~/.zshrc.d/windows.sh ] && source ~/.zshrc.d/windows.sh
 fi
 
+case  $(get_os_name) in
+    Cygwin) [ -f ~/.zshrc.d/windows.sh ] && source ~/.zshrc.d/windows.sh;;
+    Mac) [ -f ~/.zshrc.d/macos.sh ] && source ~/.zshrc.d/macos.sh;;
+esac
 
 #turn of correct
 unsetopt correct_all
-# export LC_CTYPE=en_US.UTF-8
-# export LC_ALL=en_US.UTF-8
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
-
-if [[ `uname` == 'Darwin' ]]
-then
-    alias meld="open -W -a Meld --args "
-    alias vim="/usr/local/Cellar/vim/8.1.1550/bin/vim"
-    # For remacs purpose
-    export PATH="/usr/local/opt/texinfo/bin:$PATH"
-    # Add flutter
-    export PATH="/Users/frank/Projects/private/flutter/flutter/bin:$PATH"
-    if [[ -z "$LC_ALL" ]]; then
-        export LC_ALL='en_US.UTF-8'
-    fi
-fi

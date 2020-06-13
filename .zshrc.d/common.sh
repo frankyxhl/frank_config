@@ -4,6 +4,7 @@
 # Alias
 alias e="emacsclient -a ''"
 alias g='git'
+alias cp='cp -iv'
 
 # let Cal show 3 months in default
 alias cal='cal -3'
@@ -187,6 +188,7 @@ extract () {
     fi
 }
 
+# Print PATH
 pp(){
     case $(get_os_name) in
         Mac) echo $PATH | sed 's/:/\
