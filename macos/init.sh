@@ -7,7 +7,7 @@ brew linkapps emacs-plus
 # Need fonts source code pro https://github.com/syl20bnr/spacemacs/issues/6226
 
 # https://github.com/ggreer/the_silver_searcher
-brew install the_silver_searcher
+# brew install the_silver_searcher
 
 # https://github.com/peco/peco
 brew install peco
@@ -21,19 +21,19 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 
 # Common Tools
-brew cask install caffeine google-chrome iterm2 slate alfred dropbox istat-menus mattr-slate
+brew install caffeine google-chrome iterm2 slate alfred dropbox istat-menus mattr-slate
 # Programming Tools
-brew cask install meld sourcetree font-source-code-pro icdiff ripgrep
+# brew cask install font-source-code-pro icdiff ripgrep
 # brew cask install vagrant virtualbox
 
 # Optional Tools
 # brew cask install db-browser-for-sqlite
 
 # Use Python2's pip
-pip install percol
+# pip install percol
 
 # Python3
-pip3 install httpie ipython
+# pip3 install httpie ipython
 
 # Slate
 # https://github.com/jigish/slate
