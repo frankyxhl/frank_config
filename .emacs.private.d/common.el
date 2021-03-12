@@ -38,6 +38,7 @@
 ;; https://github.com/syohex/emacs-helm-gtags/
 (global-set-key (kbd "C-x t") 'helm-gtags-find-tag)
 (global-set-key (kbd "C-t") 'spacemacs/helm-project-smart-do-search-region-or-symbol)
+(global-set-key (kbd "C-T") 'lsp-find-references)
 (global-set-key (kbd "C-x C-t") 'helm-gtags-find-pattern)
 
 ;; (aggressive-indent-global-mode)
@@ -64,6 +65,9 @@
 (add-hook 'yas-minor-mode-hook #'disable-yas-if-no-snippets)
 (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
 (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
+
+(add-hook 'magit-major-mode-hook (lambda () (yas-minor-mode -1)))
+(add-hook 'magit-status-mode-hook (lambda () (yas-minor-mode -1)))
 
 ;; god-mode
 (require 'god-mode)

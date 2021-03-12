@@ -27,7 +27,7 @@ alias docker_rm_all_containers='docker rm $(docker ps -aq)'
 # Remove all images
 alias docker_rm_all_images='docker rmi $(docker images -q)'
 
-function docker-cleanup {
+docker-cleanup() {
     EXITED=$(docker ps -q -f status=exited)
     DANGLING=$(docker images -q -f "dangling=true")
 
@@ -50,6 +50,13 @@ function docker-cleanup {
     fi
 }
 
+armageddon() {
+    removecontainers
+    docker network prune -f
+    docker rmi -f $(docker images --filter dangling=true -qa)
+    docker volume rm $(docker volume ls --filter dangling=true -q)
+    docker rmi -f $(docker images -qa)
+}
 
 
 

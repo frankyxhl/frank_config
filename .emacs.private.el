@@ -66,3 +66,9 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.private.d/aweshell"))
 (require 'aweshell)
+(require 'quelpa)
+(require 'quelpa-use-package)
+(use-package inf-iex
+  :hook (elixir-mode . inf-iex-minor-mode)
+  :quelpa (inf-iex :fetcher github
+                   :repo "DogLooksGood/inf-iex"))

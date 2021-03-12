@@ -26,23 +26,23 @@ setopt INC_APPEND_HISTORY
 # export NODE_PATH=/usr/local/lib/node_modules
 
 source ~/.zshrc.d/common.sh
-source ~/.zshrc.d/tar.sh
 source ~/.zshrc.d/search.sh
 source ~/.zshrc.d/git.sh
 source ~/.zshrc.d/docker.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Custom each computer
-[ -f ~/.zshrc.local.sh ] && source ~/.zshrc.local.sh
 # If is Cygwin
-if [ "$(get_os_name)" = "Cygwin" ]; then
-    [ -f ~/.zshrc.d/windows.sh ] && source ~/.zshrc.d/windows.sh
-fi
+# if [ "$(get_os_name)" = "Cygwin" ]; then
+#     [ -f ~/.zshrc.d/windows.sh ] && source ~/.zshrc.d/windows.sh
+# fi
 
 case  $(get_os_name) in
     Cygwin) [ -f ~/.zshrc.d/windows.sh ] && source ~/.zshrc.d/windows.sh;;
     Mac) [ -f ~/.zshrc.d/macos.sh ] && source ~/.zshrc.d/macos.sh;;
 esac
 
+[ -f ~/.zshrc.local.sh ] && source ~/.zshrc.local.sh
 #turn of correct
 unsetopt correct_all
+if [ -e /Users/frank/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/frank/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
