@@ -111,3 +111,8 @@ nmap , yyp
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
 nnoremap S :%s//g<Left><Left>
+
+
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set enc=utf8
+set fencs=utf8,gbk,gb2312,gb18030
