@@ -79,6 +79,7 @@ This function should only modify configuration layer settings."
      (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
      version-control
+     nixos
      )
 
    ;; List of additional packages that will be installed without being

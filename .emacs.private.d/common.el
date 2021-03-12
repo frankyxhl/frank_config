@@ -151,3 +151,18 @@
 (setq python-shell-interpreter "python3")
 
 (global-set-key (kbd "M-r") 'revert-buffer)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
+
+(defun ssbb-pyenv-hook ()
+  "Automatically activates pyenv version if .python-version file exists."
+  (f-traverse-upwards
+   (lambda (path)
+     (let ((pyenv-version-path (f-expand ".python-version" path)))
+		   (if (f-exists? pyenv-version-path)
+				   (pyenv-mode-set (s-trim (f-read-text pyenv-version-path 'utf-8))))))))
+
+(add-hook 'find-file-hook 'ssbb-pyenv-hook)
+
+(setq lsp-restart 'ignore)
