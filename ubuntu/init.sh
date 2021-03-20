@@ -1,72 +1,36 @@
 #!/usr/bin/bash
 # -*- coding: utf-8 -*-
 # @date: 2012-03-02
+# @date: 2021-03-20
 # @author: Frank Xu
 sudo true
-sudo apt-get install -y git vim tmux zsh 
+sudo apt-get install -y git vim tmux zsh
 find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
-# sudo apt-get install -y python2.7 python-pip
 
-# https://github.com/mooz/percol
-# sudo pip2 install percol
-
-
-#ln -s ~/frank_config/.emacs ~/.emacs
-#ln -s ~/frank_config/.emacs.d ~/.emacs.d
 echo 'configure .zshrc'
-if [ ! -f ~/.zshrc.js ]; then
-    ln -s ~/frank_config/.zshrc ~/.zshrc
-fi
+[ ! -f ~/.zshrc.js ] && ln -s ~/frank_config/.zshrc ~/.zshrc
 
-if [ ! -f ~/.zshrc.d ]; then
-    ln -s ~/frank_config/.zshrc.d ~/.zshrc.d
-fi
+[ ! -f ~/.zshrc.d ] && ln -s ~/frank_config/.zshrc.d ~/.zshrc.d
 
 echo 'configure .vimrc'
-if [ ! -f  ~/.vimrc ]; then
-    ln -s ~/frank_config/.vimrc ~/.vimrc
-fi
-
-if [ ! -f ~/.vim ]; then
-    ln -s ~/frank_config/.vim ~/.vim
-fi
+[ ! -f  ~/.vimrc ] && ln -s ~/frank_config/.vimrc ~/.vimrc
+[ ! -f ~/.vim ] && ln -s ~/frank_config/.vim ~/.vim
 
 echo 'configure .emacs'
-if [ ! -f  ~/.emacsclient ]; then
-    ln -s ~/frank_config/.emacsclient ~/.emacsclient
-fi
+[ ! -f  ~/.emacsclient ] ln -s ~/frank_config/.emacsclient ~/.emacsclient
 
 echo 'configure tmux'
-if [ ! -f  ~/.tmux.conf ]; then
-    ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
-fi
+[ ! -f  ~/.tmux.conf ] && ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
 
 echo 'configure oh-my-zsh'
-if [ ! -d ~/.oh-my-zsh ]; then
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-fi
-
-if [ ! -d ~/.zsh/zsh-autosuggestions ]; then
-    git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-fi
-
-
-if [ ! -d ~/.oh-my-zsh/custom/themes ]; then
-    mkdir -p ~/.oh-my-zsh/custom/themes
-fi
-
-if [ ! -d ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
-fi
-
-if [ ! -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
+[ ! -d ~/.oh-my-zsh ] && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+[ ! -d ~/.zsh/zsh-autosuggestions ] && git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+[ ! -d ~/.oh-my-zsh/custom/themes ] && mkdir -p ~/.oh-my-zsh/custom/themes
+[ ! -d ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ] git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+[ ! -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 echo 'configure oh-my-zsh custom theme'
-if [ ! -f  ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ]; then
-    ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
-fi
+[ ! -f  ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme ] && ln -s ~/frank_config/bira-no-ruby.zsh-theme ~/.oh-my-zsh/custom/themes/bira-no-ruby.zsh-theme
 #cp -r ~/.fonts ~/
 
 echo 'configure Tmux'
@@ -76,9 +40,7 @@ if [ ! -d ~/.tmux/plugins ]; then
     tmux source ~/.tmux.conf
 fi
 
-if [ ! -d ~/.xonshrc ]; then
-    ln -s ~/frank_config/.xonshrc ~/.xonshrc
-fi
+[ ! -d ~/.xonshrc ] && ln -s ~/frank_config/.xonshrc ~/.xonshrc
 
 # Install default Vim's plugin
 vim +PlugInstall +qall
