@@ -4,15 +4,13 @@
 # Alias
 alias e="emacsclient -a ''"
 alias g='git'
+alias t='tmux'
 alias cp='cp -iv'
 
 # let Cal show 3 months in default
 alias cal='cal -3'
 alias wget='wget -c'
 alias cls='clear'
-
-
-# ls command enhancement
 
 # ls folders only
 alias sub='ls -d */'
@@ -47,11 +45,6 @@ alias axel='axel -a'
 
 alias rsync_remote_file="rsync --partial -azv --progress $1 ."
 
-count-files(){
-    COUNT=`ls "$@" | wc -l`
-    echo "$COUNT files found."
-}
-
 alias count-file-lines='wc -l'
 
 #pip install youtube-dl
@@ -68,8 +61,8 @@ mvbk() {
 cpbk() {
     cp $1 $1.bak
 }
-alias mvbk=mvbk
-alias cpbk=cpbk
+# alias mvbk=mvbk
+# alias cpbk=cpbk
 
 
 # https://github.com/mitchellh/vagrant/issues/4412
