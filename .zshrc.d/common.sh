@@ -4,7 +4,7 @@
 # Alias
 alias e="emacsclient -a ''"
 alias g='git'
-alias t='tmux'
+alias t='tmux -A'
 alias cp='cp -iv'
 
 # let Cal show 3 months in default

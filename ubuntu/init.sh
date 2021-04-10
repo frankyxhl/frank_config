@@ -5,19 +5,14 @@
 # @author: Frank Xu
 sudo true
 sudo apt-get install -y git vim tmux zsh
-find /usr/share/vim/ -name 'less.sh' -exec sudo cp {} /usr/local/bin/vless \;
 
 echo 'configure .zshrc'
 [ ! -f ~/.zshrc.js ] && ln -s ~/frank_config/.zshrc ~/.zshrc
-
 [ ! -f ~/.zshrc.d ] && ln -s ~/frank_config/.zshrc.d ~/.zshrc.d
 
 echo 'configure .vimrc'
 [ ! -f  ~/.vimrc ] && ln -s ~/frank_config/.vimrc ~/.vimrc
 [ ! -f ~/.vim ] && ln -s ~/frank_config/.vim ~/.vim
-
-echo 'configure .emacs'
-[ ! -f  ~/.emacsclient ] ln -s ~/frank_config/.emacsclient ~/.emacsclient
 
 echo 'configure tmux'
 [ ! -f  ~/.tmux.conf ] && ln -s ~/frank_config/.tmux.conf ~/.tmux.conf
@@ -34,11 +29,7 @@ echo 'configure oh-my-zsh custom theme'
 #cp -r ~/.fonts ~/
 
 echo 'configure Tmux'
-if [ ! -d ~/.tmux/plugins ]; then
-    mkdir -p ~/.tmux/plugins
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    tmux source ~/.tmux.conf
-fi
+[ ! -d ~/.tmux/plugins ] && mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && tmux source ~/.tmux.conf
 
 [ ! -d ~/.xonshrc ] && ln -s ~/frank_config/.xonshrc ~/.xonshrc
 
